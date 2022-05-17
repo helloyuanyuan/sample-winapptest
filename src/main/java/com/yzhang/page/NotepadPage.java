@@ -1,4 +1,4 @@
-package com.yzhang.pages;
+package com.yzhang.page;
 
 import com.yzhang.common.driver.Driver;
 import org.openqa.selenium.By;

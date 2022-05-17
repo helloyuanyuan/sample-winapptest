@@ -1,11 +1,11 @@
 package com.yzhang.cases;
 
-import static com.yzhang.helpers.NotepadHelper.getResultString;
+import static com.yzhang.pageAction.NotepadAction.getResultString;
 import com.yzhang.common.driver.Driver;
 import com.yzhang.common.utils.LogUtils;
 import com.yzhang.common.utils.ProcessUtils;
 import com.yzhang.common.utils.PropertyUtils;
-import com.yzhang.pages.NotepadPage;
+import com.yzhang.pageAction.NotepadAction;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -14,10 +14,11 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
+import org.openqa.selenium.WebElement;
 
 public class Notepad {
 
-    NotepadPage notepadPage = new NotepadPage();
+    NotepadAction notepadAction = new NotepadAction();
 
     @Rule
     public TestName testName = new TestName();
@@ -31,7 +32,7 @@ public class Notepad {
     public void beforeEach() throws Exception {
         LogUtils.excuteTestCase(testName.getMethodName());
         Driver.initDriver(PropertyUtils.getInstance().getNotepadPath());
-        notepadPage.editArea().clear();
+        notepadAction.editArea().clear();
     }
 
     @After
@@ -47,19 +48,15 @@ public class Notepad {
     @Test
     public void testInput() {
         String msg = "Hello World!";
-        notepadPage.editArea().sendKeys(msg);
-        Assertions.assertThat(getResultString(notepadPage.editArea())).isEqualTo(msg);
+        WebElement result = notepadAction.input(msg);
+        Assertions.assertThat(getResultString(result)).isEqualTo(msg);
     }
 
     @Test
     public void testInputAndSave() {
         String msg = "Hello World!";
-        notepadPage.editArea().sendKeys(msg);
-        notepadPage.fileMenu().click();
-        notepadPage.saveMenu().click();
-        notepadPage.fileNameInputArea().clear();
-        notepadPage.fileNameInputArea().sendKeys("TestFile" + System.currentTimeMillis() + ".txt");
-        notepadPage.saveButton().click();
+        String fileName = "TestFile" + System.currentTimeMillis() + ".txt";
+        notepadAction.inputAndSave(msg, fileName);
     }
 
 }
