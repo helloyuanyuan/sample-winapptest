@@ -3,6 +3,7 @@
 .vscode
 reports
 target
+logs
 settings.xml
 **/.DS_Store
 **/*.iml

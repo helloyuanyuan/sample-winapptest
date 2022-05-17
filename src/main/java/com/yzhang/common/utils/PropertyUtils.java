@@ -32,16 +32,16 @@ public class PropertyUtils {
             in = PropertyUtils.class.getClassLoader().getResourceAsStream(propertiesFile);
             properties.load(new InputStreamReader(in, "UTF-8"));
         } catch (FileNotFoundException e) {
-            System.out.println(propertiesFile + "FILE NOT FOUND!");
+            LogUtils.error(propertiesFile + "FILE NOT FOUND!");
         } catch (IOException e) {
-            System.out.println(propertiesFile + "LOADING IOException!");
+            LogUtils.error(propertiesFile + "LOADING IOException!");
         } finally {
             try {
                 if (null != in) {
                     in.close();
                 }
             } catch (IOException e) {
-                System.out.println(propertiesFile + "CLOSING IOException!");
+                LogUtils.error(propertiesFile + "CLOSING IOException!");
             }
         }
         return properties;

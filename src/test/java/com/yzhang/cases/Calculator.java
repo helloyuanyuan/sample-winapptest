@@ -2,32 +2,46 @@ package com.yzhang.cases;
 
 import static com.yzhang.helpers.CalculatorHelper.getResultString;
 import com.yzhang.common.driver.Driver;
+import com.yzhang.common.utils.LogUtils;
 import com.yzhang.common.utils.ProcessUtils;
 import com.yzhang.common.utils.PropertyUtils;
 import com.yzhang.pages.CalculatorPage;
+import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Assert;
+import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestName;
 
 public class Calculator {
 
     CalculatorPage calculatorPage = new CalculatorPage();
 
+    @Rule
+    public TestName testName = new TestName();
+
     @BeforeClass
-    public static void setUp() throws Exception {
+    public static void beforeAll() throws Exception {
+        LogUtils.startTestSuite(Calculator.class.getSimpleName());
         Driver.initDriver(PropertyUtils.getInstance().getCalculatorPath());
     }
 
+    @Before
+    public void beforeEach() throws Exception {
+        LogUtils.excuteTestCase(testName.getMethodName());
+    }
+
     @After
-    public void reset() throws Exception {
+    public void afterEach() throws Exception {
         calculatorPage.clear().click();
     }
 
     @AfterClass
-    public static void tearDown() throws Exception {
+    public static void afterAll() throws Exception {
         ProcessUtils.killAllCalculatorProcess();
+        LogUtils.endTestSuite();
     }
 
     @Test
@@ -36,7 +50,7 @@ public class Calculator {
         calculatorPage.plus().click();
         calculatorPage.number("Four").click();
         calculatorPage.equals().click();
-        Assert.assertEquals("5", getResultString(calculatorPage.result()));
+        Assertions.assertThat(getResultString(calculatorPage.result())).isEqualTo("5");
     }
 
     @Test
@@ -45,7 +59,7 @@ public class Calculator {
         calculatorPage.minus().click();
         calculatorPage.number("Three").click();
         calculatorPage.equals().click();
-        Assert.assertEquals("5", getResultString(calculatorPage.result()));
+        Assertions.assertThat(getResultString(calculatorPage.result())).isEqualTo("5");
     }
 
     @Test
@@ -54,7 +68,7 @@ public class Calculator {
         calculatorPage.multiply().click();
         calculatorPage.number("One").click();
         calculatorPage.equals().click();
-        Assert.assertEquals("5", getResultString(calculatorPage.result()));
+        Assertions.assertThat(getResultString(calculatorPage.result())).isEqualTo("5");
     }
 
     @Test
@@ -64,7 +78,7 @@ public class Calculator {
         calculatorPage.divide().click();
         calculatorPage.number("Six").click();
         calculatorPage.equals().click();
-        Assert.assertEquals("5", getResultString(calculatorPage.result()));
+        Assertions.assertThat(getResultString(calculatorPage.result())).isEqualTo("5");
     }
 
 }
