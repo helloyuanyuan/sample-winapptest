@@ -1,13 +1,14 @@
 # Sample Windows App Test Project
 
-## (Java + WinAppDriver + Appnium + Selenium + Junit)
+## (Java + WinAppDriver + Appnium + Junit)
 
 ### Steps
 
 ~~~Text
-1. install /tools/WindowsApplicationDriver_1.2.1.msi
-2. run C:\Program Files (x86)\Windows Application Driver\WinAppDriver.exe
-3. run comand: ./mvnw clean compile test
+1. enable windows developer mode;
+2. install /tools/WindowsApplicationDriver_1.2.1.msi;
+3. run C:\Program Files (x86)\Windows Application Driver\WinAppDriver.exe;
+4. run comand: ./mvnw clean compile test;
 ~~~
 
 ### Notes
