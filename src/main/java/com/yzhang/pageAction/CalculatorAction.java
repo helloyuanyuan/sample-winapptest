@@ -2,7 +2,7 @@ package com.yzhang.pageAction;
 
 import java.util.Arrays;
 import com.yzhang.page.CalculatorPage;
-import org.openqa.selenium.WebElement;
+import io.appium.java_client.windows.WindowsElement;
 
 public class CalculatorAction extends CalculatorPage {
 
@@ -12,11 +12,11 @@ public class CalculatorAction extends CalculatorPage {
         this.calculatorPage = new CalculatorPage();
     }
 
-    public static String getResultString(WebElement element) {
+    public static String getText(WindowsElement element) {
         return element.getText().replace("Display is", "").trim();
     }
 
-    public WebElement plus(String... num) {
+    public WindowsElement plus(String... num) {
         calculatorPage.number(Arrays.asList(num).get(0)).click();
         calculatorPage.plus().click();
         calculatorPage.number(Arrays.asList(num).get(1)).click();
@@ -24,7 +24,7 @@ public class CalculatorAction extends CalculatorPage {
         return calculatorPage.result();
     }
 
-    public WebElement minus(String... num) {
+    public WindowsElement minus(String... num) {
         calculatorPage.number(Arrays.asList(num).get(0)).click();
         calculatorPage.minus().click();
         calculatorPage.number(Arrays.asList(num).get(1)).click();
@@ -32,7 +32,7 @@ public class CalculatorAction extends CalculatorPage {
         return calculatorPage.result();
     }
 
-    public WebElement multiply(String... num) {
+    public WindowsElement multiply(String... num) {
         calculatorPage.number(Arrays.asList(num).get(0)).click();
         calculatorPage.multiply().click();
         calculatorPage.number(Arrays.asList(num).get(1)).click();
@@ -40,7 +40,7 @@ public class CalculatorAction extends CalculatorPage {
         return calculatorPage.result();
     }
 
-    public WebElement divide(String... num) {
+    public WindowsElement divide(String... num) {
         calculatorPage.number(Arrays.asList(num).get(0)).click();
         calculatorPage.number(Arrays.asList(num).get(1)).click();
         calculatorPage.divide().click();

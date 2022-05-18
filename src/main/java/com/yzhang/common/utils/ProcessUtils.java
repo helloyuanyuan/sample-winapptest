@@ -35,6 +35,14 @@ public class ProcessUtils {
         }
     }
 
+    public static void killAllCompletionProcess() {
+        try {
+            killProcess("AUTOonline.ICRpilot.Completion.Clients.exe");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
 

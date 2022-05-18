@@ -1,6 +1,6 @@
 package com.yzhang.cases;
 
-import static com.yzhang.pageAction.CalculatorAction.getResultString;
+import static com.yzhang.pageAction.CalculatorAction.getText;
 import com.yzhang.common.driver.Driver;
 import com.yzhang.common.utils.LogUtils;
 import com.yzhang.common.utils.ProcessUtils;
@@ -14,7 +14,7 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
-import org.openqa.selenium.WebElement;
+import io.appium.java_client.windows.WindowsElement;
 
 public class Calculator {
 
@@ -47,26 +47,26 @@ public class Calculator {
 
     @Test
     public void testAddition() {
-        WebElement result = calculatoraAction.plus("One", "Four");
-        Assertions.assertThat(getResultString(result)).isEqualTo("5");
+        WindowsElement result = calculatoraAction.plus("One", "Four");
+        Assertions.assertThat(getText(result)).isEqualTo("5");
     }
 
     @Test
     public void testSubtraction() {
-        WebElement result = calculatoraAction.minus("Eight", "Three");
-        Assertions.assertThat(getResultString(result)).isEqualTo("5");
+        WindowsElement result = calculatoraAction.minus("Eight", "Three");
+        Assertions.assertThat(getText(result)).isEqualTo("5");
     }
 
     @Test
     public void testMultiplication() {
-        WebElement result = calculatoraAction.multiply("Five", "One");
-        Assertions.assertThat(getResultString(result)).isEqualTo("5");
+        WindowsElement result = calculatoraAction.multiply("Five", "One");
+        Assertions.assertThat(getText(result)).isEqualTo("5");
     }
 
     @Test
     public void testDivision() {
-        WebElement result = calculatoraAction.divide("Three", "Zero", "Six");
-        Assertions.assertThat(getResultString(result)).isEqualTo("5");
+        WindowsElement result = calculatoraAction.divide("Three", "Zero", "Six");
+        Assertions.assertThat(getText(result)).isEqualTo("5");
     }
 
 }

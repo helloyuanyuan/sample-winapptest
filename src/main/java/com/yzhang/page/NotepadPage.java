@@ -2,44 +2,54 @@ package com.yzhang.page;
 
 import com.yzhang.common.driver.Driver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import io.appium.java_client.windows.WindowsElement;
 
 public class NotepadPage {
 
-    public WebElement editArea() {
-        WebElement element = Driver.getDriver().findElement(By.name("RichEdit Control"));
+    public WindowsElement editArea() {
+        WindowsElement element = Driver.getDriver().findElement(By.name("RichEdit Control"));
         return element;
     }
 
-    public WebElement editMenu() {
-        WebElement element = Driver.getDriver().findElement(By.name("Edit"));
+    public WindowsElement editMenu() {
+        WindowsElement element = Driver.getDriver().findElement(By.name("Edit"));
         return element;
     }
 
-    public WebElement fontMenu() {
-        WebElement element = Driver.getDriver().findElement(By.name("Font"));
+    public WindowsElement fontMenu() {
+        WindowsElement element = Driver.getDriver().findElement(By.name("Font"));
         return element;
     }
 
-    public WebElement fileMenu() {
-        WebElement element = Driver.getDriver().findElement(By.name("File"));
+    public WindowsElement fileMenu() {
+        WindowsElement element = Driver.getDriver().findElement(By.name("File"));
         return element;
     }
 
-    public WebElement saveMenu() {
-        WebElement element = Driver.getDriver().findElement(By.name("Save"));
+    public WindowsElement saveMenu() {
+        WindowsElement element = Driver.getDriver().findElement(By.name("Save"));
         return element;
     }
 
-    public WebElement fileNameInputArea() {
-        WebElement element =
+    public WindowsElement fileNameInputArea() {
+        WindowsElement element =
                 Driver.getDriver().findElement(By.xpath("/Window/Window/Pane[1]/ComboBox[1]/Edit"));
         return element;
     }
 
-    public WebElement saveButton() {
-        WebElement element = Driver.getDriver().findElement(By.xpath(
+    public WindowsElement saveButton() {
+        WindowsElement element = Driver.getDriver().findElement(By.xpath(
                 "//Window[@Name=\"Save as\"]/Button[@ClassName=\"Button\"][@Name=\"Save\"]"));
+        return element;
+    }
+
+    public WindowsElement popupSaveButton() {
+        WindowsElement element = Driver.getDriver().findElementByAccessibilityId("PrimaryButton");
+        return element;
+    }
+
+    public WindowsElement popupNotSaveButton() {
+        WindowsElement element = Driver.getDriver().findElementByAccessibilityId("SecondaryButton");
         return element;
     }
 

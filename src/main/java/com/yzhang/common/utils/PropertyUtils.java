@@ -51,8 +51,8 @@ public class PropertyUtils {
         return properties.getProperty(key);
     }
 
-    public String getWindowsApplicationDriverUrl() {
-        return this.getProperty("WindowsApplicationDriverUrl");
+    public String getServerUrl() {
+        return this.getProperty("WinAppDriverURL");
     }
 
     public String getNotepadPath() {
@@ -61,6 +61,10 @@ public class PropertyUtils {
 
     public String getCalculatorPath() {
         return this.getProperty("calculatorPath");
+    }
+
+    public String getCompletionPath() {
+        return this.getProperty("completionPath");
     }
 
 }

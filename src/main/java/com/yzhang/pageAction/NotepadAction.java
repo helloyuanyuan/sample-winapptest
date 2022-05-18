@@ -1,7 +1,8 @@
 package com.yzhang.pageAction;
 
+import com.yzhang.common.driver.Driver;
 import com.yzhang.page.NotepadPage;
-import org.openqa.selenium.WebElement;
+import io.appium.java_client.windows.WindowsElement;
 
 public class NotepadAction extends NotepadPage {
 
@@ -11,11 +12,7 @@ public class NotepadAction extends NotepadPage {
         this.notepadPage = new NotepadPage();
     }
 
-    public static String getResultString(WebElement element) {
-        return element.getText();
-    }
-
-    public WebElement input(String msg) {
+    public WindowsElement input(String msg) {
         notepadPage.editArea().sendKeys(msg);
         return notepadPage.editArea();
     }
@@ -27,6 +24,11 @@ public class NotepadAction extends NotepadPage {
         notepadPage.fileNameInputArea().clear();
         notepadPage.fileNameInputArea().sendKeys(fileName);
         notepadPage.saveButton().click();
+    }
+
+    public void quitWithoutSave() {
+        Driver.getDriver().closeApp();
+        notepadPage.popupNotSaveButton().click();
     }
 
 }

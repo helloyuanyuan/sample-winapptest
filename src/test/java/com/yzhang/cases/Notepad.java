@@ -1,6 +1,5 @@
 package com.yzhang.cases;
 
-import static com.yzhang.pageAction.NotepadAction.getResultString;
 import com.yzhang.common.driver.Driver;
 import com.yzhang.common.utils.LogUtils;
 import com.yzhang.common.utils.ProcessUtils;
@@ -14,7 +13,7 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
-import org.openqa.selenium.WebElement;
+import io.appium.java_client.windows.WindowsElement;
 
 public class Notepad {
 
@@ -46,15 +45,16 @@ public class Notepad {
     }
 
     @Test
-    public void testInput() {
-        String msg = "Hello World!";
-        WebElement result = notepadAction.input(msg);
-        Assertions.assertThat(getResultString(result)).isEqualTo(msg);
+    public void testInputAndNotSave() {
+        String msg = "Input some text but not save...";
+        WindowsElement result = notepadAction.input(msg);
+        Assertions.assertThat(result.getText()).isEqualTo(msg);
+        notepadAction.quitWithoutSave();
     }
 
     @Test
     public void testInputAndSave() {
-        String msg = "Hello World!";
+        String msg = "Input some text and save to a .txt file...";
         String fileName = "TestFile" + System.currentTimeMillis() + ".txt";
         notepadAction.inputAndSave(msg, fileName);
     }
