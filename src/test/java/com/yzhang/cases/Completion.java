@@ -2,7 +2,6 @@ package com.yzhang.cases;
 
 import com.yzhang.common.driver.Driver;
 import com.yzhang.common.utils.LogUtils;
-import com.yzhang.common.utils.ProcessUtils;
 import com.yzhang.common.utils.PropertyUtils;
 import com.yzhang.pageAction.CompletionAction;
 import org.assertj.core.api.Assertions;
@@ -35,7 +34,7 @@ public class Completion {
 
     @After
     public void afterEach() throws Exception {
-        ProcessUtils.killAllCompletionProcess();
+        Driver.getDriver().quit();
     }
 
     @AfterClass
@@ -46,18 +45,23 @@ public class Completion {
     @Test
     public void testLoadDocument() throws InterruptedException {
         String expectedString = "Expert address";
-        completionAction.toolbarClickLoadButtonAndWait(0);
+        completionAction.toolbarClickLoadButton();
         WindowsElement expertAddressTitle = completionAction.dataAreaExpertAddressTitle();
         Assertions.assertThat(expertAddressTitle.getText()).isNotNull().isEqualTo(expectedString);
     }
 
     @Test
-    public void testDocumentDataAreaInputExpertAddress() throws InterruptedException {
+    public void testLoadDocumentAndInputExpertAddress() throws InterruptedException {
         String expectedString = "This is a test address";
-        completionAction.toolbarClickLoadButtonAndWait(0);
+        completionAction.toolbarClickLoadButton();
         completionAction.inputExpertAddress(expectedString);
         WindowsElement expertAddress = completionAction.dataAreaExpertAddress();
         Assertions.assertThat(expertAddress.getText()).isNotNull().isEqualTo(expectedString);
+    }
+
+    @Test
+    public void testLoadDocumentAndInputSomeData() throws InterruptedException {
+        // TO DO
     }
 
 }

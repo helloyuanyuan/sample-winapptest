@@ -17,11 +17,6 @@ public class CompletionPage {
         return element;
     }
 
-    public WindowsElement toolbarSettingClose() {
-        WindowsElement element = Driver.getDriver().findElementByAccessibilityId("Close");
-        return element;
-    }
-
     public WindowsElement dataAreaExpertAddressTitle() {
         WindowsElement element = Driver.getDriver().findElement(By.name("Expert address"));
         return element;

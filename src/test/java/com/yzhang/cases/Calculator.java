@@ -3,7 +3,6 @@ package com.yzhang.cases;
 import static com.yzhang.pageAction.CalculatorAction.getText;
 import com.yzhang.common.driver.Driver;
 import com.yzhang.common.utils.LogUtils;
-import com.yzhang.common.utils.ProcessUtils;
 import com.yzhang.common.utils.PropertyUtils;
 import com.yzhang.pageAction.CalculatorAction;
 import org.assertj.core.api.Assertions;
@@ -41,7 +40,7 @@ public class Calculator {
 
     @AfterClass
     public static void afterAll() throws Exception {
-        ProcessUtils.killAllCalculatorProcess();
+        Driver.getDriver().quit();
         LogUtils.endTestSuite();
     }
 

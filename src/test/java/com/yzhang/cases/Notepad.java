@@ -2,7 +2,6 @@ package com.yzhang.cases;
 
 import com.yzhang.common.driver.Driver;
 import com.yzhang.common.utils.LogUtils;
-import com.yzhang.common.utils.ProcessUtils;
 import com.yzhang.common.utils.PropertyUtils;
 import com.yzhang.pageAction.NotepadAction;
 import org.assertj.core.api.Assertions;
@@ -36,7 +35,7 @@ public class Notepad {
 
     @After
     public void afterEach() throws Exception {
-        ProcessUtils.killAllNotepadProcess();
+        Driver.getDriver().closeApp();
     }
 
     @AfterClass

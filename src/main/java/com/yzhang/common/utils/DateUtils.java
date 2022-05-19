@@ -3,8 +3,7 @@ package com.yzhang.common.utils;
 public class DateUtils {
 
     public static void pause(int seconds) {
-        LogUtils.info("Sleep " + seconds + " seconds ...");
-
+        LogUtils.info("pause " + seconds + " seconds ...");
         for (int i = 1; i < seconds; i++) {
             try {
                 Thread.sleep(1000);
