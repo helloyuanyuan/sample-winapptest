@@ -59,9 +59,4 @@ public class Completion {
         Assertions.assertThat(expertAddress.getText()).isNotNull().isEqualTo(expectedString);
     }
 
-    @Test
-    public void testLoadDocumentAndInputSomeData() throws InterruptedException {
-        // TO DO
-    }
-
 }

@@ -39,10 +39,17 @@ public class CompletionAction extends CompletionPage {
         loadDocument();
     }
 
+    public void toolbarClickLoadButtonNoDoc() {
+        Actions action = new Actions(Driver.getDriver());
+        action.moveToElement(completionPage.toolbar(), 61, 61);
+        action.click();
+        action.perform();
+    }
+
     public void inputExpertAddress(String address) {
-        Driver.getDriver().findElement(By.className("Edit")).clear();;
-        Driver.getDriver().findElement(By.className("Edit")).sendKeys(address);;
-        Driver.getDriver().findElement(By.className("Edit")).click();;
+        Driver.getDriver().findElement(By.className("Edit")).clear();
+        Driver.getDriver().findElement(By.className("Edit")).sendKeys(address);
+        Driver.getDriver().findElement(By.className("Edit")).click();
     }
 
 }
