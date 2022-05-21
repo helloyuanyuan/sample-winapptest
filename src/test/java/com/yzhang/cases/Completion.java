@@ -1,8 +1,6 @@
 package com.yzhang.cases;
 
-import com.yzhang.common.driver.Driver;
 import com.yzhang.common.utils.LogUtils;
-import com.yzhang.common.utils.PropertyUtils;
 import com.yzhang.pageAction.CompletionAction;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
@@ -16,7 +14,7 @@ import io.appium.java_client.windows.WindowsElement;
 
 public class Completion {
 
-    CompletionAction completionAction = new CompletionAction();
+    CompletionAction action = new CompletionAction();
 
     @Rule
     public TestName testName = new TestName();
@@ -29,12 +27,11 @@ public class Completion {
     @Before
     public void beforeEach() throws Exception {
         LogUtils.excuteTestCase(testName.getMethodName());
-        Driver.initDriver(PropertyUtils.getInstance().getCompletionPath());
     }
 
     @After
     public void afterEach() throws Exception {
-        Driver.getDriver().quit();
+        action.driver.closeApp();
     }
 
     @AfterClass
@@ -43,20 +40,31 @@ public class Completion {
     }
 
     @Test
-    public void testLoadDocument() throws InterruptedException {
-        String expectedString = "Expert address";
-        completionAction.toolbarClickLoadButton();
-        WindowsElement expertAddressTitle = completionAction.dataAreaExpertAddressTitle();
-        Assertions.assertThat(expertAddressTitle.getText()).isNotNull().isEqualTo(expectedString);
+    public void testLoadDocumentBVT() throws InterruptedException {
+        if (action.documentsInQueue()) {
+            String expectedString = "Expert address";
+            action.toolbarClickLoadButton();
+            WindowsElement expertAddressTitle = action.dataAreaExpertAddressTitle();
+            Assertions.assertThat(expertAddressTitle.getText()).isNotNull()
+                    .isEqualTo(expectedString);
+        } else {
+            action.toolbarClickLoadButton();
+            action.iCRpilotPopUpConfirmButton().click();
+        }
     }
 
     @Test
     public void testLoadDocumentAndInputExpertAddress() throws InterruptedException {
-        String expectedString = "This is a test address";
-        completionAction.toolbarClickLoadButton();
-        completionAction.inputExpertAddress(expectedString);
-        WindowsElement expertAddress = completionAction.dataAreaExpertAddress();
-        Assertions.assertThat(expertAddress.getText()).isNotNull().isEqualTo(expectedString);
+        if (action.documentsInQueue()) {
+            String expectedString = "This is a test address";
+            action.toolbarClickLoadButton();
+            action.inputExpertAddress(expectedString);
+            WindowsElement expertAddress = action.dataAreaExpertAddress();
+            Assertions.assertThat(expertAddress.getText()).isNotNull().isEqualTo(expectedString);
+        } else {
+            action.toolbarClickLoadButton();
+            action.iCRpilotPopUpConfirmButton().click();
+        }
     }
 
 }
