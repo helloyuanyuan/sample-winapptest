@@ -67,4 +67,89 @@ public class Completion {
         }
     }
 
+    @Test
+    public void testDocumentCompletionVHV() throws InterruptedException {
+        if (action.documentsInQueue()) {
+
+            // Load document
+            action.toolbarClickLoadButton();
+
+            // ExpertAddress
+            action.selectExpertAddress("Unbekannt");
+
+            // VIN
+            action.inputData(90, 440, "TESTVINNUMBER");
+
+            // Residual value (gross)
+            action.inputData(90, 665, "1024");
+
+            // First registrayion date
+            action.inputData(90, 1075, "01.01.2010");
+
+            // Vehicle type
+            action.inputData(90, 1300, "SUV");
+
+            // Platform
+            action.inputData(90, 1460, "SUV");
+
+            // Number of doors
+            action.inputData(1, "5");
+
+            // Manufacturer
+            action.inputData(1, "VOLVO");
+
+            // Model
+            action.inputData(1, "XC90");
+
+            // Variant
+            action.inputData(1, "TEST Variant");
+
+            // Engine type
+            action.inputData(1, "OTTO");
+
+            // Engine volume (ccm)
+            action.inputData(1, "2.0");
+
+            // Power (KW)
+            action.inputData(1, "235");
+
+            // Color
+            action.inputData(1, "Black");
+
+            // Mileage
+            action.inputData(1, "5000");
+
+            // Gear type
+            action.inputData(4, "AUTOMATIK");
+
+            // Standard equipment
+            action.inputData(1, "TEST Standard equipment");
+
+            // Extra equipment
+            action.inputData(1, "TEST Extra equipment");
+
+            // Calculation text
+            action.inputData(5, "TEST Calculation text");
+
+            // Repair cost (net)
+            action.inputData(1, "512");
+
+            // Completion
+            action.toolbarClickCompletionButton();
+
+            // Assertions
+            Assertions.assertThat(action.completingCompletedForm()).isNotNull();
+            Assertions.assertThat(action.completingSendAndGetNew()).isNotNull();
+            Assertions.assertThat(action.completingSend()).isNotNull();
+            Assertions.assertThat(action.completingCancel()).isNotNull();
+
+            // Send
+            action.completingSend().click();
+
+        } else {
+            action.toolbarClickLoadButton();
+            action.iCRpilotPopUpConfirmButton().click();
+        }
+    }
+
 }
