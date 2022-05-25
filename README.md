@@ -27,5 +27,5 @@
 
 ### Reference
 
-<https://github.com/microsoft/WinAppDriver>
-<http://appium.io/docs/en/drivers/windows/>
+- <https://github.com/microsoft/WinAppDriver>
+- <http://appium.io/docs/en/drivers/windows/>
