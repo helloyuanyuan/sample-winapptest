@@ -40,7 +40,7 @@ public class Completion {
     }
 
     @Test
-    public void testLoadDocumentBVT() throws InterruptedException {
+    public void testLoadDocumentBVT() {
         if (action.documentsInQueue()) {
             String expectedString = "Expert address";
             action.toolbarClickLoadButton();
@@ -54,7 +54,7 @@ public class Completion {
     }
 
     @Test
-    public void testLoadDocumentAndInputExpertAddress() throws InterruptedException {
+    public void testLoadDocumentAndInputExpertAddress() {
         if (action.documentsInQueue()) {
             String expectedString = "This is a test address";
             action.toolbarClickLoadButton();
@@ -68,7 +68,7 @@ public class Completion {
     }
 
     @Test
-    public void testDocumentCompletionVHV() throws InterruptedException {
+    public void testDocumentCompletionVHV() {
         if (action.documentsInQueue()) {
 
             // Load document
@@ -143,8 +143,8 @@ public class Completion {
             Assertions.assertThat(action.completingSend()).isNotNull();
             Assertions.assertThat(action.completingCancel()).isNotNull();
 
-            // Send
-            action.completingSend().click();
+            // SendAndGetNew, Send, Cancel
+            action.completingCancel().click();
 
         } else {
             action.toolbarClickLoadButton();
