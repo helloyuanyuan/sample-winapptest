@@ -2,51 +2,45 @@ package com.yzhang.pageAction;
 
 import java.util.Arrays;
 import com.yzhang.page.CalculatorPage;
-import org.openqa.selenium.WebElement;
+import io.appium.java_client.windows.WindowsElement;
 
 public class CalculatorAction extends CalculatorPage {
 
-    CalculatorPage calculatorPage = null;
-
-    public CalculatorAction() {
-        this.calculatorPage = new CalculatorPage();
-    }
-
-    public static String getResultString(WebElement element) {
+    public static String getText(WindowsElement element) {
         return element.getText().replace("Display is", "").trim();
     }
 
-    public WebElement plus(String... num) {
-        calculatorPage.number(Arrays.asList(num).get(0)).click();
-        calculatorPage.plus().click();
-        calculatorPage.number(Arrays.asList(num).get(1)).click();
-        calculatorPage.equals().click();
-        return calculatorPage.result();
+    public WindowsElement plus(String... num) {
+        number(Arrays.asList(num).get(0)).click();
+        plus().click();
+        number(Arrays.asList(num).get(1)).click();
+        equals().click();
+        return result();
     }
 
-    public WebElement minus(String... num) {
-        calculatorPage.number(Arrays.asList(num).get(0)).click();
-        calculatorPage.minus().click();
-        calculatorPage.number(Arrays.asList(num).get(1)).click();
-        calculatorPage.equals().click();
-        return calculatorPage.result();
+    public WindowsElement minus(String... num) {
+        number(Arrays.asList(num).get(0)).click();
+        minus().click();
+        number(Arrays.asList(num).get(1)).click();
+        equals().click();
+        return result();
     }
 
-    public WebElement multiply(String... num) {
-        calculatorPage.number(Arrays.asList(num).get(0)).click();
-        calculatorPage.multiply().click();
-        calculatorPage.number(Arrays.asList(num).get(1)).click();
-        calculatorPage.equals().click();
-        return calculatorPage.result();
+    public WindowsElement multiply(String... num) {
+        number(Arrays.asList(num).get(0)).click();
+        multiply().click();
+        number(Arrays.asList(num).get(1)).click();
+        equals().click();
+        return result();
     }
 
-    public WebElement divide(String... num) {
-        calculatorPage.number(Arrays.asList(num).get(0)).click();
-        calculatorPage.number(Arrays.asList(num).get(1)).click();
-        calculatorPage.divide().click();
-        calculatorPage.number(Arrays.asList(num).get(2)).click();
-        calculatorPage.equals().click();
-        return calculatorPage.result();
+    public WindowsElement divide(String... num) {
+        number(Arrays.asList(num).get(0)).click();
+        number(Arrays.asList(num).get(1)).click();
+        divide().click();
+        number(Arrays.asList(num).get(2)).click();
+        equals().click();
+        return result();
     }
 
 }

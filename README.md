@@ -1,6 +1,8 @@
 # Sample Windows App Test Project
 
-## (Java + WinAppDriver + Appnium + Junit)
+## (Java + Maven + Junit + Allure Report)
+
+- FLOW: Client -> Appnium -> WinAppDriver -> Windows
 
 ### Steps
 
@@ -9,6 +11,7 @@
 2. install /tools/WindowsApplicationDriver_1.2.1.msi;
 3. run C:\Program Files (x86)\Windows Application Driver\WinAppDriver.exe;
 4. run comand: ./mvnw clean compile test;
+5. run comand: ./mvnw allure:serve; (Generate test report)
 ~~~
 
 ### Notes
@@ -25,3 +28,4 @@
 ### Reference
 
 <https://github.com/microsoft/WinAppDriver>
+<http://appium.io/docs/en/drivers/windows/>

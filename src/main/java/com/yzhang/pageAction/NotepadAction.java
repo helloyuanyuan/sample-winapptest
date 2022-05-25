@@ -1,32 +1,27 @@
 package com.yzhang.pageAction;
 
 import com.yzhang.page.NotepadPage;
-import org.openqa.selenium.WebElement;
+import io.appium.java_client.windows.WindowsElement;
 
 public class NotepadAction extends NotepadPage {
 
-    NotepadPage notepadPage = null;
-
-    public NotepadAction() {
-        this.notepadPage = new NotepadPage();
-    }
-
-    public static String getResultString(WebElement element) {
-        return element.getText();
-    }
-
-    public WebElement input(String msg) {
-        notepadPage.editArea().sendKeys(msg);
-        return notepadPage.editArea();
+    public WindowsElement input(String msg) {
+        editArea().sendKeys(msg);
+        return editArea();
     }
 
     public void inputAndSave(String msg, String fileName) {
-        notepadPage.editArea().sendKeys(msg);
-        notepadPage.fileMenu().click();
-        notepadPage.saveMenu().click();
-        notepadPage.fileNameInputArea().clear();
-        notepadPage.fileNameInputArea().sendKeys(fileName);
-        notepadPage.saveButton().click();
+        editArea().sendKeys(msg);
+        fileMenu().click();
+        saveMenu().click();
+        fileNameInputArea().clear();
+        fileNameInputArea().sendKeys(fileName);
+        saveButton().click();
+    }
+
+    public void quitWithoutSave() {
+        driver.closeApp();
+        popupNotSaveButton().click();
     }
 
 }

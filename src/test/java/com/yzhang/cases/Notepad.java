@@ -1,10 +1,6 @@
 package com.yzhang.cases;
 
-import static com.yzhang.pageAction.NotepadAction.getResultString;
-import com.yzhang.common.driver.Driver;
 import com.yzhang.common.utils.LogUtils;
-import com.yzhang.common.utils.ProcessUtils;
-import com.yzhang.common.utils.PropertyUtils;
 import com.yzhang.pageAction.NotepadAction;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
@@ -14,11 +10,11 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
-import org.openqa.selenium.WebElement;
+import io.appium.java_client.windows.WindowsElement;
 
 public class Notepad {
 
-    NotepadAction notepadAction = new NotepadAction();
+    NotepadAction action = new NotepadAction();
 
     @Rule
     public TestName testName = new TestName();
@@ -31,13 +27,12 @@ public class Notepad {
     @Before
     public void beforeEach() throws Exception {
         LogUtils.excuteTestCase(testName.getMethodName());
-        Driver.initDriver(PropertyUtils.getInstance().getNotepadPath());
-        notepadAction.editArea().clear();
+        action.editArea().clear();
     }
 
     @After
     public void afterEach() throws Exception {
-        ProcessUtils.killAllNotepadProcess();
+        action.driver.closeApp();
     }
 
     @AfterClass
@@ -46,17 +41,18 @@ public class Notepad {
     }
 
     @Test
-    public void testInput() {
-        String msg = "Hello World!";
-        WebElement result = notepadAction.input(msg);
-        Assertions.assertThat(getResultString(result)).isEqualTo(msg);
+    public void testInputAndNotSave() {
+        String msg = "Input some text but not save...";
+        WindowsElement result = action.input(msg);
+        Assertions.assertThat(result.getText()).isEqualTo(msg);
+        action.quitWithoutSave();
     }
 
     @Test
     public void testInputAndSave() {
-        String msg = "Hello World!";
+        String msg = "Input some text and save to a .txt file...";
         String fileName = "TestFile" + System.currentTimeMillis() + ".txt";
-        notepadAction.inputAndSave(msg, fileName);
+        action.inputAndSave(msg, fileName);
     }
 
 }

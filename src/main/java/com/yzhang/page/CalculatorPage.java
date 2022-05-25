@@ -1,49 +1,45 @@
 package com.yzhang.page;
 
-import com.yzhang.common.driver.Driver;
+import com.yzhang.common.driver.DriverFactory;
+import com.yzhang.common.enums.App;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import io.appium.java_client.windows.WindowsDriver;
+import io.appium.java_client.windows.WindowsElement;
 
 public class CalculatorPage {
 
-    public WebElement result() {
-        WebElement element = Driver.getDriver().findElementByAccessibilityId("CalculatorResults");
-        return element;
+    public WindowsDriver<WindowsElement> driver = new DriverFactory().getDriver(App.CALCULATOR);
+
+    public WindowsElement result() {
+        return driver.findElementByAccessibilityId("CalculatorResults");
     }
 
-    public WebElement clear() {
-        WebElement element = Driver.getDriver().findElement(By.name("Clear"));
-        return element;
+    public WindowsElement clear() {
+        return driver.findElement(By.name("Clear"));
     }
 
-    public WebElement equals() {
-        WebElement element = Driver.getDriver().findElement(By.name("Equals"));
-        return element;
+    public WindowsElement equals() {
+        return driver.findElement(By.name("Equals"));
     }
 
-    public WebElement plus() {
-        WebElement element = Driver.getDriver().findElement(By.name("Plus"));
-        return element;
+    public WindowsElement plus() {
+        return driver.findElement(By.name("Plus"));
     }
 
-    public WebElement minus() {
-        WebElement element = Driver.getDriver().findElement(By.name("Minus"));
-        return element;
+    public WindowsElement minus() {
+        return driver.findElement(By.name("Minus"));
     }
 
-    public WebElement multiply() {
-        WebElement element = Driver.getDriver().findElement(By.name("Multiply by"));
-        return element;
+    public WindowsElement multiply() {
+        return driver.findElement(By.name("Multiply by"));
     }
 
-    public WebElement divide() {
-        WebElement element = Driver.getDriver().findElement(By.name("Divide by"));
-        return element;
+    public WindowsElement divide() {
+        return driver.findElement(By.name("Divide by"));
     }
 
-    public WebElement number(String numberString) {
-        WebElement element = Driver.getDriver().findElement(By.name(numberString));
-        return element;
+    public WindowsElement number(String numberString) {
+        return driver.findElement(By.name(numberString));
     }
 
 }
