@@ -3,6 +3,7 @@
 ## (Java + Maven + Junit + Allure Report)
 
 - FLOW: Test Runner >> Appium Server >> WinAppDriver >> Windows application
+- FLOW: Test Runner >> WinAppDriver  >> Windows application
 
 ### Steps
 
