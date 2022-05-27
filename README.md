@@ -33,7 +33,10 @@
   that is not supported by WinAppDriver yet.
 
 - /tools/WinAppDriverUIRecorder/WinAppDriverUiRecorder.exe
-  is for capture XPath while developing cases.
+  is for capture UI elements and Xpath while developing cases.
+
+- /tools/flauinspect/tools/FlaUInspect.exe
+  is for capture UI elements and Xpath while developing cases.
 ~~~
 
 ### Reference
