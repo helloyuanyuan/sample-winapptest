@@ -42,7 +42,7 @@ public class Completion {
     @Test
     public void testLoadDocumentBVT() {
         if (action.documentsInQueue()) {
-            String expectedString = "Expert address";
+            String expectedString = "Gutachteradresse";
             action.toolbarClickLoadButton();
             WindowsElement expertAddressTitle = action.dataAreaExpertAddressTitle();
             Assertions.assertThat(expertAddressTitle.getText()).isNotNull()

@@ -12,7 +12,7 @@ public class CompletionAction extends CompletionPage {
     private void loadDocument() {
         for (int i = 1; i < 6; i++) {
             try {
-                driver.findElement(By.name("Expert address"));
+                driver.findElement(By.name("Gutachteradresse"));
                 LogUtils.info("Document loaded");
                 break;
             } catch (Exception e) {
@@ -28,7 +28,7 @@ public class CompletionAction extends CompletionPage {
     public boolean documentsInQueue() {
         boolean hasDocument = false;
         try {
-            driver.findElement(By.name("Total: 0 document(s)"));
+            driver.findElement(By.name("Gesamt: 0 document(e)"));
             LogUtils.info("No document in queue");
         } catch (Exception e) {
             if (e != null) {

@@ -32,7 +32,7 @@ public class CompletionPage {
     }
 
     public WindowsElement dataAreaExpertAddressTitle() {
-        return driver.findElement(By.name("Expert address"));
+        return driver.findElement(By.name("Gutachteradresse"));
     }
 
     public WindowsElement dataAreaExpertAddress() {
