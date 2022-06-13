@@ -1,0 +1,1208 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AUTOonline.Utils</name>
+    </assembly>
+    <members>
+        <member name="T:AUTOonline.Utils.AmPmType">
+            <summary>
+            Definiert den Typ eines AM/PM-Strings in einer Zeitangabe
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.AmPmType.None">
+            <summary>
+            Keine AM/PM-Angabe
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.AmPmType.Left">
+            <summary>
+            AM/PM-Angabe links von der Zeitangabe
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.AmPmType.Right">
+            <summary>
+            AM/PM-Angabe rechts von der Zeitangabe
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Utils.DateFormat">
+            <summary>
+            Gibt ein Datumsformat an
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormat.German">
+            <summary>
+            Deutsches Format (wird in den meisten Ländern verwendet)
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormat.English1">
+            <summary>
+            Etwa: dd/MM/yyyy hh:mm:ss tt
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormat.English2">
+            <summary>
+            Etwa: MM/dd/yyyy h:mm:ss tt
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormat.Indian1">
+            <summary>
+            Etwa: dd-MM-yyyy H:mm:ss
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormat.Indian2">
+            <summary>
+            Etwa: dd-MM-yyyy HH.mm.ss
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormat.Chinese1">
+            <summary>
+            Etwa: yyyy-MM-dd HH:mm:ss
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormat.Chinese2">
+            <summary>
+            Etwa: yyyy/MM/dd hh:mm:ss tt
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormat.Hungary">
+            <summary>
+            Etwa yyyy.MM.dd HH:mm:ss
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormat.Yakut">
+            <summary>
+            Yakut in Russland. MM.dd.yyyy HH:mm:ss
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormat.UnSupportedFormat">
+            <summary>
+            Nicht unterstütztes Format
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Utils.DateFormatInfo">
+            <summary>
+            Liefert Informationen zu dem Datumsformat für eine Kultur
+            </summary>
+            <remarks>
+            <para>
+            Über <see cref="M:AUTOonline.Utils.DateFormatInfo.GetCurrentDateFormatInfo"/> und <see cref="M:AUTOonline.Utils.DateFormatInfo.GetDateFormatInfo(System.Globalization.CultureInfo)"/> können Sie
+            dein DateFormatInfo-Objekt für die aktuelle oder eine spezielle Kultur erzeugen lassen.
+            </para>
+            </remarks>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormatInfo.DateFormat">
+            <summary>
+            Das Basis-Format
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormatInfo.AmPmType">
+            <summary>
+            Der Typ der AM/PM-Angabe
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormatInfo.AMString">
+            <summary>
+            Der String, der für eine Zeitangabe bis 12:59 
+            verwendet wird wenn die Zeit mit AM/PM angegeben wird
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormatInfo.PMString">
+            <summary>
+            Der String, der für eine Zeitangabe ab 13:00 
+            verwendet wird wenn die Zeit mit AM/PM angegeben wird
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormatInfo.AmPmSeparator">
+            <summary>
+            Gibt das Zeichen an, mit dem die AM/PM-Angabe von der Zeit getrennt ist
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormatInfo.TimeInputIn24HourFormatEnabled">
+            <summary>
+            Gibt an, ob eine Zeitangabe im 24-Stunden-Format möglich ist
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormatInfo.CultureInfo">
+            <summary>
+            Die verwendete Kultur
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormatInfo.DateSuffixPattern">
+            <summary>
+            Das Regex-Muster, das auf die Zeichen passt, mit denen ein
+            Datum (ohne Zeit) abgeschlossen sein kann.
+            Normalerweise ist dieses Muster nicht gesetzt, bei Bulgarisch (bg-BG) ist das aber z. B.
+            das Pattern @"(?: | г| г\.)"
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.DateFormatInfo.DateTimeSeparatorPattern">
+            <summary>
+            Das Regex-Muster, das auf die Trennzeichen zwischen Zeit und Datum passt (normalerweise ist das einfach ein Leerzeichen)
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:AUTOonline.Utils.DateFormatInfo.#ctor(AUTOonline.Utils.DateFormat,AUTOonline.Utils.AmPmType,System.String,System.String,System.String,System.String,System.String,System.Globalization.CultureInfo,System.Boolean)" -->
+        <member name="P:AUTOonline.Utils.DateFormatInfo.IsAmPmTime">
+            <summary>
+            Gibt zurück, ob die Zeitangabe im Datum eine AM/PM-Angabe ist
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.DateFormatInfo.GetSampleDateString(System.Boolean)">
+            <summary>
+            Liefert ein Beispiel-Datum (31.12 des aktuellen Jahres) mit Zeit. 
+            </summary>
+            <param name="amTime">Bei true wird 11:59:59 zurückgegeben, bei false 23:59:59, 
+            natürlich entsprechend des Datumsformats konvertiert</param>
+        </member>
+        <member name="P:AUTOonline.Utils.DateFormatInfo.DayPosition">
+            <summary>
+            Liefert die logischen (1-basierte) Position des Tages in der Datumsangabe
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Utils.DateFormatInfo.MonthPosition">
+            <summary>
+            Liefert die logischen (1-basierte) Position des Monats in der Datumsangabe
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Utils.DateFormatInfo.YearPosition">
+            <summary>
+            Liefert die logischen (1-basierte) Position des Jahres in der Datumsangabe
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.DateFormatInfo.GetCurrentDateFormatInfo">
+            <summary>
+            Liefert eine Information zum Datumsformat der aktuellen Kultur
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AUTOonline.Utils.DateFormatInfo.GetDateFormatInfo(System.Globalization.CultureInfo)">
+            <summary>
+            Liefert eine Information zum Datumsformat der übergebenen Kultur
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Utils.ExceptionUtils">
+            <summary>
+            Klasse mit Methoden für Ausnahmen.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.ExceptionUtils.GetExceptionMessages(System.Exception)">
+            <summary>
+            Ermittelt die Meldungen der übergebenen und aller inneren Ausnahmen
+            </summary>
+            <param name="ex">Referenz auf das Exception-Objekt, dessen Meldungen ausgewertet werden sollen</param>
+            <returns>Gibt die ermittelten Meldungen durch Zeilenumbrüche getrennt zurück</returns>
+        </member>
+        <member name="T:AUTOonline.Utils.Nullables">
+            <summary>
+            Klasse mit statischen Hilfsmethoden zur Arbeit mit Nullables
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Nullables.GetDataValueFromNullable(System.Object)">
+            <summary>
+            Liefert einen in einer DataTable speicherbaren Wert für einen Nullable
+            </summary>
+            <param name="value">Der Nullable</param>
+            <returns>Gibt den passenden Werttyp oder DBNull.Value zurück</returns>
+        </member>
+        <member name="T:AUTOonline.Utils.Collections.CollectionClear">
+            <summary>
+            Delegate für das CollectionClear-Ereignis
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Utils.Collections.CollectionChange">
+            <summary>
+            Delegate für das CollectionChange-Ereignis
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Utils.Collections.CollectionWithEvents">
+            <summary>
+            Basisklasse für Collections, die beim Hinzufügen, Entfernen etc. Ereignisse feuern
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.Collections.CollectionWithEvents.suspendCount">
+            <summary>
+            verwaltet die Anzahl der aktuellen Suspends (Aufhebungen der Ereignis-Feuerung)
+            </summary>
+        </member>
+        <member name="E:AUTOonline.Utils.Collections.CollectionWithEvents.Clearing">
+            <summary>
+            Ereigniseigenschaft für das Clearing-Ereginis
+            </summary>
+        </member>
+        <member name="E:AUTOonline.Utils.Collections.CollectionWithEvents.Cleared">
+            <summary>
+            Ereigniseigenschaft für das Cleared-Ereginis
+            </summary>
+        </member>
+        <member name="E:AUTOonline.Utils.Collections.CollectionWithEvents.Inserting">
+            <summary>
+            Ereigniseigenschaft für das Inserting-Ereginis
+            </summary>
+        </member>
+        <member name="E:AUTOonline.Utils.Collections.CollectionWithEvents.Inserted">
+            <summary>
+            Ereigniseigenschaft für das Inserted-Ereginis
+            </summary>
+        </member>
+        <member name="E:AUTOonline.Utils.Collections.CollectionWithEvents.Removing">
+            <summary>
+            Ereigniseigenschaft für das Removing-Ereginis
+            </summary>
+        </member>
+        <member name="E:AUTOonline.Utils.Collections.CollectionWithEvents.Removed">
+            <summary>
+            Ereigniseigenschaft für das Removed-Ereginis
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Collections.CollectionWithEvents.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Collections.CollectionWithEvents.SuspendEvents">
+            <summary>
+            Methode, die das Feuern der Ereignisse aufhebt
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Collections.CollectionWithEvents.ResumeEvents">
+            <summary>
+            Methode, die das Feuern der Ereignisse wieder aufnimmt
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Utils.Collections.CollectionWithEvents.IsSuspended">
+            <summary>
+            gibt zurück, ob das Feuern der Ereignisse gerade aufgehoben ist
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Collections.CollectionWithEvents.OnClear">
+            <summary>
+            Wird überschrieben um das Clearing-Ereignis zu feuern
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Collections.CollectionWithEvents.OnClearComplete">
+            <summary>
+            Wird überschrieben um das Cleared-Ereignis zu feuern
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Collections.CollectionWithEvents.OnInsert(System.Int32,System.Object)">
+            <summary>
+            Wird überschrieben um das Inserting-Ereignis zu feuern
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Collections.CollectionWithEvents.OnInsertComplete(System.Int32,System.Object)">
+            <summary>
+            Wird überschrieben um das Inserted-Ereignis zu feuern
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Collections.CollectionWithEvents.OnRemove(System.Int32,System.Object)">
+            <summary>
+            Wird überschrieben um das Removing-Ereignis zu feuern
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Collections.CollectionWithEvents.OnRemoveComplete(System.Int32,System.Object)">
+            <summary>
+            Wird überschrieben um das Removed-Ereignis zu feuern
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Collections.CollectionWithEvents.IndexOf(System.Object)">
+            <summary>
+            Ermittelt den Index des übergebenen Objekts
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Utils.ControlUtils">
+            <summary>
+            Klasse mit Methoden zur Arbeit mit Steuerelementen 
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.ControlUtils.GetScreenPositionOfControl(System.Windows.Forms.Control)">
+            <summary>
+            ermitelt die Position eines Steuerelements bezogen auf den Bildschirm
+            </summary>
+            <param name="control">das Steuerelement</param>
+            <returns>eine Point-Instanz mit den absoluten Koordinaten des Steuerelements</returns>
+        </member>
+        <member name="T:AUTOonline.Utils.CultureComparer">
+            <summary>
+            Vergleichsklasse für Kulturen
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.CultureComparer.Compare(System.Object,System.Object)">
+            <summary>
+            Vergleicht die Namen zweier Kulturen
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Utils.Culture">
+            <summary>
+            Verwaltet die Namen einer Kultur und gibt ein Array der verfügbaren Kulturen zurück
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.Culture.Name">
+            <summary>
+            Der Name der Kultur
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.Culture.DisplayName">
+            <summary>
+            Der Anzeigename der Kultur
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Culture.#ctor(System.String,System.String)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="name">Der Name der Kultur</param>
+            <param name="displayName">Der Anzeigename der Kultur</param>
+        </member>
+        <member name="M:AUTOonline.Utils.Culture.ToString">
+            <summary>
+            Gibt den Namen und den Displaynamen zurück
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Culture.GetSpecificCultures">
+            <summary>
+            Gibt die verfügbaren speziellen Kulturen zurück
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AUTOonline.Utils.DateUtils">
+            <summary>
+            Klasse mit statischen Methoden zur Arbeit mit Datumswerten
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Utils.DateUtils.SYSTEMTIME">
+            <summary>
+            Struktur für das Setzen der Systemzeit
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.DateUtils.SetSystemTime(AUTOonline.Utils.DateUtils.SYSTEMTIME@)">
+            <summary>
+            Deklaration der API-Funktion SetSystemTime
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.DateUtils.FormatMessage(System.Int32,System.IntPtr,System.Int32,System.Int32,System.Text.StringBuilder,System.Int32,System.String[])">
+            <summary>
+            Deklaration der API-Funktion und -Konstante zur Formatierung eines API-Fehlercodes 
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.DateUtils.GetNISTTime">
+            <summary>
+            Fragt das aktuelle Datum (inklusive Zeit) bei einem NIST-Server ab
+            </summary>
+            <returns>Gibt das abgefragte Datum zurück</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.DateUtils.SetSystemTime(AUTOonline.Utils.DateUtils.SYSTEMTIME)">
+            <summary>
+            Setzt die Systemzeit
+            </summary>
+            <param name="sysTime">SYSTEMTIME-Objekt mit den Angaben zu der neuen Zeit</param>
+        </member>
+        <member name="M:AUTOonline.Utils.DateUtils.SetSystemDateTime(System.DateTime)">
+            <summary>
+            Setzt das Systemdatum inklusive Zeit
+            </summary>
+            <param name="date">Das zu setzende Datum</param>
+        </member>
+        <member name="M:AUTOonline.Utils.DateUtils.SetSystemDate(System.DateTime)">
+            <summary>
+            Setzt das Systemdatum ohne Zeit
+            </summary>
+            <param name="date">Das zu setzende Datum</param>
+        </member>
+        <member name="M:AUTOonline.Utils.DateUtils.SetSystemTime(System.DateTime)">
+            <summary>
+            Setzt die Systemzeit (ohne Datum)
+            </summary>
+            <param name="date">Die zu setzende Zeit</param>
+        </member>
+        <member name="T:AUTOonline.Utils.FileUtils">
+            <summary>
+            Klasse mit statischen Methoden zur Arbeit mit Dateien
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.FileUtils.GetFileCreationDate(System.String)">
+            <summary>
+            Ermittelt das Erstellungsdatum einer Datei
+            </summary>
+            <param name="filePath">Pfad und Dateiname der Datei</param>
+            <returns>Gibt das Erstellungsdatum der Datei zurück</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.FileUtils.SetFileCreationDate(System.String,System.DateTime)">
+            <summary>
+            Setzt das Erstellungsdatum einer Datei
+            </summary>
+            <param name="filePath">Pfad und Dateiname der Datei</param>
+            <param name="date">Das neue Dateidatum</param>
+        </member>
+        <member name="M:AUTOonline.Utils.FileUtils.MakeStringToFileName(System.String,System.String)">
+            <summary>
+            Ersetzt bei einem übergeben String alle Zeichen, die nicht in einem 
+            Datenamen vorkommen dürfen durch das im replaceChar angegebene Zeichen.
+            Sollte kein Zeichen Angegeben sein, so wird _ als replaceChar benutzt.
+            </summary>
+            <param name="filename">Der zu prüfende String</param>
+            <param name="replaceChar">Ersatzzeichen für ungültige Zeichen </param>
+            <returns></returns>
+        </member>
+        <member name="M:AUTOonline.Utils.FileUtils.ConvertFileToBase64String(System.String)">
+            <summary>
+            Kovertiert eine Datei in einen Base64-String 
+            </summary>
+            <example>
+            string base64String = ConvertFileToBase64String("C:\temp\scans\Flower.tif");
+            </example>
+            <param name="filePath">der Dateiname inklusive Pfadangabe</param>
+            <returns>konvertierte Datei als Base64-String</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:AUTOonline.Utils.FileUtils.GetUniqueFileName(System.String,System.String,System.String)" -->
+        <!-- Badly formed XML comment ignored for member "M:AUTOonline.Utils.FileUtils.GetUniqueTempFileName(System.String,System.String)" -->
+        <member name="T:AUTOonline.Utils.FormUtils">
+            <summary>
+            Klasse mit Methoden zur Arbeit mit Formularen
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.FormUtils.BringFormToFront(System.Windows.Forms.Form,System.Boolean,System.Boolean)">
+            <summary>
+            Setzt ein Formular als das in Windows oberste Fenster
+            </summary>
+            <param name="form">Referenz auf das Formular</param>
+            <param name="noSize">Gibt an, dass das Formular nicht in der Größe verändert werden kann</param>
+            <param name="noMove">Gibt an, das das Formular nicht bewegt werden kann</param>
+            <remarks>
+            Diese Methode können Sie immer dann nutzen, wenn Sie ein Formular
+            in den Vordergrund holen wollen, das aus irgendeinem Grund nicht
+            automatisch in den Vordergrund gesetzt wird.
+            </remarks>
+        </member>
+        <member name="T:AUTOonline.Utils.GraphicUtils">
+            <summary>
+            Klasse mit Hilfsmethoden zu Grafik-Aufgaben
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.GraphicUtils.SetGraphicsQuality(System.Drawing.Graphics,System.Boolean)">
+            <summary>
+            stellt die Zeichenqualität für ein Graphics-Objekt ein
+            </summary>
+            <param name="g">Referenz auf das Graphics-Objekt</param>
+            <param name="highQuality">definiert, ob die Qualität auf hoch eingestellt werden soll. Bei false wird auch geschwindigkei optimiert.</param>
+        </member>
+        <member name="M:AUTOonline.Utils.GraphicUtils.PointInTriangle(System.Drawing.Point,System.Drawing.Point,System.Drawing.Point,System.Drawing.Point)">
+            <summary>
+            Ermittelt, ob ein gegebener Punkt in einem druch drei Punkte definierten Dreieck liegt
+            </summary>
+            <param name="p">der zu überprüfende Punkt</param>
+            <param name="triangleA">Eckpunkt A des Dreiecks</param>
+            <param name="triangleB">Eckpunkt B des Dreiecks</param>
+            <param name="triangleC">Eckpunkt C des Dreiecks</param>
+            <returns>true wenn der Punkt innerhalb des Dreiecks liegt</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.GraphicUtils.ResizePolygon(System.Drawing.PointF[],System.Single)">
+            <summary>
+            Verändert ein Polygon in der Größe.
+            </summary>
+            <param name="points">Die Punkte des Polygons.</param>
+            <param name="scaleFactor">Der Skalierungsfaktor.</param>
+            <returns>Gibt ein neues PointF-Arrray mit den veränderten Punkten zurück.</returns>
+            <remarks>Als Basis für die Größenveränerung wird der Mittelpunkt des Polygons verwendet. 
+            Von dort aus wird eine Linie zu den jeweiligen Punkten gezogen, die je nach Skalierungsfaktor
+            verlängert oder verkürzt wird.
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Utils.GraphicUtils.GetPolygonCentroid(System.Drawing.PointF[])">
+            <summary>
+            Liefert den Mittelpunkt eines Polygons.
+            </summary>
+            <param name="points">Die Punkte des Polygons.</param>
+            <returns>Gibt den ermittelten Mittelpunkt zurück.</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.GraphicUtils.GetPolygonArea(System.Drawing.PointF[])">
+            <summary>
+            Liefert die Oberfläche eines Polygons.
+            </summary>
+            <param name="points">Die Punkte des Polygons.</param>
+        </member>
+        <member name="T:AUTOonline.Utils.Performance.HighResStopClock">
+            <summary>
+            Klasse für hochgenaue Zeitmessungen
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Performance.HighResStopClock.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Utils.Performance.HighResStopClock.PCFrequency">
+            <summary>
+            gibt die aktuelle Frequenz des Performance-Counters zurück
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Utils.Performance.HighResStopClock.PCResolution">
+            <summary>
+            gibt die aktuelle Auflösung (Ticks pro Sekunde) des Performance-Counters zurück
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Performance.HighResStopClock.Start">
+            <summary>
+            startet die Zeitmessung
+            </summary>
+            <seealso cref="M:AUTOonline.Utils.Performance.HighResStopClock.Stop"/>
+        </member>
+        <member name="M:AUTOonline.Utils.Performance.HighResStopClock.Stop">
+            <summary>
+            stoppt die Zeitmessung
+            </summary>
+            <returns>Sekunden, die seit dem Aufruf von <see cref="M:AUTOonline.Utils.Performance.HighResStopClock.Start"/> vergangen sind</returns>
+            <seealso cref="M:AUTOonline.Utils.Performance.HighResStopClock.Start"/>
+        </member>
+        <member name="T:AUTOonline.Utils.RegularExpressionPatterns">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Utils.RegularExpressionPatterns.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Utils.RegularExpressionPatterns.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Utils.RegularExpressionPatterns.EmailAddress">
+             <summary>
+               Looks up a localized string similar to ^(?:(?:\r\n)?[ \t])*(?:(?:(?:[^()&lt;&gt;@,;:\\&quot;.\[\] \000-\031]+(?:(?:(?:\r\n)?[ \t]
+            )+|\Z|(?=[\[&quot;()&lt;&gt;@,;:\\&quot;.\[\]]))|&quot;(?:[^\&quot;\r\\]|\\.|(?:(?:\r\n)?[ \t]))*&quot;(?:(?:
+            \r\n)?[ \t])*)(?:\.(?:(?:\r\n)?[ \t])*(?:[^()&lt;&gt;@,;:\\&quot;.\[\] \000-\031]+(?:(?:(
+            ?:\r\n)?[ \t])+|\Z|(?=[\[&quot;()&lt;&gt;@,;:\\&quot;.\[\]]))|&quot;(?:[^\&quot;\r\\]|\\.|(?:(?:\r\n)?[ 
+            \t]))*&quot;(?:(?:\r\n)?[ \t])*))*@(?:(?:\r\n)?[ \t])*(?:[^()&lt;&gt;@,;:\\&quot;.\[\] \000-\0
+            31]+(?:(?:(?:\r\n)?[ \t])+|\Z|(?=[\[&quot;()&lt;&gt;@,;:\\&quot;.\[\]]))|\[([^\[\]\r\\]|\\.)*\
+            ](?:(?:\r\n)?[ \t])*)(?:\.(?:(? [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="T:AUTOonline.Utils.Serialization">
+            <summary>
+            Klasse mit Hilfsmethoden zum Serialisieren und Deserialisieren von Objekten
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Serialization.SerializeToXmlFile(System.Object,System.String,System.Text.Encoding)">
+            <summary>
+            Methode zum Serialisieren eines Objekts in eine XML-Datei
+            </summary>
+            <param name="obj">Eine Referenz auf das zu serialisierende Objekt</param>
+            <param name="fileName">Der Dateiname der zu erzeugenden XML-Datei</param>
+            <param name="encoding">Die Codierung der zu erzeugenden XML-Datei</param>
+        </member>
+        <member name="M:AUTOonline.Utils.Serialization.SerializeToXmlFile(System.Object,System.IO.FileStream,System.Text.Encoding)">
+            <summary>
+            Serialisiert die Daten der übergebenen Objekts
+            in einen FileStream (ohne den Stream zu schlißen)
+            </summary>
+            <param name="obj">Die zu serialisiernde Objekt</param>
+            <param name="fileStream">Datei-Stream, in den geschrieben werden soll</param>
+            <param name="encoding">Gibt die zu verwendende Codierung an</param>
+        </member>
+        <member name="M:AUTOonline.Utils.Serialization.SerializeToXmlString(System.Object)">
+            <summary>
+            Methode zum Serialisieren eines Objekts in einen XML-String
+            </summary>
+            <param name="obj">Eine Referenz auf das zu serialisierende Objekt</param>
+            <returns>den erzeugten XML-String mit den Daten des Objekts</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Serialization.SerializeToXmlDocument(System.Object)">
+            <summary>
+            Methode zum Serialisieren eines Objekts in ein XMLDocument
+            </summary>
+            <param name="obj">Eine Referenz auf das zu serialisierende objekt</param>
+            <returns>ein XmlDocument-Objekt mit den Daten des Objekts</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Serialization.SerializeToBinaryFile(System.String,System.Object)">
+            <summary>
+            Serialisiert das Objekt in eine binäre Datei
+            </summary>
+            <param name="filename">Der Dateiname</param>
+            <param name="obj">Referenz auf das zu serialisierende Objekt</param>
+        </member>
+        <member name="M:AUTOonline.Utils.Serialization.DeserializeFromXmlFile(System.String,System.Type,System.Text.Encoding)">
+            <summary>
+            Methode zum Deserialisieren eines Objekts aus einer XML-Datei
+            </summary>
+            <param name="fileName">Der Dateiname der XML-Datei</param>
+            <param name="objectType">Der Typ des Objekts</param>
+            <param name="encoding">Die Codierung der XML-Datei</param>
+            <returns>Gibt das deserialisierte Objekt zurück</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Serialization.DeserializeFromXmlFile(System.IO.FileStream,System.Type,System.Text.Encoding)">
+            <summary>
+            Methode zum Deserialisieren eines Objekts aus einem FileStream
+            </summary>
+            <param name="fileStream">Der FileStream</param>
+            <param name="objectType">Der Typ des Objekts</param>
+            <param name="encoding">Die Codierung der XML-Datei</param>
+            <returns>Gibt das deserialisierte Objekt zurück</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Serialization.DeserializeFromXmlString(System.String,System.Type)">
+            <summary>
+            Methode zum Deserialisieren eines Objekts aus einem XML-String
+            </summary>
+            <param name="xmlString">Der XML-String, der die Datend es objekts verwaltet</param>
+            <param name="objectType">Der typ des Objekts</param>
+            <returns>Gibt das deserialisierte Objekt zurück</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Serialization.DeserializeFromXmlFile``1(System.String,System.Text.Encoding)">
+            <summary>
+            Methode zum Deserialisieren eines Objekts aus einer XML-Datei
+            </summary>
+            <param name="fileName">Der Dateiname der XML-Datei</param>
+            <param name="encoding">Die Codierung der XML-Datei</param>
+            <typeparam name="T">Der Typ des zu deserialisierenden Objekts</typeparam>
+            <returns>Gibt das deserialisierte Objekt zurück</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Serialization.DeserializeFromXmlFile``1(System.IO.FileStream,System.Text.Encoding)">
+            <summary>
+            Methode zum Deserialisieren eines Objekts aus einem FileStream
+            </summary>
+            <param name="fileStream">Der FileStream</param>
+            <param name="encoding">Die Codierung der XML-Datei</param>
+            <typeparam name="T">Der Typ des zu deserialisierenden Objekts</typeparam>
+            <returns>Gibt das deserialisierte Objekt zurück</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Serialization.DeserializeFromXmlString``1(System.String)">
+            <summary>
+            Methode zum Deserialisieren eines Objekts aus einem XML-String
+            </summary>
+            <param name="xmlString">Der XML-String, der die Datend es objekts verwaltet</param>
+            <typeparam name="T">Der Typ des zu deserialisierenden Objekts</typeparam>
+            <returns>Gibt das deserialisierte Objekt zurück</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Serialization.DeserializeFromBinaryFile(System.String)">
+            <summary>
+            Deserialisiert ein Objekt aus einer binären Datei
+            </summary>
+            <param name="filename">Der Dateiname</param>
+            <returns>Gibt das deserialisierte Objekt zurück</returns>
+        </member>
+        <member name="T:AUTOonline.Utils.StringUnifications">
+            <summary>
+            Möglche Modifikationen.
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.StringUnifications.CASE">
+            <summary>
+            Alles Groß
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.StringUnifications.SPACE">
+            <summary>
+            Trim + mehere nach einander folgenden Lehrzeichen/Zeilenumpruche zu einem Lehrzeichen machen.
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.StringUnifications.SPECIAL_SIGN">
+            <summary>
+            Sprachspezifische Zeichen konvertieren -> z.B. ü->ue.
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.StringUnifications.ALPHANUMERIC_ONLY">
+            <summary>
+            Nur Alphanumerisch 
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.StringUnifications.ALL">
+            <summary>
+            Alles.
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Utils.StringUnificator">
+            <summary>
+            Unifitiert den Text: Groß/Klein, Umlaute, Lehrzeichen
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.StringUnificator.#ctor">
+            <summary>
+            Konstruktor - use singleton  StringUnificator.Instance instead of creating a new one.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.StringUnificator.unificateSpecialSign(System.String)">
+            <summary>
+            Sprachspezifische Zeichen konvertieren -> z.B. ü->ue.
+            </summary>
+            <param name="sourceText">Der Text mit sonder Buchstaben</param>
+            <returns>der unifizierte Text</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.StringUnificator.Unificate(System.String,AUTOonline.Utils.StringUnifications)">
+            <summary>
+            Trims and then converts to uppercase and language-specific ( DE, PL, ES ) letters to latin alphabet.
+            </summary>
+            <param name="text">Text to modify</param>
+            <param name="unifications">Unification Operations</param>
+            <returns>Unificated text</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.StringUnificator.Unificate(System.String)">
+            <summary>
+            Trims and then converts to uppercase and language-specific ( DE, PL, ES ) letters to latin alphabet.
+            </summary>
+            <param name="text">Text to modify</param>
+            <returns>Unificated text</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.StringUnificator.IsEmptyString(System.String)">
+            <summary>
+            True, if string null, empty or contains only spaces
+            </summary>
+            <param name="str">String parameter</param>
+            <returns>True if string contains no information</returns>
+        </member>
+        <member name="T:AUTOonline.Utils.Strings.StringUtils">
+            <summary>
+            Klasse mit statischen Methoden zur Stringbearbeitung
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.Strings.StringUtils.SPECIAL_DATE_PATTERN">
+            <summary>
+            Verwaltet den regulären Ausdruck zur Validierung speziell angegebener Datumswerte
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsEmailAddress(System.String)">
+            <summary>
+            Überprüft einen String auf seine Gültigkeit als E-Mail-Adresse. Der String darf auch
+            mehrere, durch Semikoli getrennte Adressen enthalten. In diesme Fall werden alle
+            Adressen einzeln geprüft.
+            </summary>
+            <param name="emailAddress">Der zu überprüfende String</param>
+            <remarks>Diese Methode setzt den sehr komplexen und getesteten
+            regulären Audruck von Paul Warren für Perl ein. 
+            Siehe http://www.ex-parrot.com/pdw/Mail-RFC822-Address.html.
+            Der Ausdruck musste für .NET allerdings in ^ und $ eingeschlossen werden.</remarks>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsNumber(System.String,System.IFormatProvider)">
+            <summary>
+            Überprüft einen String auf einen allgemeinen Zahlwert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <param name="provider">eine Referenz auf einen Format-Provider, der das Format der Zahlim String bestimmt</param>
+            <returns>Gibt true zurück, wenn der String eine gültige Zahl speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsNumber(System.String)">
+            <summary>
+            Überprüft einen String auf einen allgemeinen Zahlwert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <returns>Gibt true zurück, wenn der String eine gültige Zahl speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsLong(System.String,System.IFormatProvider)">
+            <summary>
+            Überprüft einen String auf einen Long-Wert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <param name="provider">eine Referenz auf einen Format-Provider, der das Format der Zahlim String bestimmt</param>
+            <returns>Gibt true zurück, wenn der String einen gültigen long-Wert speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsLong(System.String)">
+            <summary>
+            Überprüft einen String auf einen Long-Wert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <returns>Gibt true zurück, wenn der String einen gültigen long-Wert speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsDouble(System.String,System.IFormatProvider)">
+            <summary>
+            Überprüft einen String auf einen Double-Wert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <param name="provider">eine Referenz auf einen Format-Provider, der das Format der Zahlim String bestimmt</param>
+            <returns>Gibt true zurück, wenn der String einen gültigen double-Wert speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsDouble(System.String)">
+            <summary>
+            Überprüft einen String auf einen Double-Wert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <returns>Gibt true zurück, wenn der String einen gültigen double-Wert speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsInt(System.String,System.IFormatProvider)">
+            <summary>
+            Überprüft einen String auf einen Int-Wert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <param name="provider">eine Referenz auf einen Format-Provider, der das Format der Zahlim String bestimmt</param>
+            <returns>Gibt true zurück, wenn der String einen gültigen int-Wert speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsInt(System.String)">
+            <summary>
+            Überprüft einen String auf einen Int-Wert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <returns>Gibt true zurück, wenn der String einen gültigen int-Wert speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsByte(System.String)">
+            <summary>
+            Überprüft einen String auf einen Byte-Wert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <returns>Gibt true zurück, wenn der String einen gültigen Byte-Wert speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsByte(System.String,System.IFormatProvider)">
+            <summary>
+            Überprüft einen String auf einen Byte-Wert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <param name="provider">eine Referenz auf einen Format-Provider, der das Format der Zahlim String bestimmt</param>
+            <returns>Gibt true zurück, wenn der String einen gültigen Byte-Wert speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsFloat(System.String)">
+            <summary>
+            Überprüft einen String auf einen Float-Wert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <returns>Gibt true zurück, wenn der String einen gültigen Float-Wert speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsFloat(System.String,System.IFormatProvider)">
+            <summary>
+            Überprüft einen String auf einen Float-Wert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <param name="provider">eine Referenz auf einen Format-Provider, der das Format der Zahlim String bestimmt</param>
+            <returns>Gibt true zurück, wenn der String einen gültigen Float-Wert speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsDecimal(System.String)">
+            <summary>
+            Überprüft einen String auf einen Decimal-Wert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <returns>Gibt true zurück, wenn der String einen gültigen Decimal-Wert speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsDecimal(System.String,System.IFormatProvider)">
+            <summary>
+            Überprüft einen String auf einen Decimal-Wert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <param name="provider">eine Referenz auf einen Format-Provider, der das Format der zahl im String bestimmt</param>
+            <returns>Gibt true zurück, wenn der String einen gültigen Decimal-Wert speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsDateTime(System.String)">
+            <summary>
+            Überprüft einen String auf einen DateTime-Wert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <returns>Gibt true zurück, wenn der String einen gültigen Decimal-Wert speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsDateTime(System.String,System.IFormatProvider)">
+            <summary>
+            Überprüft einen String auf einen DateTime-Wert
+            </summary>
+            <param name="value">der zu überprüfende String</param>
+            <param name="provider">eine Referenz auf einen Format-Provider, der das Format der zahl im String bestimmt</param>
+            <returns>Gibt true zurück, wenn der String einen gültigen Decimal-Wert speichert</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsPotentialDateTime(System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Überprüft eine Eingabe daraufhin, ob diese bezogen auf die aktuelle Kultur potenziell 
+            ein gültiges Datum oder/und eine gültige Zeit ergeben kann
+            </summary>
+            <param name="input">Die Eingabe</param>
+            <param name="includeDate">Gibt an, ob bei der Eingabe eine Datumsangabe berücksichtigt werden soll</param>
+            <param name="includeTime">Gibt an, ob bei der Eingabe eine Zeitangabe berücksichtigt werden soll</param>
+            <param name="allowZeroForDayAndMonth">Gibt an, ob die Eingabe eine 0 für den Tag und den Monat erlaubt ist</param>
+            <returns>Gibt true zurück wenn die Eingabe potenziell ein Datum und/oder eine Zeit ergeben kann</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsPotentialDateTime(System.String,System.Boolean,System.Boolean,System.Boolean,System.Globalization.CultureInfo)">
+            <summary>
+            Überprüft eine Eingabe daraufhin, ob diese bezogen auf die übergebene Kultur potenziell 
+            ein gültiges Datum oder/und eine gültige Zeit ergeben kann
+            </summary>
+            <param name="input">Die Eingabe</param>
+            <param name="includeDate">Gibt an, ob bei der Eingabe eine Datumsangabe berücksichtigt werden soll</param>
+            <param name="includeTime">Gibt an, ob bei der Eingabe eine Zeitangabe berücksichtigt werden soll</param>
+            <param name="culture">Die Kultur, für die das Datum überprüft werden soll</param>
+            <param name="allowZeroForDayAndMonth">Gibt an, ob die Eingabe eine 0 für den Tag und den Monat erlaubt ist</param>
+            <returns>Gibt true zurück wenn die Eingabe potenziell ein Datum und/oder eine Zeit ergeben kann</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsPotentialTime(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Überprüft eine Eingabe daraufhin, ob diese bezogen auf die übergebene Kultur potenziell 
+            eine gültige Zeit ergeben kann
+            </summary>
+            <param name="input">Die Eingabe</param>
+            <param name="culture">Die Kultur, für die das Datum überprüft werden soll</param>
+            <returns>Gibt true zurück wenn die Eingabe potenziell eine Zeit ergeben kann</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsPotentialTime(System.String)">
+            <summary>
+            Überprüft eine Eingabe daraufhin, ob diese bezogen auf die aktuelle Kultur potenziell 
+            eine gültige Zeit ergeben kann
+            </summary>
+            <param name="input">Die Eingabe</param>
+            <returns>Gibt true zurück wenn die Eingabe potenziell eine Zeit ergeben kann</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsPotentialDate(System.String,System.Boolean,System.Globalization.CultureInfo)">
+            <summary>
+            Überprüft eine Eingabe daraufhin, ob diese bezogen auf die übergebene Kultur potenziell 
+            ein gültiges Datum (ohne Zeit) ergeben kann
+            </summary>
+            <param name="input">Die Eingabe</param>
+            <param name="allowZeroForDayAndMonth">Gibt an, ob die Eingabe eine 0 für den Tag und den Monat erlaubt ist</param>
+            <param name="culture">Die Kultur, für die das Datum überprüft werden soll</param>
+            <returns>Gibt true zurück wenn die Eingabe potenziell ein Datumt ergeben kann</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsPotentialDate(System.String,System.Boolean)">
+            <summary>
+            Überprüft eine Eingabe daraufhin, ob diese bezogen auf die aktuelle Kultur potenziell 
+            ein gültiges Datum (ohne Zeit) ergeben kann
+            </summary>
+            <param name="input">Die Eingabe</param>
+            <param name="allowZeroForDayAndMonth">Gibt an, ob die Eingabe eine 0 für den Tag und den Monat erlaubt ist</param>
+            <returns>Gibt true zurück wenn die Eingabe potenziell ein Datum ergeben kann</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsSpecialDate(System.String)">
+            <summary>
+            Ermittelt, ob ein String ein spezielles Datum verwaltet
+            <seealso cref="M:AUTOonline.Utils.Strings.StringUtils.GetSpecialDate(System.String)"/>
+            </summary>
+            <param name="dateString">Das speziell angegebene Datum</param>
+            <returns>Gibt true zurück wenn der String ein spezielles Datum speichert, das über
+            <see cref="M:AUTOonline.Utils.Strings.StringUtils.GetSpecialDate(System.String)"/> in einen DateTime-Wert konvertiert werden kann</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.GetSpecialDate(System.String)">
+            <summary>
+            Liefert ein Datum zurück, das dem angegebenen Spezialdatum entspricht
+            </summary>
+            <param name="dateString">Das speziell angegebene Datum</param>
+            <returns>Gibt ein DateTime-Objekt zurück, das das spezielle Datum repräsentiert</returns>
+            <remarks>
+            Diese Methode erlaubt neben Datumswerten in englischen Format Eingaben, die mit 'Now' (das aktuelle Datum inkl. Zeit) oder 'Date' 
+            (das aktuelle Datum ohne Zeit) beginnen und optional von einer Subtraktion oder Addition 
+            abgeschlossen werden. Eine Addition beginnt mit +, eine Subtraktion mit -. Als
+            Operand für die Addition oder Subtraktion wird ein String angegeben, der aus einer oder mehreren
+            Zeitspanne-Token besteht. Ein Zeitspanne-Token besteht aus einer Ganzzahl gefolgt von einem
+            Zeichen, das die Einheit der Zeitspanne angibt. Möglich sind die folgenden Zeichen:<br></br>
+            y: Jahr<br></br>
+            M: Monat<br></br>
+            d: Tag<br></br>
+            h: Stunde<br></br>
+            m: Minute<br></br>
+            s: Sekunde<br></br>
+            Eine gültige Angabe wäre z. B. 'Now+1y6M10d3h2m1s' (Heute + 1 Jahr, 6 Monate, 10 Tage, 3 Stunden, 2 Minuten und 1 Sekunde)
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsEquipmentWithLeather(System.String)">
+            <summary>
+            Gibt an, ob in dem Ausstattungstext eine Lederausstattung vorkommt. 
+            </summary>
+            <param name="equipmentString">Ausstattungstext</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsEquipmentWithClimaautomatic(System.String)">
+            <summary>
+            Gibt an, ob in dem Ausstattungstext eine Klimaautomatik vorkommt. 
+            </summary>
+            <param name="equipmentString">Ausstattungstext</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsEquipmentWithClima(System.String)">
+            <summary>
+            Gibt an, ob in dem Ausstattungstext eine Klimaanlage (manuell) vorkommt. 
+            Sollte nur ausgeführt werden, wenn zu vor nach Klimaautomatik gesucht wurde. 
+            Da diese Funktion auch bei einer Klimaautomatik 'true' zurück geben kann. 
+            </summary>
+            <param name="equipmentString">Ausstattungstext</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsEquipmentWithNavigationsystem(System.String)">
+            <summary>
+            Gibt an, ob in dem Ausstattungstext ein Navigationssystem vorkommt. 
+            </summary>
+            <param name="equipmentString">Ausstattungstext</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsEquipmentWithXenonlight(System.String)">
+            <summary>
+            Gibt an, ob in dem Ausstattungstext ein Xenonlicht vorkommt. 
+            </summary>
+            <param name="equipmentString">Ausstattungstext</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsEquipmentWithHitch(System.String)">
+            <summary>
+            Gibt an, ob in dem Ausstattungstext eine Anhängerkupplung vorkommt.
+            </summary>
+            <param name="equipmentString">The equipment string.</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsEquipmentWithAbs(System.String)">
+            <summary>
+            Gibt an, ob in dem Ausstattungstext eine Abs vorkommt.
+            </summary>
+            <param name="equipmentString">The equipment string.</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsEquipmentWithCatalystConverter(System.String)">
+            <summary>
+            Gibt an, ob in dem Ausstattungstext eine Katalysator vorkommt.
+            </summary>
+            <param name="equipmentString">The equipment string.</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsEquipmentWithAllWheel(System.String)">
+            <summary>
+            Gibt an, ob in dem Ausstattungstext eine Allrad vorkommt.
+            </summary>
+            <param name="equipmentString">The equipment string.</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsEquipmentWithParticleFilter(System.String)">
+            <summary>
+            Gibt an, ob in dem Ausstattungstext ein Partikelfilter vorkommt. 
+            </summary>
+            <param name="equipmentString">Ausstattungstext</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsEquipmentWithSunroof(System.String)">
+            <summary>
+            Gibt an, ob in dem Ausstattungstext ein Schiebedach vorkommt. 
+            </summary>
+            <param name="equipmentString">Ausstattungstext</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsEquipmentWithPDC(System.String)">
+            <summary>
+            Gibt an, ob in dem Ausstattungstext eine Einparkhilfe vorkommt. 
+            </summary>
+            <param name="equipmentString">Ausstattungstext</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsEquipmentWithHeadUp(System.String)">
+            <summary>
+            Gibt an, ob in dem Ausstattungstext ein Head-Up Display vorkommt. 
+            </summary>
+            <param name="equipmentString">Ausstattungstext</param>
+            <returns>bool</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.Strings.StringUtils.IsEquipmentWithAuxiliaryHeating(System.String)">
+            <summary>
+            Gibt an, ob in dem Ausstattungstext eine Standheizung vorkommt. 
+            </summary>
+            <param name="equipmentString">Ausstattungstext</param>
+            <returns>bool</returns>
+        </member>
+        <member name="T:AUTOonline.Utils.TextPrinter">
+            <summary>
+            Klasse zum Drucken von Text.
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.TextPrinter.linesToPrint">
+            <summary>
+            Die auszudruckenden Zeilen.
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.TextPrinter.pageHeader">
+            <summary>
+            Die Seitenüberschrift.
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.TextPrinter.pageFooter">
+            <summary>
+            Die (rechtsbündige) Seitenunterschrift.
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.TextPrinter.currentPrintLineIndex">
+            <summary>
+            Index der aktuell ausgedruckten Zeile.
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Utils.TextPrinter.currentPrintPageNumber">
+            <summary>
+            Die Nummer der aktuell auszudruckenden Seite.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Utils.TextPrinter.Margins">
+            <summary>
+            Gibt die Druckränder an.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Utils.TextPrinter.Font">
+            <summary>
+            Gibt die Schriftart des Lauftextes an.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Utils.TextPrinter.HeadingFont">
+            <summary>
+            Gibt die Schriftart der Überschrift an.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.TextPrinter.Print(System.String,System.String,System.String)">
+            <summary>
+            Konstruktor.
+            </summary>
+            <param name="text">Der auszudruckende Text.</param>
+            <param name="pageHeader">Die Überschrift der einzelnen Seiten.</param>
+            <param name="pageFooter">Die Seitenunterschrift. Kann den Platzhalter {page}
+            enthalten. In diesen wird die Seitennumemr gedruckt. Falls pageFooter null
+            ist, wird kein Seitenfuß gedruckt.</param>
+        </member>
+        <member name="M:AUTOonline.Utils.TextPrinter.Print(System.Collections.Generic.IEnumerable{System.String},System.String,System.String)">
+            <summary>
+            Konstruktor.
+            </summary>
+            <param name="text">Der auszudruckende Text.</param>
+            <param name="pageHeader">Die Überschrift der einzelnen Seiten.</param>
+            <param name="pageFooter">Die Seitenunterschrift. Kann den Platzhalter {page}
+            enthalten. In diesen wird die Seitennumemr gedruckt. Falls pageFooter null
+            ist, wird kein Seitenfuß gedruckt.</param>
+        </member>
+        <member name="M:AUTOonline.Utils.TextPrinter.Print(System.String[],System.String,System.String)">
+            <summary>
+            Konstruktor.
+            </summary>
+            <param name="text">Der auszudruckende Text.</param>
+            <param name="pageHeader">Die Überschrift der einzelnen Seiten.</param>
+            <param name="pageFooter">Die Seitenunterschrift. Kann den Platzhalter {page}
+            enthalten. In diesen wird die Seitennumemr gedruckt. Falls pageFooter null
+            ist, wird kein Seitenfuß gedruckt.</param>
+        </member>
+        <member name="M:AUTOonline.Utils.TextPrinter.printDocument_PrintPage(System.Object,System.Drawing.Printing.PrintPageEventArgs)">
+            <summary>
+            Druckt eine Seite des PrintDocument, das zum Ausdrucken des Textes verwendet wird.
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Utils.TextUtils">
+            <summary>
+            Utility class for text based helper methods.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.TextUtils.CreateRtfText(System.String,System.Int32)">
+            <summary>
+            Creates an RTF text from the given plain text and font size using the Arial font.
+            The plain text can contain special formatting tags:
+            [B][/B] for bold.
+            [I][/I] for italics.
+            [U][/U] for underline.
+            [RED][/RED] for red colored text.
+            [LINK][/LINK] for an URL.
+            </summary>
+            <param name="text">The plain text.</param>
+            <param name="fontSize">size of the font to use in points.</param>
+            <returns>an RTF text string</returns>
+        </member>
+        <member name="M:AUTOonline.Utils.TextUtils.ReplaceFormatCodesWithRtf(System.String,System.String,System.String,System.String)">
+            <summary>
+            Replaces the format codes in the form [tagName] and [/tagName] with the given RTF equivalents.
+            </summary>
+            <param name="text">The original text.</param>
+            <param name="tagName">Name of the tag.</param>
+            <param name="openingRtf">The opening RTF control words.</param>
+            <param name="closingRtf">The closing RTF control words.</param>
+            <returns>the replaced text with RTF control words</returns>
+        </member>
+        <member name="T:AUTOonline.Utils.Xml.XmlUtils">
+            <summary>
+            Klasse mit statischen XML-Hilfsmethoden
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Utils.Xml.XmlUtils.GetPathFromNode(System.Xml.XmlNode,System.Boolean)">
+            <summary>
+            ermittelt den XPath-Pfad zu einem XML-Knoten
+            </summary>
+            <param name="baseNode">der XML-Knoten, dessen Pfad ermittelt werden soll</param>
+            <param name="withAttributes">wenn angegeben, werden alle Attribute des jeweiligen Knotens mit ausgegeben</param>
+            <returns>der XPath-Pfad zum Knoten</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ICRpilot>
+  <Model>
+    
+    <Mappings for="AUTOonline.Germany">
+
+      <UseString id="VehicleType">
+        <Call method="WithVehicleType"/>
+      </UseString>
+
+      <UseString id="Manufacturer">
+        <Call method="WithManufacturer"/>
+      </UseString>
+
+      <UseString id="Model">
+        <Call method="WithModel"/>
+      </UseString>
+
+      <UseString id="ModelVariant">
+        <Call method="WithVariant"/>
+      </UseString>
+
+      <UseString id="EngineType">
+        <Call method="WithEngineType"/>
+      </UseString>
+
+      <UseMeasure id="CylinderCapacity">
+        <Call method="WithEngineCapacity">
+          <Parameter type="AUTOonline.Model.VolumeMeasure"/>
+          <Unit id="CylinderCapacityUnit"/>
+        </Call>        
+      </UseMeasure>
+
+      <UseMeasure id="Power">
+        <Call method="WithEnginePower">
+          <Parameter type="AUTOonline.Model.PowerMeasure"/>
+          <Unit id="PowerUnit"/>
+        </Call>
+      </UseMeasure>      
+
+    </Mappings>
+
+    <Mappings for="AUTOonline.Germany.Fleet">
+
+      <UseString id="VehicleType">
+        <Call method="WithVehicleType"/>
+      </UseString>
+
+      <UseString id="Manufacturer">
+        <Call method="WithManufacturer"/>
+      </UseString>
+
+      <UseString id="Model">
+        <Call method="WithModel"/>
+      </UseString>
+
+      <UseString id="ModelVariant">
+        <Call method="WithVariant"/>
+      </UseString>
+
+      <UseString id="EngineType">
+        <Call method="WithEngineType"/>
+      </UseString>
+
+      <UseMeasure id="CylinderCapacity">
+        <Call method="WithEngineCapacity">
+          <Parameter type="AUTOonline.Model.VolumeMeasure"/>
+          <Unit id="CylinderCapacityUnit"/>
+        </Call>
+      </UseMeasure>
+
+      <UseMeasure id="Power">
+        <Call method="WithEnginePower">
+          <Parameter type="AUTOonline.Model.PowerMeasure"/>
+          <Unit id="PowerUnit"/>
+        </Call>
+      </UseMeasure>
+
+    </Mappings>
+    
+    <Mappings for="Allianz.CH">
+
+    </Mappings>
+
+    <Mappings for="Audatex.AT">
+
+    </Mappings>
+
+    <Mappings for="AUTOonline.Germany.Relevance">
+
+      <UseString id="VehicleType">
+        <Call method="WithVehicleType"/>
+      </UseString>
+
+      <UseString id="Manufacturer">
+        <Call method="WithManufacturer"/>
+      </UseString>
+
+      <UseString id="Model">
+        <Call method="WithModel"/>
+      </UseString>
+
+      <UseString id="ModelVariant">
+        <Call method="WithVariant"/>
+      </UseString>
+    </Mappings>
+  </Model>
+</ICRpilot>

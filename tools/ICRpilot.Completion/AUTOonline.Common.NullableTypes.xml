@@ -1,0 +1,1460 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AUTOonline.Common.NullableTypes</name>
+    </assembly>
+    <members>
+        <member name="T:AUTOonline.Common.NullableTypes.INullableValue">
+            <summary>
+            Interface für alle Nullable-Typen
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.NullableTypes.NullableBoolean">
+            <summary>
+            Verwaltet einen Boolean-Wert, der null zulässt
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableBoolean.HasValue">
+            <summary>
+            Gibt an, ob ein Wert vorhanden ist. Wenn diese Eigenschaft false ist, speichert die Struktur den Wert null.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableBoolean.Value">
+            <summary>
+            Der Wert für den Fall, dass die Struktur nicht null speichert. Enthält 0 wenn <see cref="P:AUTOonline.Common.NullableTypes.NullableBoolean.HasValue"/> false ist.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.#ctor(System.Boolean)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.#ctor(System.Object)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.setValue(System.Boolean)">
+            <summary>
+            Schreibt einen Boolean-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.setValue(System.Object)">
+            <summary>
+            Schreibt einen Boolean- oder null-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.op_Explicit(AUTOonline.Common.NullableTypes.NullableBoolean)~System.Boolean">
+            <summary>
+            Konvertierung eines NullableBoolean in einen Boolean-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.op_Implicit(System.Boolean)~AUTOonline.Common.NullableTypes.NullableBoolean">
+            <summary>
+            Konvertierung eines Boolean- in einen NullableBoolean-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.op_Implicit(System.String)~AUTOonline.Common.NullableTypes.NullableBoolean">
+            <summary>
+            Konvertierung eines object-Werts, der null oder einen Boolean-Wert speichert, in einen NullableBoolean-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.op_Equality(AUTOonline.Common.NullableTypes.NullableBoolean,AUTOonline.Common.NullableTypes.NullableBoolean)">
+            <summary>
+            Vergleicht einen NullableBoolean-Wert mit einem NullableBoolean
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.op_Inequality(AUTOonline.Common.NullableTypes.NullableBoolean,AUTOonline.Common.NullableTypes.NullableBoolean)">
+            <summary>
+            Vergleicht einen NullableBoolean-Wert mit einem NullableBoolean
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.op_Equality(AUTOonline.Common.NullableTypes.NullableBoolean,System.Boolean)">
+            <summary>
+            Vergleicht einen NullableBoolean-Wert mit einem Boolean
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.op_Inequality(AUTOonline.Common.NullableTypes.NullableBoolean,System.Boolean)">
+            <summary>
+            Vergleicht einen NullableBoolean-Wert mit einem Boolean
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.op_Equality(System.Boolean,AUTOonline.Common.NullableTypes.NullableBoolean)">
+            <summary>
+            Vergleicht einen Boolean-Wert mit einem NullableBoolean
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.op_Inequality(System.Boolean,AUTOonline.Common.NullableTypes.NullableBoolean)">
+            <summary>
+            Vergleicht einen Boolean-Wert mit einem NullableBoolean
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.op_Equality(AUTOonline.Common.NullableTypes.NullableBoolean,System.Object)">
+            <summary>
+            Vergleicht einen NullableBoolean-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.op_Inequality(AUTOonline.Common.NullableTypes.NullableBoolean,System.Object)">
+            <summary>
+            Vergleicht einen NullableBoolean-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.ToString">
+            <summary>
+            Gibt den aktuellen Wert zurück
+            </summary>
+            <returns>
+            Gibt die String-Repräsentanz des Boolean-Werts zurück falls das Objekt keinen null-Wert speichert. 
+            Speichert das Objekt null, wird null zurückgegeben
+            </returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.Equals(System.Object)">
+            <summary>
+            Vergleicht einen NullableBoolean-Wert mit null oder einem Boolean-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.GetHashCode">
+            <summary>
+            Liefert einen Hascode für das Objekt
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableBoolean.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.NullableTypes.NullableByte">
+            <summary>
+            Verwaltet einen Byte-Wert, der null zulässt
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableByte.HasValue">
+            <summary>
+            Gibt an, ob ein Wert vorhanden ist. Wenn diese Eigenschaft false ist, speichert die Struktur den Wert null.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableByte.Value">
+            <summary>
+            Der Wert für den Fall, dass die Struktur nicht null speichert. Enthält 0 wenn <see cref="P:AUTOonline.Common.NullableTypes.NullableByte.HasValue"/> false ist.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.#ctor(System.Byte)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.#ctor(System.Object)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.setValue(System.Byte)">
+            <summary>
+            Schreibt einen Byte-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.setValue(System.Object)">
+            <summary>
+            Schreibt einen Byte- oder null-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_Explicit(AUTOonline.Common.NullableTypes.NullableByte)~System.Byte">
+            <summary>
+            Konvertierung eines NullableByte in einen Byte-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_Implicit(System.Byte)~AUTOonline.Common.NullableTypes.NullableByte">
+            <summary>
+            Konvertierung eines Byte- in einen NullableByte-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_Implicit(System.String)~AUTOonline.Common.NullableTypes.NullableByte">
+            <summary>
+            Konvertierung eines object-Werts, der null oder einen Byte-Wert speichert, in einen NullableByte-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_Equality(AUTOonline.Common.NullableTypes.NullableByte,AUTOonline.Common.NullableTypes.NullableByte)">
+            <summary>
+            Vergleicht einen NullableByte-Wert mit einem NullableByte
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_Inequality(AUTOonline.Common.NullableTypes.NullableByte,AUTOonline.Common.NullableTypes.NullableByte)">
+            <summary>
+            Vergleicht einen NullableByte-Wert mit einem NullableByte
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_Equality(AUTOonline.Common.NullableTypes.NullableByte,System.Byte)">
+            <summary>
+            Vergleicht einen NullableByte-Wert mit einem Byte
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_Inequality(AUTOonline.Common.NullableTypes.NullableByte,System.Byte)">
+            <summary>
+            Vergleicht einen NullableByte-Wert mit einem Byte
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_Equality(System.Byte,AUTOonline.Common.NullableTypes.NullableByte)">
+            <summary>
+            Vergleicht einen Byte-Wert mit einem NullableByte
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_Inequality(System.Byte,AUTOonline.Common.NullableTypes.NullableByte)">
+            <summary>
+            Vergleicht einen Byte-Wert mit einem NullableByte
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_Equality(AUTOonline.Common.NullableTypes.NullableByte,System.Object)">
+            <summary>
+            Vergleicht einen NullableByte-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_Inequality(AUTOonline.Common.NullableTypes.NullableByte,System.Object)">
+            <summary>
+            Vergleicht einen NullableByte-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_GreaterThan(AUTOonline.Common.NullableTypes.NullableByte,AUTOonline.Common.NullableTypes.NullableByte)">
+            <summary>
+            Vergleicht einen NullableByte-Wert mit einem NullableByte
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_LessThan(AUTOonline.Common.NullableTypes.NullableByte,AUTOonline.Common.NullableTypes.NullableByte)">
+            <summary>
+            Vergleicht einen NullableByte-Wert mit einem NullableByte
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_GreaterThan(System.Byte,AUTOonline.Common.NullableTypes.NullableByte)">
+            <summary>
+            Vergleicht einen Byte-Wert mit einem NullableByte
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_LessThan(System.Byte,AUTOonline.Common.NullableTypes.NullableByte)">
+            <summary>
+            Vergleicht einen Byte-Wert mit einem NullableByte
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_GreaterThan(AUTOonline.Common.NullableTypes.NullableByte,System.Byte)">
+            <summary>
+            Vergleicht einen NullableByte-Wert mit einem Byte-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_LessThan(AUTOonline.Common.NullableTypes.NullableByte,System.Byte)">
+            <summary>
+            Vergleicht einen NullableByte-Wert mit einem Byte-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_GreaterThanOrEqual(AUTOonline.Common.NullableTypes.NullableByte,AUTOonline.Common.NullableTypes.NullableByte)">
+            <summary>
+            Vergleicht einen NullableByte-Wert mit einem NullableByte
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_LessThanOrEqual(AUTOonline.Common.NullableTypes.NullableByte,AUTOonline.Common.NullableTypes.NullableByte)">
+            <summary>
+            Vergleicht einen NullableByte-Wert mit einem NullableByte
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_GreaterThanOrEqual(System.Byte,AUTOonline.Common.NullableTypes.NullableByte)">
+            <summary>
+            Vergleicht einen Byte-Wert mit einem NullableByte
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_LessThanOrEqual(System.Byte,AUTOonline.Common.NullableTypes.NullableByte)">
+            <summary>
+            Vergleicht einen Byte-Wert mit einem NullableByte
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_GreaterThanOrEqual(AUTOonline.Common.NullableTypes.NullableByte,System.Byte)">
+            <summary>
+            Vergleicht einen NullableByte-Wert mit einem Byte-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.op_LessThanOrEqual(AUTOonline.Common.NullableTypes.NullableByte,System.Byte)">
+            <summary>
+            Vergleicht einen NullableByte-Wert mit einem Byte-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.ToString">
+            <summary>
+            Gibt den aktuellen Wert zurück
+            </summary>
+            <returns>
+            Gibt die String-Repräsentanz des Byte-Werts zurück falls das Objekt keinen null-Wert speichert. 
+            Speichert das Objekt null, wird null zurückgegeben
+            </returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.Equals(System.Object)">
+            <summary>
+            Vergleicht einen NullableByte-Wert mit null oder einem Byte-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.GetHashCode">
+            <summary>
+            Liefert einen Hascode für das Objekt
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableByte.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.NullableTypes.NullableDateTime">
+            <summary>
+            Verwaltet einen DateTime-Wert, der null zulässt
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableDateTime.HasValue">
+            <summary>
+            Gibt an, ob ein Wert vorhanden ist. Wenn diese Eigenschaft false ist, speichert die Struktur den Wert null.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableDateTime.Value">
+            <summary>
+            Der Wert für den Fall, dass die Struktur nicht null speichert. Enthält 0 wenn <see cref="P:AUTOonline.Common.NullableTypes.NullableDateTime.HasValue"/> false ist.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.#ctor(System.DateTime)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.#ctor(System.Object)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.setValue(System.DateTime)">
+            <summary>
+            Schreibt einen DateTime-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.setValue(System.Object)">
+            <summary>
+            Schreibt einen DateTime- oder null-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_Explicit(AUTOonline.Common.NullableTypes.NullableDateTime)~System.DateTime">
+            <summary>
+            Konvertierung eines NullableDateTime in einen DateTime-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_Implicit(System.DateTime)~AUTOonline.Common.NullableTypes.NullableDateTime">
+            <summary>
+            Konvertierung eines DateTime- in einen NullableDateTime-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_Implicit(System.String)~AUTOonline.Common.NullableTypes.NullableDateTime">
+            <summary>
+            Konvertierung eines object-Werts, der null oder einen DateTime-Wert speichert, in einen NullableDateTime-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_Equality(AUTOonline.Common.NullableTypes.NullableDateTime,AUTOonline.Common.NullableTypes.NullableDateTime)">
+            <summary>
+            Vergleicht einen NullableDateTime-Wert mit einem NullableDateTime
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_Inequality(AUTOonline.Common.NullableTypes.NullableDateTime,AUTOonline.Common.NullableTypes.NullableDateTime)">
+            <summary>
+            Vergleicht einen NullableDateTime-Wert mit einem NullableDateTime
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_Equality(AUTOonline.Common.NullableTypes.NullableDateTime,System.DateTime)">
+            <summary>
+            Vergleicht einen NullableDateTime-Wert mit einem DateTime
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_Inequality(AUTOonline.Common.NullableTypes.NullableDateTime,System.DateTime)">
+            <summary>
+            Vergleicht einen NullableDateTime-Wert mit einem DateTime
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_Equality(System.DateTime,AUTOonline.Common.NullableTypes.NullableDateTime)">
+            <summary>
+            Vergleicht einen DateTime-Wert mit einem NullableDateTime
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_Inequality(System.DateTime,AUTOonline.Common.NullableTypes.NullableDateTime)">
+            <summary>
+            Vergleicht einen DateTime-Wert mit einem NullableDateTime
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_Equality(AUTOonline.Common.NullableTypes.NullableDateTime,System.Object)">
+            <summary>
+            Vergleicht einen NullableDateTime-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_Inequality(AUTOonline.Common.NullableTypes.NullableDateTime,System.Object)">
+            <summary>
+            Vergleicht einen NullableDateTime-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_GreaterThan(AUTOonline.Common.NullableTypes.NullableDateTime,AUTOonline.Common.NullableTypes.NullableDateTime)">
+            <summary>
+            Vergleicht einen NullableDateTime-Wert mit einem NullableDateTime
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_LessThan(AUTOonline.Common.NullableTypes.NullableDateTime,AUTOonline.Common.NullableTypes.NullableDateTime)">
+            <summary>
+            Vergleicht einen NullableDateTime-Wert mit einem NullableDateTime
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_GreaterThan(System.DateTime,AUTOonline.Common.NullableTypes.NullableDateTime)">
+            <summary>
+            Vergleicht einen DateTime-Wert mit einem NullableDateTime
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_LessThan(System.DateTime,AUTOonline.Common.NullableTypes.NullableDateTime)">
+            <summary>
+            Vergleicht einen DateTime-Wert mit einem NullableDateTime
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_GreaterThan(AUTOonline.Common.NullableTypes.NullableDateTime,System.DateTime)">
+            <summary>
+            Vergleicht einen NullableDateTime-Wert mit einem DateTime-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_LessThan(AUTOonline.Common.NullableTypes.NullableDateTime,System.DateTime)">
+            <summary>
+            Vergleicht einen NullableDateTime-Wert mit einem DateTime-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_GreaterThanOrEqual(AUTOonline.Common.NullableTypes.NullableDateTime,AUTOonline.Common.NullableTypes.NullableDateTime)">
+            <summary>
+            Vergleicht einen NullableDateTime-Wert mit einem NullableDateTime
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_LessThanOrEqual(AUTOonline.Common.NullableTypes.NullableDateTime,AUTOonline.Common.NullableTypes.NullableDateTime)">
+            <summary>
+            Vergleicht einen NullableDateTime-Wert mit einem NullableDateTime
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_GreaterThanOrEqual(System.DateTime,AUTOonline.Common.NullableTypes.NullableDateTime)">
+            <summary>
+            Vergleicht einen DateTime-Wert mit einem NullableDateTime
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_LessThanOrEqual(System.DateTime,AUTOonline.Common.NullableTypes.NullableDateTime)">
+            <summary>
+            Vergleicht einen DateTime-Wert mit einem NullableDateTime
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_GreaterThanOrEqual(AUTOonline.Common.NullableTypes.NullableDateTime,System.DateTime)">
+            <summary>
+            Vergleicht einen NullableDateTime-Wert mit einem DateTime-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.op_LessThanOrEqual(AUTOonline.Common.NullableTypes.NullableDateTime,System.DateTime)">
+            <summary>
+            Vergleicht einen NullableDateTime-Wert mit einem DateTime-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.ToString">
+            <summary>
+            Gibt den aktuellen Wert zurück
+            </summary>
+            <returns>
+            Gibt die String-Repräsentanz des DateTime-Werts zurück falls das Objekt keinen null-Wert speichert. 
+            Speichert das Objekt null, wird null zurückgegeben
+            </returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.Equals(System.Object)">
+            <summary>
+            Vergleicht einen NullableDateTime-Wert mit null oder einem DateTime-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.GetHashCode">
+            <summary>
+            Liefert einen Hascode für das Objekt
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDateTime.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.NullableTypes.NullableDecimal">
+            <summary>
+            Verwaltet einen Decimal-Wert, der null zulässt
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableDecimal.HasValue">
+            <summary>
+            Gibt an, ob ein Wert vorhanden ist. Wenn diese Eigenschaft false ist, speichert die Struktur den Wert null.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableDecimal.Value">
+            <summary>
+            Der Wert für den Fall, dass die Struktur nicht null speichert. Enthält 0 wenn <see cref="P:AUTOonline.Common.NullableTypes.NullableDecimal.HasValue"/> false ist.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.#ctor(System.Decimal)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.#ctor(System.Object)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.setValue(System.Decimal)">
+            <summary>
+            Schreibt einen Decimal-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.setValue(System.Object)">
+            <summary>
+            Schreibt einen Decimal- oder null-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_Explicit(AUTOonline.Common.NullableTypes.NullableDecimal)~System.Decimal">
+            <summary>
+            Konvertierung eines NullableDecimal in einen Decimal-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_Implicit(System.Decimal)~AUTOonline.Common.NullableTypes.NullableDecimal">
+            <summary>
+            Konvertierung eines Decimal- in einen NullableDecimal-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_Implicit(System.String)~AUTOonline.Common.NullableTypes.NullableDecimal">
+            <summary>
+            Konvertierung eines object-Werts, der null oder einen Decimal-Wert speichert, in einen NullableDecimal-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_Equality(AUTOonline.Common.NullableTypes.NullableDecimal,AUTOonline.Common.NullableTypes.NullableDecimal)">
+            <summary>
+            Vergleicht einen NullableDecimal-Wert mit einem NullableDecimal
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_Inequality(AUTOonline.Common.NullableTypes.NullableDecimal,AUTOonline.Common.NullableTypes.NullableDecimal)">
+            <summary>
+            Vergleicht einen NullableDecimal-Wert mit einem NullableDecimal
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_Equality(AUTOonline.Common.NullableTypes.NullableDecimal,System.Decimal)">
+            <summary>
+            Vergleicht einen NullableDecimal-Wert mit einem Decimal
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_Inequality(AUTOonline.Common.NullableTypes.NullableDecimal,System.Decimal)">
+            <summary>
+            Vergleicht einen NullableDecimal-Wert mit einem Decimal
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_Equality(System.Decimal,AUTOonline.Common.NullableTypes.NullableDecimal)">
+            <summary>
+            Vergleicht einen Decimal-Wert mit einem NullableDecimal
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_Inequality(System.Decimal,AUTOonline.Common.NullableTypes.NullableDecimal)">
+            <summary>
+            Vergleicht einen Decimal-Wert mit einem NullableDecimal
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_Equality(AUTOonline.Common.NullableTypes.NullableDecimal,System.Object)">
+            <summary>
+            Vergleicht einen NullableDecimal-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_Inequality(AUTOonline.Common.NullableTypes.NullableDecimal,System.Object)">
+            <summary>
+            Vergleicht einen NullableDecimal-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_GreaterThan(AUTOonline.Common.NullableTypes.NullableDecimal,AUTOonline.Common.NullableTypes.NullableDecimal)">
+            <summary>
+            Vergleicht einen NullableDecimal-Wert mit einem NullableDecimal
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_LessThan(AUTOonline.Common.NullableTypes.NullableDecimal,AUTOonline.Common.NullableTypes.NullableDecimal)">
+            <summary>
+            Vergleicht einen NullableDecimal-Wert mit einem NullableDecimal
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_GreaterThan(System.Decimal,AUTOonline.Common.NullableTypes.NullableDecimal)">
+            <summary>
+            Vergleicht einen Decimal-Wert mit einem NullableDecimal
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_LessThan(System.Decimal,AUTOonline.Common.NullableTypes.NullableDecimal)">
+            <summary>
+            Vergleicht einen Decimal-Wert mit einem NullableDecimal
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_GreaterThan(AUTOonline.Common.NullableTypes.NullableDecimal,System.Decimal)">
+            <summary>
+            Vergleicht einen NullableDecimal-Wert mit einem Decimal-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_LessThan(AUTOonline.Common.NullableTypes.NullableDecimal,System.Decimal)">
+            <summary>
+            Vergleicht einen NullableDecimal-Wert mit einem Decimal-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_GreaterThanOrEqual(AUTOonline.Common.NullableTypes.NullableDecimal,AUTOonline.Common.NullableTypes.NullableDecimal)">
+            <summary>
+            Vergleicht einen NullableDecimal-Wert mit einem NullableDecimal
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_LessThanOrEqual(AUTOonline.Common.NullableTypes.NullableDecimal,AUTOonline.Common.NullableTypes.NullableDecimal)">
+            <summary>
+            Vergleicht einen NullableDecimal-Wert mit einem NullableDecimal
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_GreaterThanOrEqual(System.Decimal,AUTOonline.Common.NullableTypes.NullableDecimal)">
+            <summary>
+            Vergleicht einen Decimal-Wert mit einem NullableDecimal
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_LessThanOrEqual(System.Decimal,AUTOonline.Common.NullableTypes.NullableDecimal)">
+            <summary>
+            Vergleicht einen Decimal-Wert mit einem NullableDecimal
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_GreaterThanOrEqual(AUTOonline.Common.NullableTypes.NullableDecimal,System.Decimal)">
+            <summary>
+            Vergleicht einen NullableDecimal-Wert mit einem Decimal-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.op_LessThanOrEqual(AUTOonline.Common.NullableTypes.NullableDecimal,System.Decimal)">
+            <summary>
+            Vergleicht einen NullableDecimal-Wert mit einem Decimal-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.ToString">
+            <summary>
+            Gibt den aktuellen Wert zurück
+            </summary>
+            <returns>
+            Gibt die String-Repräsentanz des Decimal-Werts zurück falls das Objekt keinen null-Wert speichert. 
+            Speichert das Objekt null, wird null zurückgegeben
+            </returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.Equals(System.Object)">
+            <summary>
+            Vergleicht einen NullableDecimal-Wert mit null oder einem Decimal-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.GetHashCode">
+            <summary>
+            Liefert einen Hascode für das Objekt
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDecimal.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.NullableTypes.NullableDouble">
+            <summary>
+            Verwaltet einen Double-Wert, der null zulässt
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableDouble.HasValue">
+            <summary>
+            Gibt an, ob ein Wert vorhanden ist. Wenn diese Eigenschaft false ist, speichert die Struktur den Wert null.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableDouble.Value">
+            <summary>
+            Der Wert für den Fall, dass die Struktur nicht null speichert. Enthält 0 wenn <see cref="P:AUTOonline.Common.NullableTypes.NullableDouble.HasValue"/> false ist.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.#ctor(System.Double)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.#ctor(System.Object)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.setValue(System.Double)">
+            <summary>
+            Schreibt einen Double-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.setValue(System.Object)">
+            <summary>
+            Schreibt einen Double- oder null-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_Explicit(AUTOonline.Common.NullableTypes.NullableDouble)~System.Double">
+            <summary>
+            Konvertierung eines NullableDouble in einen Double-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_Implicit(System.Double)~AUTOonline.Common.NullableTypes.NullableDouble">
+            <summary>
+            Konvertierung eines Double- in einen NullableDouble-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_Implicit(System.String)~AUTOonline.Common.NullableTypes.NullableDouble">
+            <summary>
+            Konvertierung eines object-Werts, der null oder einen Double-Wert speichert, in einen NullableDouble-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_Equality(AUTOonline.Common.NullableTypes.NullableDouble,AUTOonline.Common.NullableTypes.NullableDouble)">
+            <summary>
+            Vergleicht einen NullableDouble-Wert mit einem NullableDouble
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_Inequality(AUTOonline.Common.NullableTypes.NullableDouble,AUTOonline.Common.NullableTypes.NullableDouble)">
+            <summary>
+            Vergleicht einen NullableDouble-Wert mit einem NullableDouble
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_Equality(AUTOonline.Common.NullableTypes.NullableDouble,System.Double)">
+            <summary>
+            Vergleicht einen NullableDouble-Wert mit einem Double
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_Inequality(AUTOonline.Common.NullableTypes.NullableDouble,System.Double)">
+            <summary>
+            Vergleicht einen NullableDouble-Wert mit einem Double
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_Equality(System.Double,AUTOonline.Common.NullableTypes.NullableDouble)">
+            <summary>
+            Vergleicht einen Double-Wert mit einem NullableDouble
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_Inequality(System.Double,AUTOonline.Common.NullableTypes.NullableDouble)">
+            <summary>
+            Vergleicht einen Double-Wert mit einem NullableDouble
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_Equality(AUTOonline.Common.NullableTypes.NullableDouble,System.Object)">
+            <summary>
+            Vergleicht einen NullableDouble-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_Inequality(AUTOonline.Common.NullableTypes.NullableDouble,System.Object)">
+            <summary>
+            Vergleicht einen NullableDouble-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_GreaterThan(AUTOonline.Common.NullableTypes.NullableDouble,AUTOonline.Common.NullableTypes.NullableDouble)">
+            <summary>
+            Vergleicht einen NullableDouble-Wert mit einem NullableDouble
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_LessThan(AUTOonline.Common.NullableTypes.NullableDouble,AUTOonline.Common.NullableTypes.NullableDouble)">
+            <summary>
+            Vergleicht einen NullableDouble-Wert mit einem NullableDouble
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_GreaterThan(System.Double,AUTOonline.Common.NullableTypes.NullableDouble)">
+            <summary>
+            Vergleicht einen Double-Wert mit einem NullableDouble
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_LessThan(System.Double,AUTOonline.Common.NullableTypes.NullableDouble)">
+            <summary>
+            Vergleicht einen Double-Wert mit einem NullableDouble
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_GreaterThan(AUTOonline.Common.NullableTypes.NullableDouble,System.Double)">
+            <summary>
+            Vergleicht einen NullableDouble-Wert mit einem Double-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_LessThan(AUTOonline.Common.NullableTypes.NullableDouble,System.Double)">
+            <summary>
+            Vergleicht einen NullableDouble-Wert mit einem Double-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_GreaterThanOrEqual(AUTOonline.Common.NullableTypes.NullableDouble,AUTOonline.Common.NullableTypes.NullableDouble)">
+            <summary>
+            Vergleicht einen NullableDouble-Wert mit einem NullableDouble
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_LessThanOrEqual(AUTOonline.Common.NullableTypes.NullableDouble,AUTOonline.Common.NullableTypes.NullableDouble)">
+            <summary>
+            Vergleicht einen NullableDouble-Wert mit einem NullableDouble
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_GreaterThanOrEqual(System.Double,AUTOonline.Common.NullableTypes.NullableDouble)">
+            <summary>
+            Vergleicht einen Double-Wert mit einem NullableDouble
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_LessThanOrEqual(System.Double,AUTOonline.Common.NullableTypes.NullableDouble)">
+            <summary>
+            Vergleicht einen Double-Wert mit einem NullableDouble
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_GreaterThanOrEqual(AUTOonline.Common.NullableTypes.NullableDouble,System.Double)">
+            <summary>
+            Vergleicht einen NullableDouble-Wert mit einem Double-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.op_LessThanOrEqual(AUTOonline.Common.NullableTypes.NullableDouble,System.Double)">
+            <summary>
+            Vergleicht einen NullableDouble-Wert mit einem Double-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.ToString">
+            <summary>
+            Gibt den aktuellen Wert zurück
+            </summary>
+            <returns>
+            Gibt die String-Repräsentanz des Double-Werts zurück falls das Objekt keinen null-Wert speichert. 
+            Speichert das Objekt null, wird null zurückgegeben
+            </returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.Equals(System.Object)">
+            <summary>
+            Vergleicht einen NullableDouble-Wert mit null oder einem Double-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.GetHashCode">
+            <summary>
+            Liefert einen Hascode für das Objekt
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableDouble.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.NullableTypes.NullableInt32">
+            <summary>
+            Verwaltet einen Int32-Wert, der null zulässt
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableInt32.HasValue">
+            <summary>
+            Gibt an, ob ein Wert vorhanden ist. Wenn diese Eigenschaft false ist, speichert die Struktur den Wert null.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableInt32.Value">
+            <summary>
+            Der Wert für den Fall, dass die Struktur nicht null speichert. Enthält 0 wenn <see cref="P:AUTOonline.Common.NullableTypes.NullableInt32.HasValue"/> false ist.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.#ctor(System.Int32)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.#ctor(System.Object)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.setValue(System.Int32)">
+            <summary>
+            Schreibt einen Int32-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.setValue(System.Object)">
+            <summary>
+            Schreibt einen Int32- oder null-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_Explicit(AUTOonline.Common.NullableTypes.NullableInt32)~System.Int32">
+            <summary>
+            Konvertierung eines NullableInt32 in einen Int32-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_Implicit(System.Int32)~AUTOonline.Common.NullableTypes.NullableInt32">
+            <summary>
+            Konvertierung eines Int32- in einen NullableInt32-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_Implicit(System.String)~AUTOonline.Common.NullableTypes.NullableInt32">
+            <summary>
+            Konvertierung eines object-Werts, der null oder einen Int32-Wert speichert, in einen NullableInt32-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_Equality(AUTOonline.Common.NullableTypes.NullableInt32,AUTOonline.Common.NullableTypes.NullableInt32)">
+            <summary>
+            Vergleicht einen NullableInt32-Wert mit einem NullableInt32
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_Inequality(AUTOonline.Common.NullableTypes.NullableInt32,AUTOonline.Common.NullableTypes.NullableInt32)">
+            <summary>
+            Vergleicht einen NullableInt32-Wert mit einem NullableInt32
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_Equality(AUTOonline.Common.NullableTypes.NullableInt32,System.Int32)">
+            <summary>
+            Vergleicht einen NullableInt32-Wert mit einem Int32
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_Inequality(AUTOonline.Common.NullableTypes.NullableInt32,System.Int32)">
+            <summary>
+            Vergleicht einen NullableInt32-Wert mit einem Int32
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_Equality(System.Int32,AUTOonline.Common.NullableTypes.NullableInt32)">
+            <summary>
+            Vergleicht einen Int32-Wert mit einem NullableInt32
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_Inequality(System.Int32,AUTOonline.Common.NullableTypes.NullableInt32)">
+            <summary>
+            Vergleicht einen Int32-Wert mit einem NullableInt32
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_Equality(AUTOonline.Common.NullableTypes.NullableInt32,System.Object)">
+            <summary>
+            Vergleicht einen NullableInt32-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_Inequality(AUTOonline.Common.NullableTypes.NullableInt32,System.Object)">
+            <summary>
+            Vergleicht einen NullableInt32-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_GreaterThan(AUTOonline.Common.NullableTypes.NullableInt32,AUTOonline.Common.NullableTypes.NullableInt32)">
+            <summary>
+            Vergleicht einen NullableInt32-Wert mit einem NullableInt32
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_LessThan(AUTOonline.Common.NullableTypes.NullableInt32,AUTOonline.Common.NullableTypes.NullableInt32)">
+            <summary>
+            Vergleicht einen NullableInt32-Wert mit einem NullableInt32
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_GreaterThan(System.Int32,AUTOonline.Common.NullableTypes.NullableInt32)">
+            <summary>
+            Vergleicht einen Int32-Wert mit einem NullableInt32
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_LessThan(System.Int32,AUTOonline.Common.NullableTypes.NullableInt32)">
+            <summary>
+            Vergleicht einen Int32-Wert mit einem NullableInt32
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_GreaterThan(AUTOonline.Common.NullableTypes.NullableInt32,System.Int32)">
+            <summary>
+            Vergleicht einen NullableInt32-Wert mit einem Int32-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_LessThan(AUTOonline.Common.NullableTypes.NullableInt32,System.Int32)">
+            <summary>
+            Vergleicht einen NullableInt32-Wert mit einem Int32-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_GreaterThanOrEqual(AUTOonline.Common.NullableTypes.NullableInt32,AUTOonline.Common.NullableTypes.NullableInt32)">
+            <summary>
+            Vergleicht einen NullableInt32-Wert mit einem NullableInt32
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_LessThanOrEqual(AUTOonline.Common.NullableTypes.NullableInt32,AUTOonline.Common.NullableTypes.NullableInt32)">
+            <summary>
+            Vergleicht einen NullableInt32-Wert mit einem NullableInt32
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_GreaterThanOrEqual(System.Int32,AUTOonline.Common.NullableTypes.NullableInt32)">
+            <summary>
+            Vergleicht einen Int32-Wert mit einem NullableInt32
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_LessThanOrEqual(System.Int32,AUTOonline.Common.NullableTypes.NullableInt32)">
+            <summary>
+            Vergleicht einen Int32-Wert mit einem NullableInt32
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_GreaterThanOrEqual(AUTOonline.Common.NullableTypes.NullableInt32,System.Int32)">
+            <summary>
+            Vergleicht einen NullableInt32-Wert mit einem Int32-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.op_LessThanOrEqual(AUTOonline.Common.NullableTypes.NullableInt32,System.Int32)">
+            <summary>
+            Vergleicht einen NullableInt32-Wert mit einem Int32-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.ToString">
+            <summary>
+            Gibt den aktuellen Wert zurück
+            </summary>
+            <returns>
+            Gibt die String-Repräsentanz des Int32-Werts zurück falls das Objekt keinen null-Wert speichert. 
+            Speichert das Objekt null, wird null zurückgegeben
+            </returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.Equals(System.Object)">
+            <summary>
+            Vergleicht einen NullableInt32-Wert mit null oder einem Int32-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.GetHashCode">
+            <summary>
+            Liefert einen Hascode für das Objekt
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt32.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.NullableTypes.NullableInt64">
+            <summary>
+            Verwaltet einen Int64-Wert, der null zulässt
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableInt64.HasValue">
+            <summary>
+            Gibt an, ob ein Wert vorhanden ist. Wenn diese Eigenschaft false ist, speichert die Struktur den Wert null.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableInt64.Value">
+            <summary>
+            Der Wert für den Fall, dass die Struktur nicht null speichert. Enthält 0 wenn <see cref="P:AUTOonline.Common.NullableTypes.NullableInt64.HasValue"/> false ist.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.#ctor(System.Int64)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.#ctor(System.Object)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.setValue(System.Int64)">
+            <summary>
+            Schreibt einen Int64-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.setValue(System.Object)">
+            <summary>
+            Schreibt einen Int64- oder null-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_Explicit(AUTOonline.Common.NullableTypes.NullableInt64)~System.Int64">
+            <summary>
+            Konvertierung eines NullableInt64 in einen Int64-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_Implicit(System.Int64)~AUTOonline.Common.NullableTypes.NullableInt64">
+            <summary>
+            Konvertierung eines Int64- in einen NullableInt64-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_Implicit(System.String)~AUTOonline.Common.NullableTypes.NullableInt64">
+            <summary>
+            Konvertierung eines object-Werts, der null oder einen Int64-Wert speichert, in einen NullableInt64-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_Equality(AUTOonline.Common.NullableTypes.NullableInt64,AUTOonline.Common.NullableTypes.NullableInt64)">
+            <summary>
+            Vergleicht einen NullableInt64-Wert mit einem NullableInt64
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_Inequality(AUTOonline.Common.NullableTypes.NullableInt64,AUTOonline.Common.NullableTypes.NullableInt64)">
+            <summary>
+            Vergleicht einen NullableInt64-Wert mit einem NullableInt64
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_Equality(AUTOonline.Common.NullableTypes.NullableInt64,System.Int64)">
+            <summary>
+            Vergleicht einen NullableInt64-Wert mit einem Int64
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_Inequality(AUTOonline.Common.NullableTypes.NullableInt64,System.Int64)">
+            <summary>
+            Vergleicht einen NullableInt64-Wert mit einem Int64
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_Equality(System.Int64,AUTOonline.Common.NullableTypes.NullableInt64)">
+            <summary>
+            Vergleicht einen Int64-Wert mit einem NullableInt64
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_Inequality(System.Int64,AUTOonline.Common.NullableTypes.NullableInt64)">
+            <summary>
+            Vergleicht einen Int64-Wert mit einem NullableInt64
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_Equality(AUTOonline.Common.NullableTypes.NullableInt64,System.Object)">
+            <summary>
+            Vergleicht einen NullableInt64-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_Inequality(AUTOonline.Common.NullableTypes.NullableInt64,System.Object)">
+            <summary>
+            Vergleicht einen NullableInt64-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_GreaterThan(AUTOonline.Common.NullableTypes.NullableInt64,AUTOonline.Common.NullableTypes.NullableInt64)">
+            <summary>
+            Vergleicht einen NullableInt64-Wert mit einem NullableInt64
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_LessThan(AUTOonline.Common.NullableTypes.NullableInt64,AUTOonline.Common.NullableTypes.NullableInt64)">
+            <summary>
+            Vergleicht einen NullableInt64-Wert mit einem NullableInt64
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_GreaterThan(System.Int64,AUTOonline.Common.NullableTypes.NullableInt64)">
+            <summary>
+            Vergleicht einen Int64-Wert mit einem NullableInt64
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_LessThan(System.Int64,AUTOonline.Common.NullableTypes.NullableInt64)">
+            <summary>
+            Vergleicht einen Int64-Wert mit einem NullableInt64
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_GreaterThan(AUTOonline.Common.NullableTypes.NullableInt64,System.Int64)">
+            <summary>
+            Vergleicht einen NullableInt64-Wert mit einem Int64-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_LessThan(AUTOonline.Common.NullableTypes.NullableInt64,System.Int64)">
+            <summary>
+            Vergleicht einen NullableInt64-Wert mit einem Int64-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_GreaterThanOrEqual(AUTOonline.Common.NullableTypes.NullableInt64,AUTOonline.Common.NullableTypes.NullableInt64)">
+            <summary>
+            Vergleicht einen NullableInt64-Wert mit einem NullableInt64
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_LessThanOrEqual(AUTOonline.Common.NullableTypes.NullableInt64,AUTOonline.Common.NullableTypes.NullableInt64)">
+            <summary>
+            Vergleicht einen NullableInt64-Wert mit einem NullableInt64
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_GreaterThanOrEqual(System.Int64,AUTOonline.Common.NullableTypes.NullableInt64)">
+            <summary>
+            Vergleicht einen Int64-Wert mit einem NullableInt64
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_LessThanOrEqual(System.Int64,AUTOonline.Common.NullableTypes.NullableInt64)">
+            <summary>
+            Vergleicht einen Int64-Wert mit einem NullableInt64
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_GreaterThanOrEqual(AUTOonline.Common.NullableTypes.NullableInt64,System.Int64)">
+            <summary>
+            Vergleicht einen NullableInt64-Wert mit einem Int64-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.op_LessThanOrEqual(AUTOonline.Common.NullableTypes.NullableInt64,System.Int64)">
+            <summary>
+            Vergleicht einen NullableInt64-Wert mit einem Int64-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.ToString">
+            <summary>
+            Gibt den aktuellen Wert zurück
+            </summary>
+            <returns>
+            Gibt die String-Repräsentanz des Int64-Werts zurück falls das Objekt keinen null-Wert speichert. 
+            Speichert das Objekt null, wird null zurückgegeben
+            </returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.Equals(System.Object)">
+            <summary>
+            Vergleicht einen NullableInt64-Wert mit null oder einem Int64-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.GetHashCode">
+            <summary>
+            Liefert einen Hascode für das Objekt
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableInt64.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.NullableTypes.NullableSingle">
+            <summary>
+            Verwaltet einen Single-Wert, der null zulässt
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableSingle.HasValue">
+            <summary>
+            Gibt an, ob ein Wert vorhanden ist. Wenn diese Eigenschaft false ist, speichert die Struktur den Wert null.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.NullableTypes.NullableSingle.Value">
+            <summary>
+            Der Wert für den Fall, dass die Struktur nicht null speichert. Enthält 0 wenn <see cref="P:AUTOonline.Common.NullableTypes.NullableSingle.HasValue"/> false ist.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.#ctor(System.Single)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.#ctor(System.Object)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="value">Der Initialisierungswert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.setValue(System.Single)">
+            <summary>
+            Schreibt einen Single-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.setValue(System.Object)">
+            <summary>
+            Schreibt einen Single- oder null-Wert
+            </summary>
+            <param name="value">Der Wert</param>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_Explicit(AUTOonline.Common.NullableTypes.NullableSingle)~System.Single">
+            <summary>
+            Konvertierung eines NullableSingle in einen Single-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_Implicit(System.Single)~AUTOonline.Common.NullableTypes.NullableSingle">
+            <summary>
+            Konvertierung eines Single- in einen NullableSingle-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_Implicit(System.String)~AUTOonline.Common.NullableTypes.NullableSingle">
+            <summary>
+            Konvertierung eines object-Werts, der null oder einen Single-Wert speichert, in einen NullableSingle-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_Equality(AUTOonline.Common.NullableTypes.NullableSingle,AUTOonline.Common.NullableTypes.NullableSingle)">
+            <summary>
+            Vergleicht einen NullableSingle-Wert mit einem NullableSingle
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_Inequality(AUTOonline.Common.NullableTypes.NullableSingle,AUTOonline.Common.NullableTypes.NullableSingle)">
+            <summary>
+            Vergleicht einen NullableSingle-Wert mit einem NullableSingle
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_Equality(AUTOonline.Common.NullableTypes.NullableSingle,System.Single)">
+            <summary>
+            Vergleicht einen NullableSingle-Wert mit einem Single
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_Inequality(AUTOonline.Common.NullableTypes.NullableSingle,System.Single)">
+            <summary>
+            Vergleicht einen NullableSingle-Wert mit einem Single
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_Equality(System.Single,AUTOonline.Common.NullableTypes.NullableSingle)">
+            <summary>
+            Vergleicht einen Single-Wert mit einem NullableSingle
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_Inequality(System.Single,AUTOonline.Common.NullableTypes.NullableSingle)">
+            <summary>
+            Vergleicht einen Single-Wert mit einem NullableSingle
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_Equality(AUTOonline.Common.NullableTypes.NullableSingle,System.Object)">
+            <summary>
+            Vergleicht einen NullableSingle-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_Inequality(AUTOonline.Common.NullableTypes.NullableSingle,System.Object)">
+            <summary>
+            Vergleicht einen NullableSingle-Wert mit null
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_GreaterThan(AUTOonline.Common.NullableTypes.NullableSingle,AUTOonline.Common.NullableTypes.NullableSingle)">
+            <summary>
+            Vergleicht einen NullableSingle-Wert mit einem NullableSingle
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_LessThan(AUTOonline.Common.NullableTypes.NullableSingle,AUTOonline.Common.NullableTypes.NullableSingle)">
+            <summary>
+            Vergleicht einen NullableSingle-Wert mit einem NullableSingle
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_GreaterThan(System.Single,AUTOonline.Common.NullableTypes.NullableSingle)">
+            <summary>
+            Vergleicht einen Single-Wert mit einem NullableSingle
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_LessThan(System.Single,AUTOonline.Common.NullableTypes.NullableSingle)">
+            <summary>
+            Vergleicht einen Single-Wert mit einem NullableSingle
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_GreaterThan(AUTOonline.Common.NullableTypes.NullableSingle,System.Single)">
+            <summary>
+            Vergleicht einen NullableSingle-Wert mit einem Single-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_LessThan(AUTOonline.Common.NullableTypes.NullableSingle,System.Single)">
+            <summary>
+            Vergleicht einen NullableSingle-Wert mit einem Single-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_GreaterThanOrEqual(AUTOonline.Common.NullableTypes.NullableSingle,AUTOonline.Common.NullableTypes.NullableSingle)">
+            <summary>
+            Vergleicht einen NullableSingle-Wert mit einem NullableSingle
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_LessThanOrEqual(AUTOonline.Common.NullableTypes.NullableSingle,AUTOonline.Common.NullableTypes.NullableSingle)">
+            <summary>
+            Vergleicht einen NullableSingle-Wert mit einem NullableSingle
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_GreaterThanOrEqual(System.Single,AUTOonline.Common.NullableTypes.NullableSingle)">
+            <summary>
+            Vergleicht einen Single-Wert mit einem NullableSingle
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_LessThanOrEqual(System.Single,AUTOonline.Common.NullableTypes.NullableSingle)">
+            <summary>
+            Vergleicht einen Single-Wert mit einem NullableSingle
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_GreaterThanOrEqual(AUTOonline.Common.NullableTypes.NullableSingle,System.Single)">
+            <summary>
+            Vergleicht einen NullableSingle-Wert mit einem Single-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.op_LessThanOrEqual(AUTOonline.Common.NullableTypes.NullableSingle,System.Single)">
+            <summary>
+            Vergleicht einen NullableSingle-Wert mit einem Single-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.ToString">
+            <summary>
+            Gibt den aktuellen Wert zurück
+            </summary>
+            <returns>
+            Gibt die String-Repräsentanz des Single-Werts zurück falls das Objekt keinen null-Wert speichert. 
+            Speichert das Objekt null, wird null zurückgegeben
+            </returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.Equals(System.Object)">
+            <summary>
+            Vergleicht einen NullableSingle-Wert mit null oder einem Single-Wert
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.GetHashCode">
+            <summary>
+            Liefert einen Hascode für das Objekt
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.System#Xml#Serialization#IXmlSerializable#WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.NullableSingle.System#Xml#Serialization#IXmlSerializable#ReadXml(System.Xml.XmlReader)">
+            <summary>
+            This member supports the .NET Framework infrastructure and is not intended to be used directly 
+            from your code.
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.NullableTypes.Utils">
+            <summary>
+            Klasse mit statischen Hilfsmethoden
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.Utils.GetDataValueFromNullable(AUTOonline.Common.NullableTypes.INullableValue)">
+            <summary>
+            Liefert einen in einer DataTable speicherbaren Wert für einen Nullable
+            </summary>
+            <param name="value">Der Nullable</param>
+            <returns>Gibt den passenden Werttyp oder DBNull.Value zurück</returns>
+        </member>
+        <member name="M:AUTOonline.Common.NullableTypes.Utils.ConvertNullableTypeToValueType(System.Type)">
+            <summary>
+            Konvertiert einen Nullable-Typen in einen Werttypen
+            </summary>
+            <param name="type">Der Nullable-Typ</param>
+            <returns>Gibt den Werttyp zurück</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,3030 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AUTOonline.Common</name>
+    </assembly>
+    <members>
+        <member name="T:AUTOonline.Common.AOException">
+            <summary>
+            Basisklasse für alle AUTOonline-Exceptions<br></br>
+            <i>Autor</i>: Jürgen Bayer<br></br>
+            <i>Erstelldatum:</i> unbekannt<br></br>
+            <i>Letzter Bearbeiter:</i> Jürgen Bayer <br></br>
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.AOException.#ctor(System.String)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="message">Die Meldung der Ausnahme</param>
+        </member>
+        <member name="T:AUTOonline.Common.LogConfigurationSectionHandler">
+            <summary>
+            Handler für den eigenen Konfigurationsabschnitt
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogConfigurationSectionHandler.Create(System.Object,System.Object,System.Xml.XmlNode)">
+            <summary>
+            Implementierung der Create-Methode
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.LogConfiguration">
+            <summary>
+            Verwaltet die Konfiguration, die aus der .config-Datei der Anwendung ausgelesen wird
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogConfiguration.DebugEnabled">
+            <summary>
+            Gibt an, ob Debug-Nachrichten aktiviert sind
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogConfiguration.InfoEnabled">
+            <summary>
+            Gibt an, ob Info-Nachrichten aktiviert sind
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.LogWatcherForm">
+            <summary>
+            Formular zur Anzeige eines Logs, das über UDP versendet wird. Setzt das
+            <see cref="T:AUTOonline.Common.LogWatcher"/>-Steuerelement ein.
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogWatcherForm.remoteAddress">
+            <summary>
+            Die Adresse, auf deren Nachrichten der Log Watcher wartet
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogWatcherForm.listenerPort">
+            <summary>
+            Der Port, an dem der Log Watcher auf Nachrichten warten soll
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcherForm.#ctor(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="remoteAddress">Die Adresse, auf deren Nachrichten der Log Watcher wartet</param>
+            <param name="listenerPort">Der Port, an dem der Log Watcher auf Nachrichten warten soll</param>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcherForm.frmLogWatcher_Load(System.Object,System.EventArgs)">
+            <summary>
+            Initialisierungen
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcherForm.StartListening">
+            <summary>
+            Startet ein neues Listening
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogWatcherForm.components">
+            <summary>
+            Erforderliche Designervariable.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcherForm.Dispose(System.Boolean)">
+            <summary>
+            Verwendete Ressourcen bereinigen.
+            </summary>
+            <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcherForm.InitializeComponent">
+            <summary>
+            Erforderliche Methode für die Designerunterstützung.
+            Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.LogWatcher">
+            <summary>
+            Steuerelement zum Beobachten von Log-Einträgen über UDP
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.LogWatcher.LogWatcherWorkerArgs">
+            <summary>
+            Argumente für den Start des Backgroundworkers, der die Nachrichten empfängt
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.LogWatcher.LogMessage">
+            <summary>
+            Verwaltet eine Protokoll-Nachricht
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogWatcher.LogMessage.Date">
+            <summary>
+            Das Datum des Eintrags
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogWatcher.LogMessage.LoggerName">
+            <summary>
+            Der Name des Loggers
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogWatcher.LogMessage.MachineName">
+            <summary>
+            Der Name der Maschine, auf der das Programm läuft, das protokolliert wird
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogWatcher.LogMessage.ThreadId">
+            <summary>
+            Die Id des Threads, aus dem der Eintrag gesendet wurde
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogWatcher.LogMessage.Level">
+            <summary>
+            Der Log-Level
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogWatcher.LogMessage.MethodName">
+            <summary>
+            Name der Methode (falls verfügbar)
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogWatcher.LogMessage.Message">
+            <summary>
+            Die Nachricht
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogWatcher.logMessages">
+            <summary>
+            Die aktuellen Protokollnachrichten
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.LogWatcher.RemoteAddress">
+            <summary>
+            Gibt die IP-Adresse, deren Nachrichten protokolliert werden, zurück
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.LogWatcher.ListenerPort">
+            <summary>
+            Gibt den Port, an dem der LogWatcher auf Nachrichten wartet, zurück
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.StartNewListener">
+            <summary>
+            Startet einen neuen Listener
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.NewListener">
+            <summary>
+            Erzeugt einen neuen BackgroundWorker zum Warten auf die Daten
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.listener_DoWork(System.Object,System.ComponentModel.DoWorkEventArgs)">
+            <summary>
+            Die Arbeitsmethode
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.listener_ProgressChanged(System.Object,System.ComponentModel.ProgressChangedEventArgs)">
+            <summary>
+            Die Fortschritts-Methode
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.listener_RunWorkerCompleted(System.Object,System.ComponentModel.RunWorkerCompletedEventArgs)">
+            <summary>
+            Die Complete-Methode
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.StartListener(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Startet das Warten auf Log-Nachrichten
+            </summary>
+            <param name="remoteAddress">Die entfernte IP-Adresse, für die NAchrichten empfangen werden. Kann IPAddress.Any sein wenn von allen IP-Adressen empfangen werden soll.</param>
+            <param name="listenerPort">Der Port, an dem auf Nachrichten gewartet werden soll</param>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.StopListening">
+            <summary>
+            Stoppt das Warten auf Log-Nachrichten
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.AddLogMessage(AUTOonline.Common.LogWatcher.LogMessage)">
+            <summary>
+            Fügt eine Protokollnachricht hinzu
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.ShowLogMessage(AUTOonline.Common.LogWatcher.LogMessage)">
+            <summary>
+            Zeigt eine Protokollnachricht an
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.LogMessageVisible(AUTOonline.Common.LogWatcher.LogMessage)">
+            <summary>
+            Ermittelt, ob die übergebene Protokollnachricht nicht gefiltert ist
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.RefillList">
+            <summary>
+            Füllt die Liste der Nachrichten neu. Wendet den aktuellen Filter an, der über
+            <see cref="M:AUTOonline.Common.LogWatcher.LogMessageVisible(AUTOonline.Common.LogWatcher.LogMessage)"/> abgefragt wird.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.LogWatcher_Load(System.Object,System.EventArgs)">
+            <summary>
+            Initialisierungen beim Laden
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.cboLoggerName_Leave(System.Object,System.EventArgs)">
+            <summary>
+            Filtert die Anzeige nach der Änderung der Auswahl des Loggers
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.cboLoggerName_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Filtert die Anzeige nach der Änderung der Auswahl des Loggers
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.cboLoggerName_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Filtert die Anzeige nach der Änderung der Auswahl des Loggers
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.lstLevel_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Filtert die Anzeige nach der Änderung der Auswahl des LogLevel
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogWatcher.components">
+            <summary> 
+            Erforderliche Designervariable.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.Dispose(System.Boolean)">
+            <summary> 
+            Verwendete Ressourcen bereinigen.
+            </summary>
+            <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
+        </member>
+        <member name="M:AUTOonline.Common.LogWatcher.InitializeComponent">
+            <summary> 
+            Erforderliche Methode für die Designerunterstützung. 
+            Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.LogLevel">
+            <summary>
+            Gibt das Log-Level für die Protokollierung über die <see cref="T:AUTOonline.Common.Log"/>-Klasse an
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogLevel.All">
+            <summary>
+            Alle Protokoll-Nachrichten
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogLevel.Info">
+            <summary>
+            Info-Protokoll-Nachrichten
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogLevel.Debug">
+            <summary>
+            Debug-Protokoll-Nachrichten
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogLevel.Warn">
+            <summary>
+            Warnungs-Protokoll-Nachrichten
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogLevel.Error">
+            <summary>
+            Fehler-Protokoll-Nachrichten
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogLevel.Fatal">
+            <summary>
+            Fatale-Fehler-Protokoll-Nachrichten
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.LogLevel.Off">
+            <summary>
+            Das Loging ist ausgeschaltet
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.Globals">
+            <summary>
+            Klasse für globale statische Eigenschaften
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.Globals.ResourceHandler">
+            <summary>
+            Der Rassourcen-Handler
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.Globals.#cctor">
+            <summary>
+            Liest die allgemeinen Ressourcen ein (die nicht einem speziellen Steuerelement zugeordnet sind und nicht im Schema verwaltet werden)
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.HighResStopClock">
+            <summary>
+            Klasse für hochgenaue Zeitmessungen
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.HighResStopClock.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.HighResStopClock.PCFrequency">
+            <summary>
+            gibt die aktuelle Frequenz des Performance-Counters zurück
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.HighResStopClock.PCResolution">
+            <summary>
+            gibt die aktuelle Auflösung (Ticks pro Sekunde) des Performance-Counters zurück
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.HighResStopClock.Start">
+            <summary>
+            startet die Zeitmessung
+            </summary>
+            <seealso cref="M:AUTOonline.Common.HighResStopClock.Stop"/>
+        </member>
+        <member name="M:AUTOonline.Common.HighResStopClock.Stop">
+            <summary>
+            stoppt die Zeitmessung
+            </summary>
+            <returns>Sekunden, die seit dem Aufruf von <see cref="M:AUTOonline.Common.HighResStopClock.Start"/> vergangen sind</returns>
+            <seealso cref="M:AUTOonline.Common.HighResStopClock.Start"/>
+        </member>
+        <member name="T:AUTOonline.Common.IAOControl">
+            <summary>
+            Schnittstelle für die gemeinsamen Elemente aller AUTOonline-Steuerelemente<br></br>
+            <i>Autor</i>: Jürgen Bayer<br></br>
+            <i>Erstelldatum:</i> unbekannt<br></br>
+            <i>Letzter Bearbeiter:</i> Jürgen Bayer <br></br>
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.IAOControl.Value">
+            <summary>
+            Verwaltet den Wert des Steuerelements
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.Log">
+            <summary>
+            Klasse zum Protokollieren über log4net
+            </summary>
+            <remarks>
+            	<para>
+            In Ihrer Anwendung (nicht in Klassenbibliotheken!) müssen Sie das intern 
+            verwendete log4net konfigurieren. Idealerweise verwenden Sie
+            dazu die statischen Methoden <see cref="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,AUTOonline.Common.LogLevel)"/>, <see cref="M:AUTOonline.Common.Log.AddTraceAppender(AUTOonline.Common.LogLevel)"/>,
+            <see cref="M:AUTOonline.Common.Log.AddAspNetTraceAppender(AUTOonline.Common.LogLevel)"/>, <see cref="M:AUTOonline.Common.Log.AddSmtpAppender(System.String,System.String,System.String,System.String,System.Int32,AUTOonline.Common.LogLevel)"/>, <see cref="M:AUTOonline.Common.Log.AddNetSendAppender(System.String,System.String,System.String,AUTOonline.Common.LogLevel)"/> und
+            <see cref="M:AUTOonline.Common.Log.AddUdpAppender(AUTOonline.Common.LogLevel,System.Int32,System.Net.IPAddress,System.Int32)"/>.
+            </para>
+            	<para>
+            In jeweils einer Variante der AddFileAppender-Methoden können Sie am Argument minimalLock
+            definieren, dass beim Zugriff auf die Datei diese nur für den Zugriff gesperrt wird.
+            In Webanwendungen und Multithreading-Anwendungen kann ein minimaler Lock notwendig sein um
+            </para>
+            	<para>
+            Einer jeweils zweiten Variante der einzelnen Add-Methoden können Sie als letzte Argumente
+            eine Liste von Typnamen (inkl. Namensraum) übergeben. Diese Appender können Sie verwenden, um ausschließlich
+            Log-Einträge für die angegebenen Typen in separate Protokolle zu schreiben. Normalerweise wird diese
+            Technik verwendet, um beim Testen einzelner Klassen deren Protokolleinträge isoliert betrachten
+            zu können.
+            </para>
+            	<para>
+            Alternativ können Sie net4log auch über die Anwendungs-Konfigurationsdatei konfigurieren. Damit können Sie auch
+            Appender konfigurieren, die diese Klasse nicht implementiert (weil diese zu komplex sind oder bei AUTOonline
+            normalerweise nicht verwendet werden). Die Konfiguration eines AdoNetAppenders zur Protokollierung in eine
+            Datenbank ist ein Beispiel dafür. Beispiele für die Konfiguraton über eine .config-Datei finden Sie an der 
+            Adresse
+            http://logging.apache.org/log4net/release/config-examples.html.
+            Diese Konfiguration muss in der .config-Datei der Anwendung
+            untergebracht werden. Wenn Sie diese Variante bevorzugen, rufen Sie vor der Verwendung
+            des Loggers die Methode <see cref="M:AUTOonline.Common.Log.ConfigureLoggerByConfigFile"/> auf.
+            </para>
+            	<para>
+            Zum Protokollieren erzeugen Sie eine Instanz der Log-Klasse. Am einzigen Argument des 
+            Konstruktors übergeben Sie ein Type-Objekt, das den Typ repräsentieren sollte,
+            in dem sie protokollieren wollen. 
+            </para>
+            	<para>
+            Ideralerweise verwenden Sie den folgenden Quellcode zur Erzeugung des Loggers:
+            </para>
+            	<para>
+            		<code>
+            /// &lt;summary&gt;
+            /// Der für die Protokollierung verwendete Logger
+            /// &lt;/summary&gt;
+            private (static) Log logger = new Log(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            </code>
+            	</para>
+            	<para>
+            Protokollieren können Sie über die Methoden <see cref="M:AUTOonline.Common.Log.Info(System.String)"/>, <see cref="M:AUTOonline.Common.Log.InfoFormat(System.String,System.Object[])"/>,
+            <see cref="M:AUTOonline.Common.Log.Debug(System.String)"/>, <see cref="M:AUTOonline.Common.Log.DebugFormat(System.String,System.Object[])"/>, <see cref="M:AUTOonline.Common.Log.Warn(System.String)"/>, <see cref="M:AUTOonline.Common.Log.WarnFormat(System.String,System.Object[])"/><see cref="M:AUTOonline.Common.Log.Error(System.String)"/>, <see cref="M:AUTOonline.Common.Log.ErrorFormat(System.String,System.Object[])"/>, <see cref="M:AUTOonline.Common.Log.Fatal(System.String)"/> und <see cref="M:AUTOonline.Common.Log.FatalFormat(System.String,System.Object[])"/>.
+            </para>
+            	<para>
+            Beachten Sie, dass Debug-Nachrichten per Default nicht aktiviert sind. Sie können diese Einstellung
+            in der Anwendungskonfiguration ändern (siehe weiter unten).
+            </para>
+            	<para>
+            Für spezielle, eventuell in Logging nicht implementierte neue
+            Features von log4net können Sie die Logger-Instanz verwenden, die Sie über die Eigenschaft
+            <see cref="P:AUTOonline.Common.Log.Log4NetLogger"/> erreichen.
+            </para>
+            	<para>
+            Wichtig und interessant ist, dass auch Klassenbibliotheken in diesen
+            Logger schreiben können, und diese Meldungen dann in den Protokollen erscheinen,
+            die die Anwendung bei der Konfiguration des Loggers definiert hat.
+            </para>
+            	<para>
+            Um die Performance der Anwendung zu erhöhen sind Debug-Nachrichten per Voreinstellung 
+            deaktiviert. Sie können die Verfügbarkeit von Debug- und Info-Nachrichten über
+            die Anwendungs-Konfigurationsdatei steuern. Legen Sie dazu den Abschnitt 
+            'AUTOonline.Common.Log' wir folgt an:
+            	</para>
+            	<para>
+            		<code><![CDATA[
+            <configuration>
+              <!-- Bekanntmachung der Konfigurations-Sektion für AUTOonline.Common.Log -->
+              <configSections>
+                <section 
+                  name="AUTOonline.Common.Log"
+                  type="AUTOonline.Common.LogConfigurationSectionHandler, AUTOonline.Common"/>
+              </configSections>
+              <AUTOonline.Common.Log>
+                <!-- Gibt an, ob Debug-Einträge aktiviert sind. Default ist false. -->
+                <debug enabled="true"/>
+                
+                <!-- Gibt an, ob Info-Einträge aktiviert sind. Default ist true. -->
+                <info enabled="true"/>
+              </AUTOonline.Common.Log>
+            </configuration>
+            ]]></code>
+            	</para>
+            </remarks>
+            <changeLog>
+            	<changeLogEntry date="10.09.2006 10:32:17" href="http://tools/ProjectChangeLog/ShowEntry.aspx?EntryId=c268c5d5-1013-4fcc-bdff-6a04450f3ebf" version="2.0.0.4" changes="Neue Methode AddUdpAppender "/>
+            	<changeLogEntry date="10.09.2006 13:05:48" href="http://tools/ProjectChangeLog/ShowEntry.aspx?EntryId=4e3ecb10-9c01-4a77-b2da-b40013c48f74" version="2.0.0.4" changes="Dem Default-Log-Pattern die Thread-Informatione ..."/>
+            	<changeLogEntry date="13.09.2006 11:34:54" href="http://tools/ProjectChangeLog/ShowEntry.aspx?EntryId=72b1052c-8d8d-43a6-819b-03c5705ebf63" version="2.0.0.4" changes="Ge&amp;#228;ndertes Layout-Pattern f&amp;#252;r die Nac ..."/>
+            	<changeLogEntry date="13.09.2006 12:19:20" href="http://tools/ProjectChangeLog/ShowEntry.aspx?EntryId=184821b5-286f-45ab-9c7d-7e9b60e7ee92" version="2.0.0.4" changes="Neue Methoden InfoFormat, DebugFormat, WarnForm ..."/>
+            	<changeLogEntry date="13.09.2006 14:50:01" href="http://tools/ProjectChangeLog/ShowEntry.aspx?EntryId=cc994d90-d135-44e0-a8e7-c571ec0fc9b1" version="2.0.0.4" changes="Das Logging der Level Debug und Info kann nun &amp; ..."/>
+            	<changeLogEntry date="12.10.2006 17:17:37" href="http://tools/ProjectChangeLog/ShowEntry.aspx?EntryId=5f6c9875-0153-45f1-ac89-542421fa05f5" version="2.0.0.7" changes="Neue AddRollingFileAppender-Methoden mit Minima ..."/>
+            	<changeLogEntry date="02.02.2007 11:48:02" href="http://tools/ProjectChangeLog/ShowEntry.aspx?EntryId=edaf4bd3-4ce9-4e5a-b62d-9fd85db3ea2f" version="2.0.0.27" changes="Neuer Konstruktor, dem der Name des Loggers &amp;#2 ..."/>
+            	<changeLogEntry date="02.02.2007 11:51:07" href="http://tools/ProjectChangeLog/ShowEntry.aspx?EntryId=ab8c2577-c726-4d84-b9f1-b80481fc156a" version="2.0.0.27" changes="Die AddRollingFileAppender-Methoden, die nach D ..."/>
+            	<changeLogEntry date="02.02.2007 11:51:47" href="http://tools/ProjectChangeLog/ShowEntry.aspx?EntryId=6dd625db-3df9-4d22-85d6-5574b17cfcea" version="2.0.0.27" changes="Das Default-Pattern wurde auf &amp;quot;%d;%c;%prop ..."/>
+            	<changeLogEntry date="02.02.2007 13:37:12" href="http://tools/ProjectChangeLog/ShowEntry.aspx?EntryId=2084080b-37df-4152-aea2-0ade96441142" version="2.0.0.27" changes="AddSmtpAppender-Methoden um das Feature erweite ..."/>
+            	<changeLogEntry date="02.02.2007 17:12:05" href="http://tools/ProjectChangeLog/ShowEntry.aspx?EntryId=4bf87954-cbc4-4b65-9db0-90059fb8ac15" changes="BugFix: Beim Hinzuf&amp;#252;gen von FileAppendern ..."/>
+            </changeLog>
+        </member>
+        <member name="F:AUTOonline.Common.Log.alreadyExistingFileAppenders">
+            <summary>
+            Verwaltet Infos zu allen bereits angelegten DateiAppendern (zur Vermeidung von Mehrfach-Erzeugungen) 
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.Log.alreadyExistingSmtpAppenders">
+            <summary>
+            Verwaltet Infos zu allen bereits angelegten Smtp-Appendern (zur Vermeidung von Mehrfach-Erzeugungen) 
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.Log.defaultLogPattern">
+            <summary>
+            Das Default-Log-Pattern
+            </summary>
+            <remarks>
+            %d = Datum<br></br>
+            %c = Logger-Name<br></br>
+            %property{log4net:HostName} = Der Name der Maschine<br></br>
+            %t = Der Thread<br></br>
+            %p = Log-Level<br></br>
+            %m = Die Nachricht<br></br>
+            %n = Neue Zeile<br></br>
+            </remarks>
+        </member>
+        <member name="F:AUTOonline.Common.Log.configuration">
+            <summary>
+            Verwaltet die Konfiguration
+            </summary>
+            <remarks>
+            Wird im Konstruktor gegebenenfalls überschrieben
+            </remarks>
+        </member>
+        <member name="F:AUTOonline.Common.Log.log4NetLog">
+            <summary>
+            Der verwendete Logger
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.Log.Log4NetLogger">
+            <summary>
+            Gibt die aktuelle log4net-Logger-Instanz zurück.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.Log.CostOfTime">
+            <summary>
+            Gibt die Sekunden zurück, die eine bestimmte Aktion, vom 
+            ersten Aufruf von <see cref="M:AUTOonline.Common.Log.StartStopClock"/> bis zum Aufruf
+            von <see cref="M:AUTOonline.Common.Log.StopStopClock"/> benötigt hat.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.Log.#ctor(System.Type)">
+            <summary>
+            Konstruktor. Erzeugt den verwendeten Log4Net-Logger.
+            </summary>
+            <param name="type">Der Typ, für den diese Log-Instanz erzeugt wird.</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.#ctor(System.String)">
+            <summary>
+            Konstruktor. Erzeugt den verwendeten Log4Net-Logger.
+            </summary>
+            <param name="loggerName">Der Name des Loggers, für den diese Log-Instanz erzeugt wird.</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.#cctor">
+            <summary>
+            Statischer Konstruktor
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.Log.ConvertLogLevel(AUTOonline.Common.LogLevel)">
+            <summary>
+            Konvertiert einen LogLevel nach log4net
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.Log.DoesFileAppenderAlreadyExist(System.String,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.Boolean)">
+            <summary>
+            Überprüft, ob bereits ein FileAppender für die angegebene Datei existiert
+            </summary>
+            <param name="filename">Der Dateiname</param>
+            <param name="minLevel">Der Min-Level</param>
+            <param name="maxLevel">Der Max-Level</param>
+            <param name="rollingByDate">Gibt an, ob der Appender nach Datum rollt (oder nach Größe)</param>
+            <returns></returns>
+        </member>
+        <member name="M:AUTOonline.Common.Log.DoesSmptAppenderAlreadyExist(System.String,System.String,System.String,System.String,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel)">
+            <summary>
+            Überprüft, ob bereits ein SMTP-Appender mit den angegebenen Daten existiert
+            </summary>
+            <param name="smtpHost">Gibt den SMTP-Server an</param>
+            <param name="from">Die Sender-Adresse</param>
+            <param name="to">Die Empfänger-Adresse</param>
+            <param name="subject">Der Betreff</param>      
+            <param name="minLevel">Der Min-Level</param>
+            <param name="maxLevel">Der Max-Level</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddFileAppenderInfo(System.String,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.Boolean)">
+            <summary>
+            Fügt der Liste, die die existierenden FileAppender verwaltet, Infos über einen neuen FileAppender hinzu
+            </summary>
+            <param name="filename">Der Dateiname</param>
+            <param name="minLevel">Der Min-Level</param>
+            <param name="maxLevel">Der Max-Level</param>
+            <param name="rollingByDate">Gibt an, ob der Appender nach Datum rollt (oder nach Größe)</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddSmtpAppenderInfo(System.String,System.String,System.String,System.String,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel)">
+            <summary>
+            Fügt der Liste, die die existierenden SmtpAppender verwaltet, Infos über einen neuen SmtpAppender hinzu
+            </summary>
+            <param name="smtpHost">Gibt den SMTP-Server an</param>
+            <param name="from">Die Sender-Adresse</param>
+            <param name="to">Die Empfänger-Adresse</param>
+            <param name="subject">Der Betreff</param>
+            <param name="minLevel">Der Min-Level</param>
+            <param name="maxLevel">Der Max-Level</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.GetLogger(System.String)">
+            <summary>
+            Liefert einen Logger
+            </summary>
+            <param name="name">Der Name des Loggers </param>
+            <returns>Gibt eine ILog-Referenz zurück</returns>
+        </member>
+        <member name="T:AUTOonline.Common.Log.AppenderInfo">
+            <summary>
+            Verwaltet eine Info zu einem angelegten Appender (zur Vermeidung von Mehrfach-Erzeugungen) 
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.Log.AppenderInfo.MinLevel">
+            <summary>
+            Der minimale Level
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.Log.AppenderInfo.MaxLevel">
+            <summary>
+            Der maximale Level
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.Log.FileAppenderInfo">
+            <summary>
+            Verwaltet eine Info zu einem angelegten File-Appender (zur Vermeidung von Mehrfach-Erzeugungen) 
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.Log.FileAppenderInfo.FileName">
+            <summary>
+            Der Dateiname
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.Log.FileAppenderInfo.RollingByDate">
+            <summary>
+            Gibt an, ob der Appender nach Datum rollt (oder nach Größe)
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.Log.SmtpAppenderInfo">
+            <summary>
+            Verwaltet eine Info zu einem angelegten SMTP-Appender (zur Vermeidung von Mehrfach-Erzeugungen) 
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.Log.ConfigureLoggerByConfigFile">
+            <summary>
+            Konfiguriert den Logger an Hand der .config-Datei der Anwendung
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,AUTOonline.Common.LogLevel)">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            pro Tag eine neue Datei, deren Name mit dem aktuellen Datum versehen wird.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="threshold">Gibt den Log-Level an, ab dem protokolliert wird</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            Datei-Sperrung: Exklusiv<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer die aktuelle Protokolldatei. 
+            Wird an einem anderen Tag protokolliert, kopiert der Appender die alte Datei in
+            eine Datei, die das aktuelle Datum als Dateiandung trägt. Die Datei 
+            Log.txt wird dann z. B. zu Log.txt-2005-03-18. Damit wird pro Tag
+            eine separate Protokolldatei erzeugt.
+            </para>
+            <para>
+            In dieser Methode wird die Datei gesperrt solange protokolliert wird (Exklusiver Lock).
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie der weiteren Variante dieser Methode das Argument minimalLock übergeben.
+            Übergeben Sie hier true, wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>      
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel)">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            pro Tag eine neue Datei, deren Name mit dem aktuellen Datum versehen wird.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            Datei-Sperrung: Exklusiv<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer die aktuelle Protokolldatei. 
+            Wird an einem anderen Tag protokolliert, kopiert der Appender die alte Datei in
+            eine Datei, die das aktuelle Datum als Dateiandung trägt. Die Datei 
+            Log.txt wird dann z. B. zu Log.txt-2005-03-18. Damit wird pro Tag
+            eine separate Protokolldatei erzeugt.
+            </para>
+            <para>
+            In dieser Methode wird die Datei gesperrt solange protokolliert wird (Exklusiver Lock).
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie der weiteren Variante dieser Methode das Argument minimalLock übergeben.
+            Übergeben Sie hier true, wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>      
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,System.Int32,System.Int32,AUTOonline.Common.LogLevel)">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            einzelne Dateien, deren Größe die angegebene Maximalgröße nicht überschreitet. Die Namen
+            der Dateien werden automatisch durchnummeriert.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="threshold">Definiert die Schwelle, 
+            ab der dieser Appender auf Protokollnachrichten reagiert. Anm.: Die hier verfügbaren Log-Level sind
+            im Vergleich zu den originalen log4net-Leveln auf die Wesentlichen reduziert</param>
+            <param name="maxFileSize">Die maximale Dateigröße in Kilobyte</param>
+            <param name="maxSizeRollBackups">Gibt die maximale Anzahl an Backup-Dateien an bevor die älteste gelöscht wird</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            Datei-Sperrung: Exklusiv<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer sie aktuelle Protokolldatei. Wenn diese
+            die angegebene Größe erreicht, erzeugt der Appender eine Datei mit dem angegebnen Namen und
+            einer zusätzlichen durchnummerierten Endung. Log.txt wird dann zu Log.txt.1, Log.txt.2 etc.
+            </para>
+            <para>
+            In dieser Methode wird die Datei gesperrt solange protokolliert wird (Exklusiver Lock).
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie der weiteren Variante dieser Methode das Argument minimalLock übergeben.
+            Übergeben Sie hier true, wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>      
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,System.Int32,System.Int32,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel)">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            einzelne Dateien, deren Größe die angegebene Maximalgröße nicht überschreitet. Die Namen
+            der Dateien werden automatisch durchnummeriert.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="maxFileSize">Die maximale Dateigröße in Kilobyte</param>
+            <param name="maxSizeRollBackups">Gibt die maximale Anzahl an Backup-Dateien an bevor die älteste gelöscht wird</param>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            Datei-Sperrung: Exklusiv<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer die aktuelle Protokolldatei. Wenn diese
+            die angegebene Größe erreicht, erzeugt der Appender eine Datei mit dem angegebnen Namen und
+            einer zusätzlichen durchnummerierten Endung. Log.txt wird dann zu Log.txt.1, Log.txt.2 etc.
+            </para>
+            <para>
+            In dieser Methode wird die Datei gesperrt solange protokolliert wird (Exklusiver Lock).
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie der weiteren Variante dieser Methode das Argument minimalLock übergeben.
+            Übergeben Sie hier true, wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>      
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddTraceAppender(AUTOonline.Common.LogLevel)">
+            <summary>
+            Fügt dem Logger einen Default-TraceAppender mit vordefinierten Einstellungen hinzu,
+            der in das Ausgabefenster von Visual Studio schreibt.
+            </summary>
+            <param name="threshold">Definiert die Schwelle, 
+            ab der dieser Appender auf Protokollnachrichten reagiert. Anm.: Die hier verfügbaren Log-Level sind
+            im Vergleich zu den originalen log4net-Leveln auf die Wesentlichen reduziert</param>
+            <remarks>
+            <para>
+            Ein TraceAppender fügt den Trace-Listenern der Anwendung automatisch einen
+            DefaultTraceListener hinzu, der in das Ausgabefenster von Visual Studio schreibt.
+            </para>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddTraceAppender(AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel)">
+            <summary>
+            Fügt dem Logger einen Default-TraceAppender mit vordefinierten Einstellungen hinzu,
+            der in das Ausgabefenster von Visual Studio schreibt.
+            </summary>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <remarks>
+            <para>
+            Ein TraceAppender fügt den Trace-Listenern der Anwendung automatisch einen
+            DefaultTraceListener hinzu, der in das Ausgabefenster von Visual Studio schreibt.
+            </para>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddAspNetTraceAppender(AUTOonline.Common.LogLevel)">
+            <summary>
+            Fügt dem Logger einen ASP.net-TraceAppender mit vordefinierten Einstellungen hinzu,
+            der das Trace-Protokoll der Webanwendung schreibt (und dieses Protokoll automatisch
+            an aufgerufene Webseiten anhängt wenn Tracing enabled ist).
+            </summary>
+            <param name="threshold">Definiert die Schwelle, 
+            ab der dieser Appender auf Protokollnachrichten reagiert. Anm.: Die hier verfügbaren Log-Level sind
+            im Vergleich zu den originalen log4net-Leveln auf die Wesentlichen reduziert</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddAspNetTraceAppender(AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel)">
+            <summary>
+            Fügt dem Logger einen ASP.net-TraceAppender mit vordefinierten Einstellungen hinzu,
+            der das Trace-Protokoll der Webanwendung schreibt (und dieses Protokoll automatisch
+            an aufgerufene Webseiten anhängt wenn Tracing enabled ist).
+            </summary>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddUdpAppender(AUTOonline.Common.LogLevel,System.Int32,System.Net.IPAddress,System.Int32)">
+            <summary>
+            Fügt dem Logger einen UDP-Appender mit vordefinierten Einstellungen hinzu,
+            der das Protokoll über das UDP-Protokoll versendet (das z.B. über den log4net Viewer
+            - http://www.devintelligence.com/Log4NetViewer - dann angzeigt werden kann).
+            </summary>
+            <param name="threshold">Definiert die Schwelle, 
+            ab der dieser Appender auf Protokollnachrichten reagiert. Anm.: Die hier verfügbaren Log-Level sind
+            im Vergleich zu den originalen log4net-Leveln auf die Wesentlichen reduziert
+            </param>
+            <param name="localPort">Gibt den lokalen Port an, von dem der Logger das Protokoll sendet. Beispiel: 8080. 0 bedeutet, das automatisch ein freier Port verwendet wird.</param>
+            <param name="remoteAddress">Die Adresse, an die der Logger das Protokoll senden soll</param>
+            <param name="remotePort">Der Port, an den der Logger das Protokoll senden soll. Beispiel: 8081</param>
+            <remarks>
+            <para>
+            Wenn Sie einen lokalen Port angeben und der Empfänger läuft auf demselben Computer, 
+            muss der lokale Port ein anderer sein als der Remote-Port.
+            </para>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddUdpAppender(AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.Int32,System.Net.IPAddress,System.Int32)">
+            <summary>
+            Fügt dem Logger einen UDP-Appender mit vordefinierten Einstellungen hinzu,
+            der das Protokoll über das UDP-Protokoll versendet (das z.B. über den log4net Viewer
+            - http://www.devintelligence.com/Log4NetViewer - dann angzeigt werden kann).
+            </summary>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="localPort">Gibt den lokalen Port an, von dem der Logger das Protokoll sendet. Beispiel: 8080. 0 bedeutet, das automatisch ein freier Port verwendet wird.</param>
+            <param name="remoteAddress">Die Adresse, an die der Logger das Protokoll senden soll</param>
+            <param name="remotePort">Der Port, an den der Logger das Protokoll senden soll. Beispiel: 8081</param>
+            <remarks>
+            <para>
+            Wenn Sie einen lokalen Port angeben und der Empfänger läuft auf demselben Computer, 
+            muss der lokale Port ein anderer sein als der Remote-Port.
+            </para>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddUdpAppender(AUTOonline.Common.LogLevel,System.Net.IPAddress,System.Int32)">
+            <summary>
+            Fügt dem Logger einen UDP-Appender mit vordefinierten Einstellungen hinzu,
+            der das Protokoll über das UDP-Protokoll versendet (das z.B. über den log4net Viewer
+            - http://www.devintelligence.com/Log4NetViewer - dann angzeigt werden kann).
+            </summary>
+            <param name="threshold">Definiert die Schwelle, 
+            ab der dieser Appender auf Protokollnachrichten reagiert. Anm.: Die hier verfügbaren Log-Level sind
+            im Vergleich zu den originalen log4net-Leveln auf die Wesentlichen reduziert
+            </param>
+            <param name="remoteAddress">Die Adresse, an die der Logger das Protokoll senden soll</param>
+            <param name="remotePort">Der Port, an den der Logger das Protokoll senden soll. Beispiel: 8081</param>
+            <remarks>
+            <para>
+            Ein TraceAppender fügt den Trace-Listenern der Anwendung automatisch einen
+            DefaultTraceListener hinzu, der in das Ausgabefenster von Visual Studio schreibt.
+            </para>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddUdpAppender(AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.Net.IPAddress,System.Int32)">
+            <summary>
+            Fügt dem Logger einen UDP-Appender mit vordefinierten Einstellungen hinzu,
+            der das Protokoll über das UDP-Protokoll versendet (das z.B. über den log4net Viewer
+            - http://www.devintelligence.com/Log4NetViewer - dann angzeigt werden kann).
+            </summary>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="remoteAddress">Die Adresse, an die der Logger das Protokoll senden soll</param>
+            <param name="remotePort">Der Port, an den der Logger das Protokoll senden soll. Beispiel: 8081</param>
+            <remarks>
+            <para>
+            Ein TraceAppender fügt den Trace-Listenern der Anwendung automatisch einen
+            DefaultTraceListener hinzu, der in das Ausgabefenster von Visual Studio schreibt.
+            </para>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddSmtpAppender(System.String,System.String,System.String,System.String,System.Int32,AUTOonline.Common.LogLevel)">
+            <summary>
+            Fügt dem Logger einen SMTPAppender mit vordefinierten Einstellungen hinzu, der
+            jede Meldung des Protokolls an eine E-Mail-Adresse sendet.
+            </summary>
+            <param name="smtpHost">Gibt den SMTP-Server an</param>
+            <param name="from">Die Sender-Adresse</param>
+            <param name="to">Die Empfänger-Adresse</param>
+            <param name="subject">Der Betreff</param>
+            <param name="numberOfPreviousMessagesToInclude">In diesem Argument können Sie angeben, wie viele
+            der vorhergehenden Meldungen zusätzlich in die Mail geschrieben werden</param>
+            <param name="threshold">Definiert die Schwelle, 
+            ab der dieser Appender auf Protokollnachrichten reagiert. Anm.: Die hier verfügbaren Log-Level sind
+            im Vergleich zu den originalen log4net-Leveln auf die Wesentlichen reduziert</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddSmtpAppender(System.String,System.String,System.String,System.String,System.Int32,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel)">
+            <summary>
+            Fügt dem Logger einen SMTPAppender mit vordefinierten Einstellungen hinzu, der
+            jede Meldung des Protokolls an eine E-Mail-Adresse sendet.
+            </summary>
+            <param name="smtpHost">Gibt den SMTP-Server an</param>
+            <param name="from">Die Sender-Adresse</param>
+            <param name="to">Die Empfänger-Adresse</param>
+            <param name="subject">Der Betreff</param>
+            <param name="numberOfPreviousMessagesToInclude">In diesem Argument können Sie angeben, wie viele
+            der vorhergehenden Meldungen zusätzlich in die Mail geschrieben werden</param>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddNetSendAppender(System.String,System.String,System.String,AUTOonline.Common.LogLevel)">
+            <summary>
+            Fügt dem Logger einen NetSendAppender mit vordefinierten Einstellungen hinzu. Ein solcher Appender sendet Protokolleinträge über die Windows-Nachrichtenfunktion.
+            </summary>
+            <param name="server">Name der Maschine, zu der die Nachricht gesendet werden soll, Name des Domänen-Controllers, Name der Workgroup oder leer (siehe unten)</param>
+            <param name="sender">Der Sender der Nachricht</param>
+            <param name="recipient">Der Empfänger der Nachricht</param>
+            <param name="threshold">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <remarks>
+            <para>
+            Ein NetSendAppender sendet die Nachrichten über Net Send.
+            </para>
+            <para>
+            Den Empfänger können Sie folgerndermaßen angeben:
+            </para>
+            <list type="bullet">
+            <item>server = Maschinenname; recipient = Benutzername: Senden an einen spezifischen Benutzer auf einer Maschine</item>
+            <item>server = Domänencontrollername oder null; recipient = Benutzername: Senden an einen Benutzer innerhalb einer Domäne bzw. der aktuellen Domäne</item>
+            <item>server = Arbeitsgruppenname oder Domänencontrollername; recipient = null: Senden an alle Benutzer innerhalb einer Domäne bzw. Arbeitsgruppe</item>
+            <item>server = null; recipient = Remote-Maschinenname: Senden an eine entfernte Maschine</item>
+            </list>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddNetSendAppender(System.String,System.String,System.String,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel)">
+            <summary>
+            Fügt dem Logger einen NetSendAppender mit vordefinierten Einstellungen hinzu. Ein solcher Appender sendet Protokolleinträge über die Windows-Nachrichtenfunktion.
+            </summary>
+            <param name="server">Name der Maschine, zu der die Nachricht gesendet werden soll, Name des Domänen-Controllers, Name der Workgroup oder leer (siehe unten)</param>
+            <param name="sender">Der Sender der Nachricht</param>
+            <param name="recipient">Der Empfänger der Nachricht</param>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <remarks>
+            <para>
+            Ein NetSendAppender sendet die Nachrichten über Net Send.
+            </para>
+            <para>
+            Den Empfänger können Sie folgerndermaßen angeben:
+            </para>
+            <list type="bullet">
+            <item>server = Maschinenname; recipient = Benutzername: Senden an einen spezifischen Benutzer auf einer Maschine</item>
+            <item>server = Domänencontrollername oder null; recipient = Benutzername: Senden an einen Benutzer innerhalb einer Domäne bzw. der aktuellen Domäne</item>
+            <item>server = Arbeitsgruppenname oder Domänencontrollername; recipient = null: Senden an alle Benutzer innerhalb einer Domäne bzw. Arbeitsgruppe</item>
+            <item>server = null; recipient = Remote-Maschinenname: Senden an eine entfernte Maschine</item>
+            </list>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,AUTOonline.Common.LogLevel,System.String[])">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            pro Tag eine neue Datei, deren Name mit dem aktuellen Datum versehen wird.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="threshold">Gibt den Log-Level an, ab dem protokolliert wird</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            Datei-Sperrung: Exklusiv<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer die aktuelle Protokolldatei. 
+            Wird an einem anderen Tag protokolliert, kopiert der Appender die alte Datei in
+            eine Datei, die das aktuelle Datum als Dateiandung trägt. Die Datei 
+            Log.txt wird dann z. B. zu Log.txt-2005-03-18. Damit wird pro Tag
+            eine separate Protokolldatei erzeugt.
+            </para>
+            <para>
+            In dieser Methode wird die Datei gesperrt solange protokolliert wird (Exklusiver Lock).
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie der weiteren Variante dieser Methode das Argument minimalLock übergeben.
+            Übergeben Sie hier true, wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.String[])">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            pro Tag eine neue Datei, deren Name mit dem aktuellen Datum versehen wird.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            Datei-Sperrung: Exklusiv<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer die aktuelle Protokolldatei. 
+            Wird an einem anderen Tag protokolliert, kopiert der Appender die alte Datei in
+            eine Datei, die das aktuelle Datum als Dateiandung trägt. Die Datei 
+            Log.txt wird dann z. B. zu Log.txt-2005-03-18. Damit wird pro Tag
+            eine separate Protokolldatei erzeugt.
+            </para>
+            <para>
+            In dieser Methode wird die Datei gesperrt solange protokolliert wird (Exklusiver Lock).
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie der weiteren Variante dieser Methode das Argument minimalLock übergeben.
+            Übergeben Sie hier true, wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,System.Int32,System.Int32,AUTOonline.Common.LogLevel,System.String[])">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            einzelne Dateien, deren Größe die angegebene Maximalgröße nicht überschreitet. Die Namen
+            der Dateien werden automatisch durchnummeriert.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="threshold">Definiert die Schwelle, 
+            ab der dieser Appender auf Protokollnachrichten reagiert. Anm.: Die hier verfügbaren Log-Level sind
+            im Vergleich zu den originalen log4net-Leveln auf die Wesentlichen reduziert</param>
+            <param name="maxFileSize">Die maximale Dateigröße in Kilobyte</param>
+            <param name="maxSizeRollBackups">Gibt die maximale Anzahl an Backup-Dateien an bevor die älteste gelöscht wird</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            Datei-Sperrung: Exklusiv<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer sie aktuelle Protokolldatei. Wenn diese
+            die angegebene Größe erreicht, erzeugt der Appender eine Datei mit dem angegebnen Namen und
+            einer zusätzlichen durchnummerierten Endung. Log.txt wird dann zu Log.txt.1, Log.txt.2 etc.
+            </para>
+            <para>
+            In dieser Methode wird die Datei gesperrt solange protokolliert wird (Exklusiver Lock).
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie der weiteren Variante dieser Methode das Argument minimalLock übergeben.
+            Übergeben Sie hier true, wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,System.Int32,System.Int32,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.String[])">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            einzelne Dateien, deren Größe die angegebene Maximalgröße nicht überschreitet. Die Namen
+            der Dateien werden automatisch durchnummeriert.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="maxFileSize">Die maximale Dateigröße in Kilobyte</param>
+            <param name="maxSizeRollBackups">Gibt die maximale Anzahl an Backup-Dateien an bevor die älteste gelöscht wird</param>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            Datei-Sperrung: Exklusiv<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer die aktuelle Protokolldatei. Wenn diese
+            die angegebene Größe erreicht, erzeugt der Appender eine Datei mit dem angegebnen Namen und
+            einer zusätzlichen durchnummerierten Endung. Log.txt wird dann zu Log.txt.1, Log.txt.2 etc.
+            </para>
+            <para>
+            In dieser Methode wird die Datei gesperrt solange protokolliert wird (Exklusiver Lock).
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie der weiteren Variante dieser Methode das Argument minimalLock übergeben.
+            Übergeben Sie hier true, wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddTraceAppender(AUTOonline.Common.LogLevel,System.String[])">
+            <summary>
+            Fügt dem Logger einen Default-TraceAppender mit vordefinierten Einstellungen hinzu,
+            der in das Ausgabefenster von Visual Studio schreibt.
+            </summary>
+            <param name="threshold">Definiert die Schwelle, 
+            ab der dieser Appender auf Protokollnachrichten reagiert. Anm.: Die hier verfügbaren Log-Level sind
+            im Vergleich zu den originalen log4net-Leveln auf die Wesentlichen reduziert</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Ein TraceAppender fügt den Trace-Listenern der Anwendung automatisch einen
+            DefaultTraceListener hinzu, der in das Ausgabefenster von Visual Studio schreibt.
+            </para>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddTraceAppender(AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.String[])">
+            <summary>
+            Fügt dem Logger einen Default-TraceAppender mit vordefinierten Einstellungen hinzu,
+            der in das Ausgabefenster von Visual Studio schreibt.
+            </summary>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Ein TraceAppender fügt den Trace-Listenern der Anwendung automatisch einen
+            DefaultTraceListener hinzu, der in das Ausgabefenster von Visual Studio schreibt.
+            </para>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddAspNetTraceAppender(AUTOonline.Common.LogLevel,System.String[])">
+            <summary>
+            Fügt dem Logger einen ASP.net-TraceAppender mit vordefinierten Einstellungen hinzu,
+            der das Trace-Protokoll der Webanwendung schreibt (und dieses Protokoll automatisch
+            an aufgerufene Webseiten anhängt wenn Tracing enabled ist).
+            </summary>
+            <param name="threshold">Definiert die Schwelle, 
+            ab der dieser Appender auf Protokollnachrichten reagiert. Anm.: Die hier verfügbaren Log-Level sind
+            im Vergleich zu den originalen log4net-Leveln auf die Wesentlichen reduziert</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddAspNetTraceAppender(AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.String[])">
+            <summary>
+            Fügt dem Logger einen ASP.net-TraceAppender mit vordefinierten Einstellungen hinzu,
+            der das Trace-Protokoll der Webanwendung schreibt (und dieses Protokoll automatisch
+            an aufgerufene Webseiten anhängt wenn Tracing enabled ist).
+            </summary>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddUdpAppender(AUTOonline.Common.LogLevel,System.Int32,System.Net.IPAddress,System.Int32,System.String[])">
+            <summary>
+            Fügt dem Logger einen UDP-Appender mit vordefinierten Einstellungen hinzu,
+            der das Protokoll über das UDP-Protokoll versendet (das z.B. über den log4net Viewer
+            - http://www.devintelligence.com/Log4NetViewer - dann angzeigt werden kann).
+            </summary>
+            <param name="threshold">Definiert die Schwelle, 
+            ab der dieser Appender auf Protokollnachrichten reagiert. Anm.: Die hier verfügbaren Log-Level sind
+            im Vergleich zu den originalen log4net-Leveln auf die Wesentlichen reduziert
+            </param>
+            <param name="localPort">Gibt den lokalen Port an, von dem der Logger das Protokoll sendet. Beispiel: 8081</param>
+            <param name="remoteAddress">Die Adresse, an die der Logger das Protokoll senden soll</param>
+            <param name="remotePort">Der Port, an den der Logger das Protokoll senden soll. Beispiel: 8081</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Wenn Sie einen lokalen Port angeben und der Empfänger läuft auf demselben Computer, 
+            muss der lokale Port ein anderer sein als der Remote-Port.
+            </para>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddUdpAppender(AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.Int32,System.Net.IPAddress,System.Int32,System.String[])">
+            <summary>
+            Fügt dem Logger einen UDP-Appender mit vordefinierten Einstellungen hinzu,
+            der das Protokoll über das UDP-Protokoll versendet (das z.B. über den log4net Viewer
+            - http://www.devintelligence.com/Log4NetViewer - dann angzeigt werden kann).
+            </summary>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="localPort">Gibt den lokalen Port an, von dem der Logger das Protokoll sendet. Beispiel: 8081</param>
+            <param name="remoteAddress">Die Adresse, an die der Logger das Protokoll senden soll</param>
+            <param name="remotePort">Der Port, an den der Logger das Protokoll senden soll. Beispiel: 8081</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Wenn Sie einen lokalen Port angeben und der Empfänger läuft auf demselben Computer, 
+            muss der lokale Port ein anderer sein als der Remote-Port.
+            </para>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddUdpAppender(AUTOonline.Common.LogLevel,System.Net.IPAddress,System.Int32,System.String[])">
+            <summary>
+            Fügt dem Logger einen UDP-Appender mit vordefinierten Einstellungen hinzu,
+            der das Protokoll über das UDP-Protokoll versendet (das z.B. über den log4net Viewer
+            - http://www.devintelligence.com/Log4NetViewer - dann angzeigt werden kann).
+            </summary>
+            <param name="threshold">Definiert die Schwelle, 
+            ab der dieser Appender auf Protokollnachrichten reagiert. Anm.: Die hier verfügbaren Log-Level sind
+            im Vergleich zu den originalen log4net-Leveln auf die Wesentlichen reduziert
+            </param>
+            <param name="remoteAddress">Die Adresse, an die der Logger das Protokoll senden soll</param>
+            <param name="remotePort">Der Port, an den der Logger das Protokoll senden soll. Beispiel: 8081</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Ein TraceAppender fügt den Trace-Listenern der Anwendung automatisch einen
+            DefaultTraceListener hinzu, der in das Ausgabefenster von Visual Studio schreibt.
+            </para>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddUdpAppender(AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.Net.IPAddress,System.Int32,System.String[])">
+            <summary>
+            Fügt dem Logger einen UDP-Appender mit vordefinierten Einstellungen hinzu,
+            der das Protokoll über das UDP-Protokoll versendet (das z.B. über den log4net Viewer
+            - http://www.devintelligence.com/Log4NetViewer - dann angzeigt werden kann).
+            </summary>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="remoteAddress">Die Adresse, an die der Logger das Protokoll senden soll</param>
+            <param name="remotePort">Der Port, an den der Logger das Protokoll senden soll. Beispiel: 8081</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Ein TraceAppender fügt den Trace-Listenern der Anwendung automatisch einen
+            DefaultTraceListener hinzu, der in das Ausgabefenster von Visual Studio schreibt.
+            </para>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddSmtpAppender(System.String,System.String,System.String,System.String,System.Int32,AUTOonline.Common.LogLevel,System.String[])">
+            <summary>
+            Fügt dem Logger einen SMTPAppender mit vordefinierten Einstellungen hinzu, der
+            jede Meldung des Protokolls an eine E-Mail-Adresse sendet.
+            </summary>
+            <param name="smtpHost">Gibt den SMTP-Server an</param>
+            <param name="from">Die Sender-Adresse</param>
+            <param name="to">Die Empfänger-Adresse</param>
+            <param name="subject">Der Betreff</param>
+            <param name="numberOfPreviousMessagesToInclude">In diesem Argument können Sie angeben, wie viele
+            der vorhergehenden Meldungen zusätzlich in die Mail geschrieben werden</param>
+            <param name="threshold">Definiert die Schwelle, 
+            ab der dieser Appender auf Protokollnachrichten reagiert. Anm.: Die hier verfügbaren Log-Level sind
+            im Vergleich zu den originalen log4net-Leveln auf die Wesentlichen reduziert</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddSmtpAppender(System.String,System.String,System.String,System.String,System.Int32,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.String[])">
+            <summary>
+            Fügt dem Logger einen SMTPAppender mit vordefinierten Einstellungen hinzu, der
+            jede Meldung des Protokolls an eine E-Mail-Adresse sendet.
+            </summary>
+            <param name="smtpHost">Gibt den SMTP-Server an</param>
+            <param name="from">Die Sender-Adresse</param>
+            <param name="to">Die Empfänger-Adresse</param>
+            <param name="subject">Der Betreff</param>
+            <param name="numberOfPreviousMessagesToInclude">In diesem Argument können Sie angeben, wie viele
+            der vorhergehenden Meldungen zusätzlich in die Mail geschrieben werden</param>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddNetSendAppender(System.String,System.String,System.String,AUTOonline.Common.LogLevel,System.String[])">
+            <summary>
+            Fügt dem Logger einen NetSendAppender mit vordefinierten Einstellungen hinzu. Ein solcher Appender sendet Protokolleinträge über die Windows-Nachrichtenfunktion.
+            </summary>
+            <param name="server">Name der Maschine, zu der die Nachricht gesendet werden soll, Name des Domänen-Controllers, Name der Workgroup oder leer (siehe unten)</param>
+            <param name="sender">Der Sender der Nachricht</param>
+            <param name="recipient">Der Empfänger der Nachricht</param>
+            <param name="threshold">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Ein NetSendAppender sendet die Nachrichten über Net Send.
+            </para>
+            <para>
+            Den Empfänger können Sie folgerndermaßen angeben:
+            </para>
+            <list type="bullet">
+            <item>server = Maschinenname; recipient = Benutzername: Senden an einen spezifischen Benutzer auf einer Maschine</item>
+            <item>server = Domänencontrollername oder null; recipient = Benutzername: Senden an einen Benutzer innerhalb einer Domäne bzw. der aktuellen Domäne</item>
+            <item>server = Arbeitsgruppenname oder Domänencontrollername; recipient = null: Senden an alle Benutzer innerhalb einer Domäne bzw. Arbeitsgruppe</item>
+            <item>server = null; recipient = Remote-Maschinenname: Senden an eine entfernte Maschine</item>
+            </list>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddNetSendAppender(System.String,System.String,System.String,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.String[])">
+            <summary>
+            Fügt dem Logger einen NetSendAppender mit vordefinierten Einstellungen hinzu. Ein solcher Appender sendet Protokolleinträge über die Windows-Nachrichtenfunktion.
+            </summary>
+            <param name="server">Name der Maschine, zu der die Nachricht gesendet werden soll, Name des Domänen-Controllers, Name der Workgroup oder leer (siehe unten)</param>
+            <param name="sender">Der Sender der Nachricht</param>
+            <param name="recipient">Der Empfänger der Nachricht</param>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Ein NetSendAppender sendet die Nachrichten über Net Send.
+            </para>
+            <para>
+            Den Empfänger können Sie folgerndermaßen angeben:
+            </para>
+            <list type="bullet">
+            <item>server = Maschinenname; recipient = Benutzername: Senden an einen spezifischen Benutzer auf einer Maschine</item>
+            <item>server = Domänencontrollername oder null; recipient = Benutzername: Senden an einen Benutzer innerhalb einer Domäne bzw. der aktuellen Domäne</item>
+            <item>server = Arbeitsgruppenname oder Domänencontrollername; recipient = null: Senden an alle Benutzer innerhalb einer Domäne bzw. Arbeitsgruppe</item>
+            <item>server = null; recipient = Remote-Maschinenname: Senden an eine entfernte Maschine</item>
+            </list>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,AUTOonline.Common.LogLevel,System.Boolean)">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            pro Tag eine neue Datei, deren Name mit dem aktuellen Datum versehen wird.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="threshold">Gibt den Log-Level an, ab dem protokolliert wird</param>
+            <param name="minimalLock">Gibt an, ob der FileAppender die Dateisperre für jeden Zugriff separat setzen soll. Wenn Sie hier true einstellen, wird die Datei nur für den jeweiligen Schreibzugang gesperrt. 
+            In Web- und Multithreading-Anwendungen kann dies notwendig sein, um Probleme mit gleichzeitigen Zugriffen zu vermeiden.</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer die aktuelle Protokolldatei. 
+            Wird an einem anderen Tag protokolliert, kopiert der Appender die alte Datei in
+            eine Datei, die das aktuelle Datum als Dateiandung trägt. Die Datei 
+            Log.txt wird dann z. B. zu Log.txt-2005-03-18. Damit wird pro Tag
+            eine separate Protokolldatei erzeugt.
+            </para>
+            <para>
+            Das Argument minimalLock bestimmt den Sperrmechanismus. Wenn Sie hier false angeben,
+            wird die Datei gesperrt, solange protokolliert wird (Exklusiver Lock). 
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie mit true definieren, dass nur minimal gesperrt wird.
+            In diesem Fall wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>      
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.Boolean)">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            pro Tag eine neue Datei, deren Name mit dem aktuellen Datum versehen wird.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="minimalLock">Gibt an, ob der FileAppender die Dateisperre für jeden Zugriff separat setzen soll. Wenn Sie hier true einstellen, wird die Datei nur für den jeweiligen Schreibzugang gesperrt. 
+            In Web- und Multithreading-Anwendungen kann dies notwendig sein, um Probleme mit gleichzeitigen Zugriffen zu vermeiden.</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer die aktuelle Protokolldatei. 
+            Wird an einem anderen Tag protokolliert, kopiert der Appender die alte Datei in
+            eine Datei, die das aktuelle Datum als Dateiandung trägt. Die Datei 
+            Log.txt wird dann z. B. zu Log.txt-2005-03-18. Damit wird pro Tag
+            eine separate Protokolldatei erzeugt.
+            </para>
+            <para>
+            Das Argument minimalLock bestimmt den Sperrmechanismus. Wenn Sie hier false angeben,
+            wird die Datei gesperrt, solange protokolliert wird (Exklusiver Lock). 
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie mit true definieren, dass nur minimal gesperrt wird.
+            In diesem Fall wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>         
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,System.Int32,System.Int32,AUTOonline.Common.LogLevel,System.Boolean)">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            einzelne Dateien, deren Größe die angegebene Maximalgröße nicht überschreitet. Die Namen
+            der Dateien werden automatisch durchnummeriert.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="threshold">Definiert die Schwelle, 
+            ab der dieser Appender auf Protokollnachrichten reagiert. Anm.: Die hier verfügbaren Log-Level sind
+            im Vergleich zu den originalen log4net-Leveln auf die Wesentlichen reduziert</param>
+            <param name="maxFileSize">Die maximale Dateigröße in Kilobyte</param>
+            <param name="maxSizeRollBackups">Gibt die maximale Anzahl an Backup-Dateien an bevor die älteste gelöscht wird</param>
+            <param name="minimalLock">Gibt an, ob der FileAppender die Dateisperre für jeden Zugriff separat setzen soll. Wenn Sie hier true einstellen, wird die Datei nur für den jeweiligen Schreibzugang gesperrt. 
+            In Web- und Multithreading-Anwendungen kann dies notwendig sein, um Probleme mit gleichzeitigen Zugriffen zu vermeiden.</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer sie aktuelle Protokolldatei. Wenn diese
+            die angegebene Größe erreicht, erzeugt der Appender eine Datei mit dem angegebnen Namen und
+            einer zusätzlichen durchnummerierten Endung. Log.txt wird dann zu Log.txt.1, Log.txt.2 etc.
+            </para>
+            <para>
+            Das Argument minimalLock bestimmt den Sperrmechanismus. Wenn Sie hier false angeben,
+            wird die Datei gesperrt, solange protokolliert wird (Exklusiver Lock). 
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie mit true definieren, dass nur minimal gesperrt wird.
+            In diesem Fall wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>         
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,System.Int32,System.Int32,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.Boolean)">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            einzelne Dateien, deren Größe die angegebene Maximalgröße nicht überschreitet. Die Namen
+            der Dateien werden automatisch durchnummeriert.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="maxFileSize">Die maximale Dateigröße in Kilobyte</param>
+            <param name="maxSizeRollBackups">Gibt die maximale Anzahl an Backup-Dateien an bevor die älteste gelöscht wird</param>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="minimalLock">Gibt an, ob der FileAppender die Dateisperre für jeden Zugriff separat setzen soll. Wenn Sie hier true einstellen, wird die Datei nur für den jeweiligen Schreibzugang gesperrt. 
+            In Web- und Multithreading-Anwendungen kann dies notwendig sein, um Probleme mit gleichzeitigen Zugriffen zu vermeiden.</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer die aktuelle Protokolldatei. Wenn diese
+            die angegebene Größe erreicht, erzeugt der Appender eine Datei mit dem angegebnen Namen und
+            einer zusätzlichen durchnummerierten Endung. Log.txt wird dann zu Log.txt.1, Log.txt.2 etc.
+            </para>
+            <para>
+            Das Argument minimalLock bestimmt den Sperrmechanismus. Wenn Sie hier false angeben,
+            wird die Datei gesperrt, solange protokolliert wird (Exklusiver Lock). 
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie mit true definieren, dass nur minimal gesperrt wird.
+            In diesem Fall wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>         
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,AUTOonline.Common.LogLevel,System.Boolean,System.String[])">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            pro Tag eine neue Datei, deren Name mit dem aktuellen Datum versehen wird.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="threshold">Gibt den Log-Level an, ab dem protokolliert wird</param>
+            <param name="minimalLock">Gibt an, ob der FileAppender die Dateisperre für jeden Zugriff separat setzen soll. Wenn Sie hier true einstellen, wird die Datei nur für den jeweiligen Schreibzugang gesperrt. 
+            In Web- und Multithreading-Anwendungen kann dies notwendig sein, um Probleme mit gleichzeitigen Zugriffen zu vermeiden.</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer die aktuelle Protokolldatei. 
+            Wird an einem anderen Tag protokolliert, kopiert der Appender die alte Datei in
+            eine Datei, die das aktuelle Datum als Dateiandung trägt. Die Datei 
+            Log.txt wird dann z. B. zu Log.txt-2005-03-18. Damit wird pro Tag
+            eine separate Protokolldatei erzeugt.
+            </para>
+            <para>
+            Das Argument minimalLock bestimmt den Sperrmechanismus. Wenn Sie hier false angeben,
+            wird die Datei gesperrt, solange protokolliert wird (Exklusiver Lock). 
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie mit true definieren, dass nur minimal gesperrt wird.
+            In diesem Fall wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>         
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.Boolean,System.String[])">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            pro Tag eine neue Datei, deren Name mit dem aktuellen Datum versehen wird.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="minimalLock">Gibt an, ob der FileAppender die Dateisperre für jeden Zugriff separat setzen soll. Wenn Sie hier true einstellen, wird die Datei nur für den jeweiligen Schreibzugang gesperrt. 
+            In Web- und Multithreading-Anwendungen kann dies notwendig sein, um Probleme mit gleichzeitigen Zugriffen zu vermeiden.</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer die aktuelle Protokolldatei. 
+            Wird an einem anderen Tag protokolliert, kopiert der Appender die alte Datei in
+            eine Datei, die das aktuelle Datum als Dateiandung trägt. Die Datei 
+            Log.txt wird dann z. B. zu Log.txt-2005-03-18. Damit wird pro Tag
+            eine separate Protokolldatei erzeugt.
+            </para>
+            <para>
+            Das Argument minimalLock bestimmt den Sperrmechanismus. Wenn Sie hier false angeben,
+            wird die Datei gesperrt, solange protokolliert wird (Exklusiver Lock). 
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie mit true definieren, dass nur minimal gesperrt wird.
+            In diesem Fall wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>         
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,System.Int32,System.Int32,AUTOonline.Common.LogLevel,System.Boolean,System.String[])">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            einzelne Dateien, deren Größe die angegebene Maximalgröße nicht überschreitet. Die Namen
+            der Dateien werden automatisch durchnummeriert.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="threshold">Definiert die Schwelle, 
+            ab der dieser Appender auf Protokollnachrichten reagiert. Anm.: Die hier verfügbaren Log-Level sind
+            im Vergleich zu den originalen log4net-Leveln auf die Wesentlichen reduziert</param>
+            <param name="maxFileSize">Die maximale Dateigröße in Kilobyte</param>
+            <param name="maxSizeRollBackups">Gibt die maximale Anzahl an Backup-Dateien an bevor die älteste gelöscht wird</param>
+            <param name="minimalLock">Gibt an, ob der FileAppender die Dateisperre für jeden Zugriff separat setzen soll. Wenn Sie hier true einstellen, wird die Datei nur für den jeweiligen Schreibzugang gesperrt. 
+            In Web- und Multithreading-Anwendungen kann dies notwendig sein, um Probleme mit gleichzeitigen Zugriffen zu vermeiden.</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer sie aktuelle Protokolldatei. Wenn diese
+            die angegebene Größe erreicht, erzeugt der Appender eine Datei mit dem angegebnen Namen und
+            einer zusätzlichen durchnummerierten Endung. Log.txt wird dann zu Log.txt.1, Log.txt.2 etc.
+            </para>
+            <para>
+            Das Argument minimalLock bestimmt den Sperrmechanismus. Wenn Sie hier false angeben,
+            wird die Datei gesperrt, solange protokolliert wird (Exklusiver Lock). 
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie mit true definieren, dass nur minimal gesperrt wird.
+            In diesem Fall wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>   
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.AddRollingFileAppender(System.String,System.Int32,System.Int32,AUTOonline.Common.LogLevel,AUTOonline.Common.LogLevel,System.Boolean,System.String[])">
+            <summary>
+            Fügt dem Logger einen RollingFileAppender mit vordefinierten Einstellungen hinzu.
+            Ein solcher Appender protokolliert in eine Datei. Der hier erzeugte Appender erzeugt
+            einzelne Dateien, deren Größe die angegebene Maximalgröße nicht überschreitet. Die Namen
+            der Dateien werden automatisch durchnummeriert.
+            </summary>
+            <param name="filename">Der Basis-Dateiname der Protokolldatei (wird automatisch um das aktuelle Datum ergänzt)</param>
+            <param name="maxFileSize">Die maximale Dateigröße in Kilobyte</param>
+            <param name="maxSizeRollBackups">Gibt die maximale Anzahl an Backup-Dateien an bevor die älteste gelöscht wird</param>
+            <param name="levelMin">Gibt den Log-Level an, ab dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="levelMax">Gibt den Log-Level an, bis zu dem dieser Appender auf Protokollnachrichten reagiert</param>
+            <param name="minimalLock">Gibt an, ob der FileAppender die Dateisperre für jeden Zugriff separat setzen soll. Wenn Sie hier true einstellen, wird die Datei nur für den jeweiligen Schreibzugang gesperrt. 
+            In Web- und Multithreading-Anwendungen kann dies notwendig sein, um Probleme mit gleichzeitigen Zugriffen zu vermeiden.</param>
+            <param name="loggerNames">An diesem Argument können Sie den Namen eines oder mehrer Logger angeben für die der Appender ausschließlich protokollieren soll</param>
+            <remarks>
+            <para>
+            Die Priorität der Log-Level ist folgende:
+            </para>
+            <para>
+            <list type="bullet">
+            <item><see cref="F:AUTOonline.Common.LogLevel.Info"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Debug"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Warn"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Error"/></item>
+            <item><see cref="F:AUTOonline.Common.LogLevel.Fatal"/></item>
+            </list>
+            </para>
+            <para>
+            Das <see cref="F:AUTOonline.Common.LogLevel.All"/> gibt an, dass alle Nachrichten protokolliert werden.
+            </para>
+            <para>
+            Der RollingFileAppender wird mit den folgenden Voreinstellungen erzeugt:<br></br>
+            Encoding: iso-8859-1<br></br>
+            AppendToFile: true<br></br>
+            RollingStyle: Date<br></br>
+            MaxSizeRollBackups: 5<br></br>+
+            ImmediateFlush: true<br></br>
+            </para>
+            <para>
+            Die Datei mit dem angegebenen Dateiname ist immer die aktuelle Protokolldatei. Wenn diese
+            die angegebene Größe erreicht, erzeugt der Appender eine Datei mit dem angegebnen Namen und
+            einer zusätzlichen durchnummerierten Endung. Log.txt wird dann zu Log.txt.1, Log.txt.2 etc.
+            </para>
+            <para>
+            Das Argument minimalLock bestimmt den Sperrmechanismus. Wenn Sie hier false angeben,
+            wird die Datei gesperrt, solange protokolliert wird (Exklusiver Lock). 
+            Da dies in Webanwendungen und Multithreadinganwendungen Probleme bereiten kann,
+            können Sie mit true definieren, dass nur minimal gesperrt wird.
+            In diesem Fall wird die Datei nur für den Zugriff gesperrt, was einen
+            konkurrierenden Zugriff erleichtert.
+            </para>         
+            <para>
+            Diese Methode überprüft, ob bereits ein FileAppender mit identischen Werten (Dateiname, Log-Level, Typ) 
+            existiert und ignoriert den Aufruf wenn dies der Fall ist. Wird diese oder eine andere Add-Methode 
+            für dieselbe Datei mehrfach mit unterschiedlichen Einstellungen aufgerufen, 
+            resultiert dies in einer entsprechenden AOException.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.StartStopClock">
+            <summary>
+            Startet die Stoppuhr
+            </summary>
+            <remarks>Setzt <see cref="P:AUTOonline.Common.Log.CostOfTime"/> auf 0</remarks>
+        </member>
+        <member name="M:AUTOonline.Common.Log.StopStopClock">
+            <summary>
+            Beendet die Stoppuhr
+            </summary>
+            <remarks>Setzt <see cref="P:AUTOonline.Common.Log.CostOfTime"/> auf die gemessene Zeit in Sekunden </remarks>
+            <returns>Gibt den gemessenen Wert zurück</returns>
+        </member>
+        <member name="M:AUTOonline.Common.Log.Info(System.String)">
+            <summary>
+            Gibt eine Info-Meldung aus
+            </summary>
+            <param name="message">Die Meldung</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.Info(System.String,System.Exception)">
+            <summary>
+            Gibt eine Info-Meldung aus
+            </summary>
+            <param name="message">Die Meldung</param>
+            <param name="ex">Referenz auf eine Exception, deren Daten zusätzlich zur Meldung 
+            ausgegeben werden sollen</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.InfoFormat(System.String,System.Object[])">
+            <summary>
+            Gibt eine Info-Meldung aus
+            </summary>
+            <param name="message">Die Meldung</param>
+            <param name="args">Die Argumente, die in den Formatstring eingebaut werden sollen</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.Debug(System.String)">
+            <summary>
+            Gibt eine Debug-Meldung aus
+            </summary>
+            <param name="message">Die Meldung</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.DebugFormat(System.String,System.Object[])">
+            <summary>
+            Gibt eine Debug-Meldung aus
+            </summary>
+            <param name="message">Die Meldung</param>
+            <param name="args">Die Argumente, die in den Formatstring eingebaut werden sollen</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.Debug(System.String,System.Boolean)">
+            <summary>
+            Gibt eine Debug-Meldung aus
+            </summary>
+            <param name="message">Die Meldung</param>
+            <param name="measureCostOfTime">Gibt an, ob die aktuell gemessene 
+            Zeit mit in den Protokolleintrag übernommen werden soll. Setzt voraus, dass
+            zuvor <see cref="M:AUTOonline.Common.Log.StartStopClock"/> aufgerufen wurde. 
+            Stoppt die Stoppuhr wenn Sie true übergeben.</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.DebugFormat(System.String,System.Boolean,System.Object[])">
+            <summary>
+            Gibt eine Debug-Meldung aus
+            </summary>
+            <param name="message">Die Meldung</param>
+            <param name="measureCostOfTime">Gibt an, ob die aktuell gemessene 
+            Zeit mit in den Protokolleintrag übernommen werden soll. Setzt voraus, dass
+            zuvor <see cref="M:AUTOonline.Common.Log.StartStopClock"/> aufgerufen wurde. 
+            Stoppt die Stoppuhr wenn Sie true übergeben.</param>
+            <param name="args">Die Argumente, die in den Formatstring eingebaut werden sollen</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.Debug(System.String,System.Exception)">
+            <summary>
+            Gibt eine Debug-Meldung aus
+            </summary>
+            <param name="message">Die Meldung</param>
+            <param name="ex">Referenz auf eine Exception, deren Daten zusätzlich zur Meldung ausgegeben werden sollen</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.Debug(System.String,System.Exception,System.Boolean)">
+            <summary>
+            Gibt eine Debug-Meldung aus
+            </summary>
+            <param name="message">Die Meldung</param>
+            <param name="ex">Referenz auf eine Exception, deren Daten zusätzlich zur Meldung ausgegeben werden sollen</param>
+            <param name="measureCostOfTime">Gibt an, ob die aktuell gemessene 
+            Zeit mit in den Protokolleintrag übernommen werden soll. Setzt voraus, dass
+            zuvor <see cref="M:AUTOonline.Common.Log.StartStopClock"/> aufgerufen wurde. 
+            Stoppt die Stoppuhr wenn Sie true übergeben.</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.Warn(System.String)">
+            <summary>
+            Gibt eine Warn-Meldung aus
+            </summary>
+            <param name="message">Die Meldung</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.WarnFormat(System.String,System.Object[])">
+            <summary>
+            Gibt eine Warn-Meldung aus
+            </summary>
+            <param name="message">Die Meldung</param>
+            <param name="args">Die Argumente, die in den Formatstring eingebaut werden sollen</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.Warn(System.String,System.Exception)">
+            <summary>
+            Gibt eine Warn-Meldung aus
+            </summary>
+            <param name="message">Die Meldung</param>
+            <param name="ex">Referenz auf eine Exception, deren Daten zusätzlich zur Meldung ausgegeben werden sollen</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.Error(System.String)">
+            <summary>
+            Gibt eine Fehler-Meldung aus
+            </summary>
+            <param name="message">Die Meldung</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.ErrorFormat(System.String,System.Object[])">
+            <summary>
+            Gibt eine Fehler-Meldung aus
+            </summary>
+            <param name="message">Die Meldung</param>
+            <param name="args">Die Argumente, die in den Formatstring eingebaut werden sollen</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.Error(System.String,System.Exception)">
+            <summary>
+            Gibt eine Fehler-Meldung aus
+            </summary>
+            <param name="message">Die Meldung</param>
+            <param name="ex">Referenz auf eine Exception, deren Daten zusätzlich zur Meldung ausgegeben werden sollen</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.Fatal(System.String)">
+            <summary>
+            Gibt die Meldung eines fatalen Fehlers aus
+            </summary>
+            <param name="message">Die Meldung</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.FatalFormat(System.String,System.Object[])">
+            <summary>
+            Gibt die Meldung eines fatalen Fehlers aus
+            </summary>
+            <param name="message">Die Meldung</param>
+            <param name="args">Die Argumente, die in den Formatstring eingebaut werden sollen</param>
+        </member>
+        <member name="M:AUTOonline.Common.Log.Fatal(System.String,System.Exception)">
+            <summary>
+            Gibt die Meldung eines fatalen Fehlers aus
+            </summary>
+            <param name="message">Die Meldung</param>
+            <param name="ex">Referenz auf eine Exception, deren Daten zusätzlich zur Meldung ausgegeben werden sollen</param>
+        </member>
+        <member name="P:AUTOonline.Common.Log.IsDebugEnabled">
+            <summary>
+            Gibt zurück, ob aktuell Appender existieren, die Debug-Nachrichten empfangen
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.Log.IsErrorEnabled">
+            <summary>
+            Gibt zurück, ob aktuell Appender existieren, die Fehler-Nachrichten empfangen
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.Log.IsFatalEnabled">
+            <summary>
+            Gibt zurück, ob aktuell Appender existieren, die Fatale-Fehler-Nachrichten empfangen
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.Log.IsInfoEnabled">
+            <summary>
+            Gibt zurück, ob aktuell Appender existieren, die Info-Nachrichten empfangen
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.Log.IsWarnEnabled">
+            <summary>
+            Gibt zurück, ob aktuell Appender existieren, die Warn-Nachrichten empfangen
+            </summary>
+        </member>
+        <member name="T:AUTOonline.Common.ProtocolAppender">
+            <summary>
+            log4net appender used to log to the global AUTOonline log repository.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.ProtocolAppender.#ctor(System.Int32,System.String,System.Net.IPAddress,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AUTOonline.Common.ProtocolAppender"/> class.
+            </summary>
+            <param name="agentId">The agent id.</param>
+            <param name="agentName">Name of the agent.</param>
+            <param name="ipAddress">The ip address of the logging service.</param>
+            <param name="port">The port of the logging service.</param>
+        </member>
+        <member name="M:AUTOonline.Common.ProtocolAppender.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AUTOonline.Common.ProtocolAppender"/> class.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.ProtocolAppender.ClientId">
+            <summary>
+            Gets or sets the client identification information. This property is set on a per-thread basis.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.ProtocolAppender.ClientIp">
+            <summary>
+            Gets or sets the client IP address. This property is set on a per-thread basis.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.ProtocolAppender.ParticipantId">
+            <summary>
+            Gets or sets the AUTOonline participant ID. This property is set on a per-thread basis.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.ProtocolAppender.OfferId">
+            <summary>
+            Gets or sets the AUTOonline offer ID. This property is set on a per-thread basis.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.ProtocolAppender.ReferenceNumber">
+            <summary>
+            Gets or sets a reference number to identify the transaction. This property is set on a per-thread basis.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.ProtocolAppender.ReferenceFile">
+            <summary>
+            Gets or sets a reference file path with additional information. This property is set on a per-thread basis.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.ProtocolAppender.AgentId">
+            <summary>
+            Gets the agent id.
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.ProtocolAppender.AgentName">
+            <summary>
+            Gets the name of the agent.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.ProtocolAppender.ActivateOptions">
+            <summary>
+            Activates the options.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.ProtocolAppenderException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AUTOonline.Common.ProtocolAppenderException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="T:AUTOonline.Common.ProtocolLayout">
+            <summary>
+            Layout for the AUTOonline logging.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.ProtocolLayout.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AUTOonline.Common.ProtocolLayout"/> class.
+            </summary>
+            <param name="agentId">The agent id.</param>
+            <param name="agentName">Name of the agent.</param>
+        </member>
+        <member name="P:AUTOonline.Common.ProtocolLayout.IgnoresException">
+            <summary>
+            Gets a value indicating whether this layout will handle exception objects.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.ProtocolLayout.ActivateOptions">
+            <summary>
+            Activates the options.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.ProtocolLayout.Format(System.IO.TextWriter,log4net.Core.LoggingEvent)">
+            <summary>
+            Writes the logging string to 
+            </summary>
+            <param name="writer">The writer.</param>
+            <param name="loggingEvent">The logging event.</param>
+        </member>
+        <member name="T:AUTOonline.Common.ResourceHandler">
+            <summary>
+            Klasse mit Methoden zur globalen Verwaltung der allgemeinen Ressourcen 
+            einer Anwendung oder einer Klassenbibliothek<br></br><i>Autor:</i>Jürgen Bayer<br></br><i>Erstelldatum:</i>01.09.2003<br></br><i>Letzter Bearbeiter:</i>Jürgen Bayer<br></br></summary>
+            <remarks>
+            	<para>
+            Der Konstruktor dieser Klasse erzeugt je einen ResourceManager für die
+            Resourcen Resources/Strings und Resources/Images der aufrufenden Anwendung. Die
+            aufrufende Anwendung kann also String und/oder Bilder zur Verfügung stellen, 
+            muss diese aber in dem Unterordner Resources (relativ zum Projekt-Ordner) speichern
+            und Strings[-Kulturbezeichner].resx bzw. Images[-Kulturbezeichner].resx nennen.
+            </para>
+            	<para>
+            Dem Konstruktor oder der Eigenschaft <see cref="P:AUTOonline.Common.ResourceHandler.Culture"/> können Sie die zu verwendende Kultur übergeben.
+            Ist diese null, wird die dem Thread zugewiesene Kultur verwendet. Wenn Sie die Varianten von
+            <see cref="M:AUTOonline.Common.ResourceHandler.GetString(System.String)"/> und <see cref="M:AUTOonline.Common.ResourceHandler.GetBitmap(System.String)"/> verwenden, denen eine spezielle Kultur übergeben wird,
+            wird natürlich diese verwendet. 
+            </para>
+            	<para>
+            Über die Methode <see cref="M:AUTOonline.Common.ResourceHandler.GetString(System.String)"/> kann die Anwendung einen String aus der 
+            Ressource lesen, <see cref="M:AUTOonline.Common.ResourceHandler.GetBitmap(System.String)"/> liefert ein Bitmap-Objekt.
+            </para>
+            	<para>
+            Tritt beim Lesen der Ressource ein Fehler auf, geben die String-Methoden den Namen
+            der Ressource zurück. GetBitmap gibt null zurück. Die Eigenschaft <see cref="P:AUTOonline.Common.ResourceHandler.ErrorInLastGetOperation"/>
+            wird in diesem Fall auf true gesetzt (diese Eigenschaft wird bei jedem Lesen zunächst
+            auf false gesetzt). Die überladenen Varianten der Methoden, denen das out-Argument
+            errors übergeben wird, speichern den aufgetretenen Fehler in diesem Argument. 
+            Damit ist gewährleistet, dass eine Anwendung nicht 
+            aufgrund einer fehlenden oder fehlerhaften Ressource in einer Exception beendet wird, 
+            und dass trotzdem alle Fehler ausgewertet werden können. Sie können nach dem Lesen 
+            einer Ressource über <see cref="P:AUTOonline.Common.ResourceHandler.ErrorInLastGetOperation"/> herausfinden, ob das Lesen erfolgreich
+            war und im Fehlerfall über das out-Argument den letzten Fehler herausfinden.  
+            </para>
+            	<para>
+            Die Methode <see cref="M:AUTOonline.Common.ResourceHandler.SetCaption(System.Windows.Forms.Control,System.String)"/> liest die Beschriftungen von Steuerelementen
+            aus der Ressource aus. Die einzelnen String-Ressourcen müssen dazu nach dem Schema
+            Containername_Objektname bezeichnet sein (z. B. "mainForm_lblCopyright"). 
+            </para>
+            	<para>
+            		<b>Hinweis</b>Da diese Klasse den Namensraum der Ressourcen ermitteln muss, wird davon ausgegangen, 
+            dass der Stammnamensraum der aufrufenden Assembly derselbe ist, wie der aller
+            enthaltenen Klassen. Als Namensraum wird einfach der der ersten Klasse in der 
+            Assembly verwendet.
+            	</para>
+            </remarks>
+        </member>
+        <member name="P:AUTOonline.Common.ResourceHandler.Culture">
+            <summary>
+            Gibt die Kultur an, die standardmäßig verwendet werden soll. Bei null wird die aktuelle Thread-Kultur verwendet.
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.ResourceHandler.rmStrings">
+            <summary>
+            Verwaltet einen ResourceManager für die Strings
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.ResourceHandler.StringResourceManager">
+            <summary>
+            Liefert eine Referenz auf den ResourceManager zurück, der die Strings verwaltet
+            </summary>
+        </member>
+        <member name="F:AUTOonline.Common.ResourceHandler.rmBitmaps">
+            <summary>
+            Verwaltet einen ResourceManager für die Bitmaps
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.ResourceHandler.BitmapResourceManager">
+            <summary>
+            Liefert eine Referenz auf den ResourceManager zurück, der die Bitmaps verwaltet
+            </summary>
+        </member>
+        <member name="P:AUTOonline.Common.ResourceHandler.ErrorInLastGetOperation">
+            <summary>
+            Gibt eine Information darüber, ob beim letzten 
+            Aufruf einer Methode zum Lesen einer Ressource 
+            ein Fehler aufgetreten ist
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.#ctor(System.Type,System.String)">
+            <summary>
+            Konstruktor. Erzeugt die verwendeten ResourceManager 
+            über die Methode <see cref="M:AUTOonline.Common.ResourceHandler.CreateResourceManager(System.Type,System.String)"/>
+            </summary>
+            <param name="callingType">Gibt den Typ an, von dem 
+            aus die Ressourcen verwendet werden sollen</param>
+            <param name="resourceNamespace">Gibt den Namensraum 
+            an, in dem die Ressourcen verwaltet werden. 
+            Beachten Sie, dass die Namen von Unterordnern 
+            mit in den Namensraum aufgenommen werden müssen.</param>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.#ctor(System.Type)">
+            <summary>
+            Konstruktor. Erzeugt die verwendeten ResourceManager 
+            über die Methode <see cref="M:AUTOonline.Common.ResourceHandler.CreateResourceManager(System.Type,System.String)"/>
+            </summary>
+            <param name="callingType">Gibt den Typ an, von dem 
+            aus die Ressourcen verwendet werden sollen</param>
+            <remarks>
+            Als Namensraum der Ressource wird der Namensraum der 
+            ersten Klasse in der Assembly + ".Resources" verwendet. 
+            Die Ressourcen müssen also in einem Unterordner 
+            'Resources' verwaltet werden. Außerdem sollten alle 
+            Klassen der Assembly demselben Namensraum zugeordnet 
+            sein, da ansonsten u. U. für den ResourceManager 
+            der falsche Namensraum verwendet wird.
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.#ctor(System.String)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="resourceFolder">Gibt den Ordner an, aus dem die Ressourcen ausgelesen werden sollen</param>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.#ctor(System.Type,System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Konstruktor. Erzeugt die verwendeten ResourceManager 
+            über die Methode <see cref="M:AUTOonline.Common.ResourceHandler.CreateResourceManager(System.Type,System.String)"/>
+            </summary>
+            <param name="callingType">Gibt den Typ an, von dem 
+            aus die Ressourcen verwendet werden sollen</param>
+            <param name="resourceNamespace">Gibt den Namensraum 
+            an, in dem die Ressourcen verwaltet werden. 
+            Beachten Sie, dass die Namen von Unterordnern 
+            mit in den Namensraum aufgenommen werden müssen.</param>
+            <param name="culture">Die für die Ressourcen zu verwendende Kultur. Bei null wird die aktuelle Thread-Kultur verwendet. </param>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.#ctor(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            Konstruktor. Erzeugt die verwendeten ResourceManager 
+            über die Methode <see cref="M:AUTOonline.Common.ResourceHandler.CreateResourceManager(System.Type,System.String)"/>
+            </summary>
+            <param name="callingType">Gibt den Typ an, von dem 
+            aus die Ressourcen verwendet werden sollen</param>
+            <param name="culture">Die für die Ressourcen zu verwendende Kultur. Bei null wird die aktuelle Thread-Kultur verwendet. </param>
+            <remarks>
+            Als Namensraum der Ressource wird der Namensraum der 
+            ersten Klasse in der Assembly + ".Resources" verwendet. 
+            Die Ressourcen müssen also in einem Unterordner 
+            'Resources' verwaltet werden. Außerdem sollten alle 
+            Klassen der Assembly demselben Namensraum zugeordnet 
+            sein, da ansonsten u. U. für den ResourceManager 
+            der falsche Namensraum verwendet wird.
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.#ctor(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="resourceFolder">Gibt den Ordner an, aus dem die Ressourcen ausgelesen werden sollen</param>
+            <param name="culture">Die für die Ressourcen zu verwendende Kultur. Bei null wird die aktuelle Thread-Kultur verwendet. </param>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.CreateResourceManager(System.Type,System.String)">
+            <summary>
+             Erzeugt die verwendeten ResourceManager. Die Ressourcen werden aus der Assembly ausgelesen.
+            </summary>
+            <param name="callingType">Gibt den Typ an, von dem aus die 
+            Ressourcen verwendet werden sollen</param>
+            <param name="resourceNamespace">Gibt den Namensraum an, 
+            in dem die Ressourcen verwaltet werden. 
+            Beachten Sie, dass die Namen von Unterordnern mit 
+            in den Namensraum aufgenommen werden müssen.</param>
+            <remarks>
+            Die Angabe des Typs ist deswegen notwendig, da der 
+            ResourceManager Informationen über die Assembly und 
+            den Namensraum der Ressourcen ermitteln muss
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.CreateResourceManager(System.String)">
+            <summary>
+             Erzeugt die verwendeten ResourceManager. Die Ressourcen werden aus .resx- oder
+             .resources-Dateien ausgelesen, die in einem angegebenen Ordner gespeichert sind.
+            </summary>
+            <param name="resourceFolder">Gibt den Ordner an, aus dem die Ressourcen ausgelesen werden sollen</param>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.CreateResourceManager(System.Type,System.String,System.Globalization.CultureInfo)">
+            <summary>
+             Erzeugt die verwendeten ResourceManager. Die Ressourcen werden aus der Assembly ausgelesen.
+            </summary>
+            <param name="callingType">Gibt den Typ an, von dem aus die 
+            Ressourcen verwendet werden sollen</param>
+            <param name="resourceNamespace">Gibt den Namensraum an, 
+            in dem die Ressourcen verwaltet werden. 
+            Beachten Sie, dass die Namen von Unterordnern mit 
+            in den Namensraum aufgenommen werden müssen.</param>
+            <param name="culture">Die für die Ressourcen zu verwendende Kultur. Bei null wird die aktuelle Thread-Kultur verwendet. </param>
+            <remarks>
+            Die Angabe des Typs ist deswegen notwendig, da der 
+            ResourceManager Informationen über die Assembly und 
+            den Namensraum der Ressourcen ermitteln muss
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.CreateResourceManager(System.String,System.Globalization.CultureInfo)">
+            <summary>
+             Erzeugt die verwendeten ResourceManager. Die Ressourcen werden aus .resx- oder
+             .resources-Dateien ausgelesen, die in einem angegebenen Ordner gespeichert sind.
+            </summary>
+            <param name="resourceFolder">Gibt den Ordner an, aus dem die Ressourcen ausgelesen werden sollen</param>
+            <param name="culture">Die für die Ressourcen zu verwendende Kultur. Bei null wird die aktuelle Thread-Kultur verwendet. </param>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.GetString(System.String)">
+            <summary>
+            Liest eine String-Ressource aus den Ressourcen der Assembly aus
+            </summary>
+            <param name="resourceName">Der Name der Ressource</param>
+            <returns>Gibt den ausgelesenen String zurück</returns>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.GetString(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Liest eine String-Ressource aus den Ressourcen der Assembly aus
+            </summary>
+            <param name="resourceName">Der Name der Ressource</param>
+            <param name="cultureInfo">Referenz auf ein CultureInfo-Objekt, 
+            das die gewünschte Kultur repräsentiert</param>
+            <returns>Gibt den ausgelesenen String zurück</returns>
+            <remarks>
+            Falls für die angegebene Kultur keine Ressource gefunden
+            wird, wird ein Resource Fallback durchgeführt. Das Ergebnis ist
+            dann die Ressource für die allgemeine oder die invariante Kultur.
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.GetString(System.String,System.Object[])">
+            <summary>
+            Liest eine String-Ressource mit einem Format-String aus den 
+            Ressourcen der Assembly aus und formatiert diese mit den in 
+            args übergebenen Daten
+            </summary>
+            <param name="resourceName">Der Name der Ressource</param>
+            <param name="args">Die in den aus der Ressource ausgelesenen 
+            Format-String zu integrierenden Daten</param>
+            <returns>Gibt den ausgelesenen Strng zurück</returns>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.GetString(System.String,System.Globalization.CultureInfo,System.Object[])">
+            <summary>
+            Liest eine String-Ressource mit einem Format-String aus den 
+            Ressourcen der Assembly aus und formatiert diese mit den in 
+            args übergebenen Daten
+            </summary>
+            <param name="resourceName">Der Name der Ressource</param>
+            <param name="cultureInfo">Referenz auf ein CultureInfo-Objekt, 
+            das die gewünschte Kultur repräsentiert</param>
+            <param name="args">Die in den aus der Ressource ausgelesenen 
+            Format-String zu integrierenden Daten</param>
+            <returns>Gibt den ausgelesenen String zurück. Wenn 
+            dontFallback true ist, wird null zurückgegeben wenn die
+            übergebene Kultur nicht im Resource Set der Anwendung
+            gefunden wird.</returns>
+            <remarks>
+            Falls für die angegebene Kultur keine Ressource gefunden
+            wird, wird ein Resource Fallback durchgeführt. Das Ergebnis ist
+            dann die Ressource für die allgemeine oder die invariante Kultur.
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.GetString(System.String,System.String@)">
+            <summary>
+            Liest eine String-Ressource aus den Ressourcen der Assembly aus
+            </summary>
+            <param name="resourceName">Der Name der Ressource</param>
+            <param name="error">In diesem Argument gibt die Methode eventuell aufgetretene Fehler zurück</param>
+            <returns>Gibt den ausgelesenen String zurück</returns>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.GetString(System.String,System.String@,System.Globalization.CultureInfo)">
+            <summary>
+            Liest eine String-Ressource aus den Ressourcen der Assembly aus
+            </summary>
+            <param name="resourceName">Der Name der Ressource</param>
+            <param name="error">In diesem Argument gibt die Methode eventuell aufgetretene Fehler zurück</param>
+            <param name="cultureInfo">Referenz auf ein CultureInfo-Objekt, 
+            das die gewünschte Kultur repräsentiert</param>
+            <returns>Gibt den ausgelesenen String zurück</returns>
+            <remarks>
+            Falls für die angegebene Kultur keine Ressource gefunden
+            wird, wird ein Resource Fallback durchgeführt. Das Ergebnis ist
+            dann die Ressource für die allgemeine oder die invariante Kultur.
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.GetString(System.String,System.String@,System.Object[])">
+            <summary>
+            Liest eine String-Ressource mit einem Format-String aus den 
+            Ressourcen der Assembly aus und formatiert diese mit den in 
+            args übergebenen Daten
+            </summary>
+            <param name="resourceName">Der Name der Ressource</param>
+            <param name="error">In diesem Argument gibt die Methode eventuell aufgetretene Fehler zurück</param>
+            <param name="args">Die in den aus der Ressource ausgelesenen 
+            Format-String zu integrierenden Daten</param>
+            <returns>Gibt den ausgelesenen Strng zurück</returns>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.GetString(System.String,System.String@,System.Globalization.CultureInfo,System.Object[])">
+            <summary>
+            Liest eine String-Ressource mit einem Format-String aus den 
+            Ressourcen der Assembly aus und formatiert diese mit den in 
+            args übergebenen Daten
+            </summary>
+            <param name="resourceName">Der Name der Ressource</param>
+            <param name="cultureInfo">Referenz auf ein CultureInfo-Objekt, 
+            das die gewünschte Kultur repräsentiert</param>
+            <param name="args">Die in den aus der Ressource ausgelesenen 
+            Format-String zu integrierenden Daten</param>
+            <param name="error">In diesem Argument gibt die Methode eventuell aufgetretene Fehler zurück</param>
+            <returns>Gibt den ausgelesenen String zurück. Wenn 
+            dontFallback true ist, wird null zurückgegeben wenn die
+            übergebene Kultur nicht im Resource Set der Anwendung
+            gefunden wird.</returns>
+            <remarks>
+            Falls für die angegebene Kultur keine Ressource gefunden
+            wird, wird ein Resource Fallback durchgeführt. Das Ergebnis ist
+            dann die Ressource für die allgemeine oder die invariante Kultur.
+            </remarks>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.GetBitmap(System.String)">
+            <summary>
+            Liest ein Bitmap aus der Ressource (Images.resx) 
+            der Anwendung aus.
+            </summary>
+            <param name="resourceName">Der Name der Ressource</param>
+            <returns>Gibt das aus ausgelesene Bitmap zurück, 
+            oder null wenn die Ressource nicht gefunden wurde 
+            oder kein Bitmap ist</returns>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.GetBitmap(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Liest ein Bitmap aus der Ressource (Images.resx) der Anwendung aus.
+            </summary>
+            <param name="resourceName">Der Name der Ressource</param>
+            <param name="cultureInfo">Referenz auf ein CultureInfo-Objekt, 
+            das die gewünschte Kultur repräsentiert</param>
+            <returns>Gibt das aus ausgelesene Bitmap zurück, 
+            oder null wenn die Ressource nicht gefunden wurde 
+            oder kein Bitmap ist</returns>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.GetBitmap(System.String,System.String@)">
+            <summary>
+            Liest ein Bitmap aus der Ressource (Images.resx) 
+            der Anwendung aus.
+            </summary>
+            <param name="resourceName">Der Name der Ressource</param>
+            <param name="error">In diesem Argument gibt die Methode eventuell aufgetretene Fehler zurück</param>
+            <returns>Gibt das aus ausgelesene Bitmap zurück, 
+            oder null wenn die Ressource nicht gefunden wurde 
+            oder kein Bitmap ist</returns>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.GetBitmap(System.String,System.String@,System.Globalization.CultureInfo)">
+            <summary>
+            Liest ein Bitmap aus der Ressource (Images.resx) der Anwendung aus.
+            </summary>
+            <param name="resourceName">Der Name der Ressource</param>
+            <param name="error">In diesem Argument gibt die Methode eventuell aufgetretene Fehler zurück</param>
+            <param name="cultureInfo">Referenz auf ein CultureInfo-Objekt, 
+            das die gewünschte Kultur repräsentiert</param>
+            <returns>Gibt das aus ausgelesene Bitmap zurück, 
+            oder null wenn die Ressource nicht gefunden wurde 
+            oder kein Bitmap ist</returns>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.SetCaption(System.Windows.Forms.Control,System.String)">
+            <summary>
+            Liest die Beschriftung eines Windows-Steuerelements aus 
+            der Ressource der Anwendung aus und schreibt diese, 
+            wenn vorhanden, in die Eigenschaft Text
+            </summary>
+            <param name="control">Referenz auf das Steuerelement</param>
+            <param name="containerName">
+            Name des Container-Steuerelements</param>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.SetCaptions(System.Web.UI.Control,System.String)">
+            <summary>
+            Liest die Beschriftung eines Web-Steuerelements aus der 
+            Ressource der Anwendung aus und schreibt diese, 
+            wenn vorhanden, in die Eigenschaft Text
+            </summary>
+            <param name="control">
+            Referenz auf das Steuerelement</param>
+            <param name="containerName">
+            Name des Container-Steuerelements</param>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.SetCaptions(System.Windows.Forms.Control)">
+            <summary>
+            Liest die Beschriftung eines Windows-Steuerelements und 
+            dessen Child-Steuerelemente (rekursiv) aus der Ressource 
+            der Anwendung aus und schreibt diese, wenn vorhanden, 
+            in die Eigenschaft Text
+            </summary>
+            <param name="container">Referenz auf das Container-
+            Steuerelement bzw. -Formular</param>
+        </member>
+        <member name="M:AUTOonline.Common.ResourceHandler.SetCaptions(System.Web.UI.Control)">
+            <summary>
+            Liest die Beschriftung eines Web-Steuerelements 
+            und dessen Child-Steuerelemente (rekursiv) aus 
+            der Ressource der Anwendung aus und schreibt 
+            diese, wenn vorhanden, in die Eigenschaft Text
+            </summary>
+            <param name="container">Referenz auf das 
+            Container-Steuerelement bzw. -Formular</param>
+        </member>
+        <member name="F:AUTOonline.Common.TextForm.components">
+            <summary>
+            Erforderliche Designervariable.
+            </summary>
+        </member>
+        <member name="M:AUTOonline.Common.TextForm.Dispose(System.Boolean)">
+            <summary>
+            Verwendete Ressourcen bereinigen.
+            </summary>
+            <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
+        </member>
+        <member name="M:AUTOonline.Common.TextForm.InitializeComponent">
+            <summary>
+            Erforderliche Methode für die Designerunterstützung.
+            Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+            </summary>
+        </member>
+    </members>
+</doc>

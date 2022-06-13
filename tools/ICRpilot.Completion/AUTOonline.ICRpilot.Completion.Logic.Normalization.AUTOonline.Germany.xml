@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ICRpilot>
+  <Matching>
+    <Normalization for="AUTOonline.Germany">      
+
+      <!-- discussion: theoretically, should add the selector allowing to
+      select the normalizer by type. BUT since we agreed to always use the
+      late binding, the original type name is not SO relevant. So we neglect
+      the type, at least for the first time
+      -->
+
+      <Rule action="Transform" transform="ToLower" params="de-DE;"/>
+      <Rule action="Replace" pattern="ü" with="ue"/>
+      <Rule action="Replace" pattern="ö" with="oe"/>
+      <Rule action="Replace" pattern="ä" with="ae"/>
+      <Rule action="Replace" pattern="ß" with="ss"/>
+      
+      <Property name="Street">
+        <Rule action="Replace" pattern="\s*str(asse)?\b\.?.*" with=""/>
+        <Rule action="Replace" pattern=" *\d+.*$" with=""/>
+      </Property>
+
+      <Property name="ZipCode">
+        <Rule action="Match" pattern="[0-9]{5}"/>        
+      </Property>
+
+      <!--
+      <Type name="AUTOonline.ICRpilot.Completion.Logic.Matching.Addresses.GenericAddress">
+      </Type>      
+      <Type name="AUTOonline.ICRpilot.Completion.Logic.Matching.Addresses.OcrAddress">
+      </Type>
+      -->
+
+    </Normalization>
+  </Matching>
+</ICRpilot>

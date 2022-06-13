@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ICRpilot>
+  <Completion>
+    <Config id="AUTOonline.Germany.Relevance" culture="de-DE" numberOfColumns="1" recognitionResultType="Cadosys">
+      <Name>
+        <Culture lcid="de-DE" value="Deutschland" />
+        <Culture lcid="neutral" value="Germany" />
+      </Name>
+
+      <Developers help="Not currently used, only stored in the config">
+        <Developer1>a.dolnik@autoonline.com</Developer1>
+        <Developer>a.grothues@autoonline.com</Developer>
+        <Developer>h.lehnert@autoonline.com</Developer>
+        <Developer>qtd.trinh@autoonline.com</Developer>
+      </Developers>
+
+      <ToolBar>
+        <Button Name="DiscardForcedDiscard" Enabled="false" Visible="true" EnabledOnlyForVendors="00015730" />
+        <Button Name="DiscardAudatex" Enabled="false" Visible="false" />
+        <Button Name="ClearFields" Enabled="false" Visible="false" />
+        <Button Name="PrevPage" Enabled="false" Visible="false" />
+        <Button Name="NextPage" Enabled="false" Visible="false" />
+        <Button Name="LastPage" Enabled="false" Visible="false" />
+        <Button Name="FirstPage" Enabled="false" Visible="false" />
+        <Button Name="VinCompletion" Enabled="false" Visible="true" />
+      </ToolBar>
+
+      <CodeExecution>
+        <References>
+          <Reference dll="System.dll" />
+          <Reference dll="System.Xml.dll" />
+          <Reference dll="System.Drawing.dll" />
+          <Reference dll="System.Windows.Forms.dll" />
+          <Reference dll="cadosys.CaptureThis.Common.dll" />
+          <Reference dll="cadosys.AF.Common.dll" />
+          <Reference dll="AUTOonline.Data.Processing.Text.dll" />
+          <Reference dll="AUTOonline.Data.Processing.Interfaces.dll" />
+          <Reference dll="AUTOonline.ICRpilot.Completion.Logic.dll" />
+          <Reference dll="AUTOonline.ICRpilot.Core.Model.dll" />
+          <Reference dll="AUTOonline.Controls.DocumentFlow.Interfaces.dll" />
+        </References>
+        <Imports>
+          <Using namespace="System" />
+          <Using namespace="System.Xml" />
+          <Using namespace="System.Text" />
+          <Using namespace="System.Drawing" />
+          <Using namespace="System.Windows.Forms" />
+          <Using namespace="System.Globalization" />
+          <Using namespace="System.Collections.Generic" />
+          <Using namespace="System.Text.RegularExpressions" />
+          <Using namespace="AUTOonline.Data.Processing.Interfaces" />
+          <Using namespace="AUTOonline.ICRpilot.Core.Model" />
+          <Using namespace="AUTOonline.ICRpilot.Completion.Logic" />
+          <Using namespace="AUTOonline.ICRpilot.Completion.Logic.Ocr" />
+          <Using namespace="AUTOonline.ICRpilot.Completion.Logic.Fields" />
+          <Using namespace="AUTOonline.ICRpilot.Completion.Logic.Config" />
+          <Using namespace="AUTOonline.ICRpilot.Completion.Logic.Global" />
+          <Using namespace="AUTOonline.ICRpilot.Completion.Logic.Contexts" />
+          <Using namespace="AUTOonline.ICRpilot.Completion.Logic.Matching" />
+          <Using namespace="AUTOonline.ICRpilot.Completion.Logic.Validation" />
+        </Imports>
+      </CodeExecution>
+
+      <Functions>
+        <Function id="function1">
+          <!--
+          global.UI.EventSink.Forward("MsgBox", "Hello");
+          -->
+        </Function>
+        <Function id="function2">
+          <Param name="message" type="System.String" />
+          <!--
+          global.UI.EventSink.Forward("MsgBox", message);
+          -->
+        </Function>
+        <!-- ICRP-587 -->
+        <Function id="FullTextSearch">
+          <Param name="message" type="System.String" />
+          <Param name="names" type="System.Array" />
+          <!--                                        
+            IList<IIcrSearchPattern> patterns = new List<IIcrSearchPattern>();
+
+            foreach (string name in names)
+            {
+                IIcrSearchPattern pattern = new IcrSearchPattern(name);
+                patterns.Add(pattern);
+            }
+
+            global.UI.FullText.Searcher.BeginSearch(patterns, async =>
+            {
+                IList<IOcrMatch> matches = global.UI.FullText.Searcher.EndSearch(async);
+                if (matches.Count > 0)
+                {
+                    string[] matchedNames = new string[matches.Count];
+                    for (int i = 0; i < matches.Count; i++)
+                    {
+                        matchedNames[i] = matches[i].Value.Digest;
+                    }
+
+                    string newmessage = string.Format(message, string.Join(",", matchedNames));
+                    global.UI.EventSink.Forward("MsgBox", newmessage);
+                }
+            });          
+            -->
+        </Function>
+      </Functions>
+
+      <EventHandlers source="this.Loader">
+        <!-- ICRP-594 -->
+        <OnEvent hint="Gothaer FZ" name="DocumentLoaded">
+          <!--
+            // Gothaer
+            if (global.Document.Core.Vendor.VendorId == "00015730")
+                global.UI.EventSink.Forward("MsgBox", "Fahrzeug von Gothaer.\nGebotsblatt vorhanden?");
+            -->
+        </OnEvent>
+        <!-- ICRP-587 -->
+        <OnEvent hint="Gothaer SVs" name="DocumentLoaded">
+          <!--          
+            // Gothaer
+            if (global.Document.Core.Vendor.VendorId == "00015730")
+            {
+              global.Functions.Invoke("FullTextSearch", "Gothaer-eigenes Gutachten von Gutachter {0}. Bitte als 'nicht relevant' verwerfen", new string[] { "Ralf Brenke", "Ralf Brust", "Frank Dahlhaus", "Axel Demitrowitz", "Heiko Gebert", "Matthias Grosschopp", "Siegfried Haubner", "Stephan Kahnt", "Andreas Kulpe", "Ralf Lübbers", "Franko Schmidt", "Jens Simon", "Jörg Wolfram", "Detlef Meyerhoff", "Bernhard Brandl", "Wilfried Dieling", "Thomas Dzurokovic", "Franco Guidi", "Bernd Hahn", "Andreas Haug", "Siegmar Just", "Rüdiger Kengelbach", "Martin Keßner", "Kai Kümmelberger", "Werner Langenwalter", "Helmut Marx", "Thomas Nitschke", "Karl-heinz Opfer", "Helmut Rögle", "Willi Schreiber", "Günter Weber", "Enver Xhakaliu", "Wolfgang Heinrich" });
+            }
+          -->
+        </OnEvent>
+        <OnEvent hint="Hellmann" name="DocumentLoaded">
+          <!--          
+              // OEFFENTLICHE_VERSICHERUNG_BRAUNSCHWEIG          
+              if (global.Document.Core.Vendor.AUTOonlineGroupId == "00015590")
+              {
+                  IcrSearchPattern pattern = new IcrSearchPattern("Christian Hellmann");                  
+                  global.UI.FullText.Searcher.BeginSearch(pattern, async =>
+                  {
+                      // discussion: this piece of code is executed on the thread other than the calling one,
+                      // be careful with the UI interaction. Use only message box (or use my marshaler).
+                      
+                      IList<IOcrMatch> matches = global.UI.FullText.Searcher.EndSearch(async);
+                      if (0 != matches.Count)
+                      {
+                          string customer = string.Join(" ", global.Document.Core.Vendor.Customer.Name.ToString().Split('_'));
+
+                          string message = string.Format("Hardliner Gutachten '{0}' ({1}) - bitte als 'nicht relevant' verwerfen",
+                              customer, matches[0].Value.Digest);
+                              
+                          global.UI.EventSink.Forward("MsgBox", message);
+                      }
+                  });
+              }
+          -->
+        </OnEvent>
+      </EventHandlers>
+
+      <!-- Felder für AddressForm müssen vor "ExpertAddressForm definiert sein." -->
+      <Field id="AddressName" type="Simple" hint="Never" width="297" heigth="20" visible="false" maxLength="250">
+        <Name>
+          <Culture lcid="neutral" value="." />
+        </Name>
+      </Field>
+
+      <Field id="AddressStreet" type="Simple" hint="Never" width="297" heigth="20" visible="false" maxLength="50">
+        <Name>
+          <Culture lcid="neutral" value="." />
+        </Name>
+      </Field>
+
+      <Field id="AddressZipCode" type="Simple" hint="Never" width="82" heigth="20" visible="false" maxLength="10">
+        <Name>
+          <Culture lcid="neutral" value="." />
+        </Name>
+      </Field>
+
+      <Field id="AddressCity" type="Simple" hint="Never" width="210" heigth="20" visible="false" maxLength="50">
+        <Name>
+          <Culture lcid="neutral" value="." />
+        </Name>
+      </Field>
+
+      <Field id="AddressPhone" type="Simple" hint="Never" width="147" heigth="20" visible="false" maxLength="30">
+        <Name>
+          <Culture lcid="neutral" value="." />
+        </Name>
+      </Field>
+
+      <Field id="AddressFax" type="Simple" hint="Never" width="143" heigth="20" visible="false" maxLength="30">
+        <Name>
+          <Culture lcid="neutral" value="." />
+        </Name>
+      </Field>
+
+      <Field id="AddressEmail" type="Simple" hint="Never" width="297" heigth="20" visible="false" maxLength="255">
+        <Name>
+          <Culture lcid="neutral" value="." />
+        </Name>
+      </Field>
+
+      <Field id="ParticipantId" type="Simple" hint="Never" width="297" heigth="20" visible="false" maxLength="8">
+        <Name>
+          <Culture lcid="neutral" value="." />
+        </Name>
+      </Field>
+
+      <Field id="AddressComment" type="Simple" hint="Never" width="297" heigth="119" visible="false" maxLength="1000">
+        <Name>
+          <Culture lcid="neutral" value="." />
+        </Name>
+      </Field>
+
+      <Field id="ExpertAddressForm" type="ExpertAddress" hint="Never">
+        <Name>
+          <Culture lcid="1031" value="Gutachteradresse" />
+          <Culture lcid="127" value="Expert address" />
+        </Name>
+        <Validation class="Warning" treatEmptyAs="Error" allowRelaxationTo="Warning" />
+      </Field>
+
+      <Field id="VIN" type="Simple" height="20" hint="Never">
+        <Name>
+          <Culture lcid="de-DE" value="Fahrgestellnummer" />
+          <Culture lcid="neutral" value="VIN" />
+        </Name>
+        <DependsOn>
+          <Id>Manufacturer</Id>
+          <Id>VehicleType</Id>
+        </DependsOn>
+        <Validation treatEmptyAs="Error" class="Error" allowRelaxationTo="Warning">
+          <Rule action="Evaluate">
+            <Source language="CSharp">
+              <!--
+              IOcrSimpleContext vehicleTypeField = context.Global.Fields.Collection.ContainsKey("VehicleType") 
+                  ? context.Global.Fields["VehicleType"].Ocr.As<IOcrSimpleContext>()
+                  : null ;
+              IOcrSimpleContext vinField = context.Global.Fields["VIN"].Ocr.As<IOcrSimpleContext>();
+              IOcrSimpleContext manufacturerField = context.Global.Fields.Collection.ContainsKey("Manufacturer")
+                  ? context.Global.Fields["Manufacturer"].Ocr.As<IOcrSimpleContext>()
+                  : null ;
+
+              if (vehicleTypeField != null && manufacturerField != null && 
+                  ValidationClass.Valid == vehicleTypeField.Validator.Status &&
+                  vehicleTypeField.Normalizer.Value != null &&
+                  String.Compare(vehicleTypeField.Normalizer.Value.Trim(), "PKW", true) == 0 &&
+                  !context.Global.VinValidator.IsValid(vinField.Normalizer.Value, manufacturerField.Normalizer.Value))
+              {
+                  vinField.Validator.Message = "Hersteller zur VIN ungültig";
+                  return false;
+              }
+              else
+              {
+                  vinField.Validator.Message = string.Empty;
+                  return true;
+              }
+              -->
+            </Source>
+          </Rule>
+        </Validation>
+      </Field>
+
+      <Field id="InvoiceDate" type="Simple" useOcrResult="IgnoreOcrResult"> 
+        <Name>
+          <Culture lcid="de-DE" value="Erstellungsdatum" />
+          <Culture lcid="neutral" value="Creation date" />
+        </Name>
+        <Type>System.DateTime</Type>
+        <EventHandlers source="this">
+          <OnEvent name="Initialized"><!-- 
+            field.Ocr.Global.ExpertiseAge.TryEnable(field);
+           -->
+          </OnEvent>
+          <OnEvent name="Updated">
+            <!--
+            field.Ocr.Global.ExpertiseAge.ValidateAge(field); 
+          -->
+          </OnEvent>
+        </EventHandlers>
+      </Field>
+
+      <Field id="ReplacementValue" type="Simple" height="20">
+        <Name>
+          <Culture lcid="1031" value="Wiederbeschaffungswert (Brutto)" />
+          <Culture lcid="127" value="Replacement value (gross)" />
+          <!-- 127=InvariantCulture, used as fallback, to explicitly specify en-US use 1033 -->
+          <!-- cultures and lcids see http://msdn.microsoft.com/en-us/library/0h88fahh(VS.85).aspx -->
+        </Name>
+        <Type>System.Decimal</Type>
+        <Normalization>
+          <Rule action="Replace" pattern="€" with="" />
+          <Rule action="Match" pattern="[0-9.,]+" />
+          <Rule action="Replace" pattern="\s+" with="" />
+          <Rule action="Replace" pattern="\." with="," />
+          <Rule action="Replace" pattern="([0-9]*)(,)([0-9]{2,},[0-9]{1,2})" with="$1.$3" />
+        </Normalization>
+        <Validation class="Warning">
+          <Rule action="Evaluate">
+            <Source language="CSharp">
+              <!--
+                return (input.Decimal > 10.0M);
+              -->
+            </Source>
+          </Rule>
+        </Validation>
+      </Field>
+
+      <Field id="SalvageValue" type="Simple" height="20">
+        <Name>
+          <Culture lcid="de-DE" value="Restwert lt. Gutachten (Brutto)" />
+          <Culture lcid="neutral" value="Residual value (gross)" />
+        </Name>
+        <Type>System.Decimal</Type>
+        <Normalization like="ReplacementValue" />
+        <Validation class="Warning" treatEmptyAs="Error" allowRelaxationTo="Warning" />
+      </Field>
+
+      <!--netcash was here-->
+
+      <Field id="FirstRegistrationDate" type="Simple" height="20" useOcrResult="UseOcrResultPageOnly">
+        <Name>
+          <Culture lcid="de-DE" value="Erstzulassung" />
+          <Culture lcid="neutral" value="First registration date" />
+        </Name>
+        <Type formatAs="dd.MM.yyyy">System.DateTime</Type>
+        <Jato relevant="true">
+          <MapsTo name="FirstRegistrationDate" />
+        </Jato>
+        <Normalization>
+          <Rule action="Replace" pattern="," with="." />
+        </Normalization>
+        <Validation class="Error" treatEmptyAs="Error" allowRelaxationTo="Warning">
+          <!--<Rule action="Match" pattern="^[0-9]{1,2}\.[0-9]{1,2}\.([0-9]{2}|[0-9]{4})$"/>-->
+          <Rule action="Evaluate">
+            <Source language="CSharp">
+              <!--
+              return ((input.DateTime <= DateTime.Today) && (input.DateTime >= new DateTime(DateTime.Now.Year-50, 1, 1)));
+              -->
+            </Source>
+          </Rule>
+        </Validation>
+      </Field>
+
+      <Field id="VehicleType" type="DropDown" height="20" useOnlyAllowedValuesForRecognition="true">
+        <Name>
+          <Culture lcid="de-DE" value="Fahrzeugart" />
+          <Culture lcid="neutral" value="Vehicle type" />
+        </Name>
+        <Jato relevant="true"/>
+        <Validation class="Error" treatEmptyAs="Error" allowRelaxationTo="Warning">
+          <Query id="VehicleTypeAliases" />
+        </Validation>
+      </Field>
+
+      <Field id="Manufacturer" type="DropDown" height="20">
+        <Name>
+          <Culture lcid="de-DE" value="Hersteller" />
+          <Culture lcid="neutral" value="Manufacturer" />
+        </Name>
+        <Jato relevant="true"/>
+        <Normalization>
+          <Rule action="Replace" pattern="^Škoda$" with="Skoda" />
+          <Rule action="Replace" pattern="^vw$" with="Volkswagen" options="IgnoreCase" />
+          <Rule action="Replace" pattern=".*VOLKSWAGEN.*" with="VOLKSWAGEN" options="IgnoreCase" />
+          <Rule action="Replace" pattern="DAIMLER[-]?CHRYSLER" with="MERCEDES-BENZ" options="IgnoreCase" />
+          <Rule action="Transform" transform="ToUpperInvariant" />
+        </Normalization>
+        <Validation class="Warning" treatEmptyAs="Error">
+          <Query id="Manufacturer" />
+        </Validation>
+      </Field>
+
+      <Field id="Model" type="DropDown" height="20">
+        <Name>
+          <Culture lcid="de-DE" value="Typ" />
+          <Culture lcid="neutral" value="Model" />
+        </Name>
+        <Jato relevant="true" />
+        <DependsOn>
+          <Id>Manufacturer</Id>
+        </DependsOn>
+        <Normalization>
+          <Rule action="Transform" transform="ToUpperInvariant" />
+        </Normalization>
+        <Validation class="Warning" treatEmptyAs="Error">
+          <Query id="Model" />
+        </Validation>
+
+      </Field>
+
+      <Field id="ModelVariant" type="Simple" height="20">
+        <Name>
+          <Culture lcid="de-DE" value="Variante" />
+          <Culture lcid="neutral" value="Variant" />
+        </Name>
+        <Jato relevant="true" />
+        <Validation class="Warning" treatEmptyAs="Error" allowRelaxationTo="Warning" />
+      </Field>
+
+      <Field id="Mileage" type="Simple" height="20" useOcrResult="UseOcrResultPageOnly">
+        <Name>
+          <Culture lcid="de-DE" value="Laufleistung (km)" />
+          <Culture lcid="neutral" value="Mileage" />
+        </Name>
+        <Normalization>
+          <Rule action="Replace" pattern="[\.,' ']" with="" />
+          <Rule action="Match" pattern="^([0-9]{1,7})(\s*km)?$" options="IgnoreCase">
+            <Rule action="Consume" group="1" />
+          </Rule>
+        </Normalization>
+        <Validation class="Warning" treatEmptyAs="Error" allowRelaxationTo="Warning">
+          <Rule action="Match" pattern="[0-9]{2,7}">
+            <Rule action="Evaluate">
+              <Source language="CSharp">
+                <!--                                                   
+                  IOcrSimpleContext simple = context.Global.Fields["FirstRegistrationDate"].Ocr.As<IOcrSimpleContext>();
+                  if (ValidationClass.Valid == simple.Validator.Status && !string.IsNullOrEmpty(simple.Normalizer.Value))
+                  {
+                      DateTime firstRegistration = new Variant(simple.Normalizer.Value).DateTime;
+                      double age = DateTime.Now.Subtract(firstRegistration).TotalDays;
+                      
+                      if (age <= 0) age = 1;
+                      
+                      return input.Int32 / age > 19 && input.Int32 / age < 138;
+                  }
+                
+                return true;
+                -->
+              </Source>
+              <Source language="CSharp">
+                <!-- 
+                return input.Int32 < 1000000;
+                -->
+              </Source>
+            </Rule>
+          </Rule>
+        </Validation>
+      </Field>
+
+      <Field id="NetCash" type="Simple" height="20" discardWhenValidityIsNotSafe="true">
+        <Name>
+          <Culture lcid="de-DE" value="Reparaturkosten (Netto)" />
+          <Culture lcid="neutral" value="Repair costs (net)" />
+        </Name>
+        <Type>System.Decimal</Type>
+        <DependsOn>
+          <Id>Wages</Id>
+          <Id>CostOfPainting</Id>
+          <Id>CostOfSpareparts</Id>
+          <!--<Id>AdditionalCost</Id>-->
+        </DependsOn>
+        <Normalization>
+          <Rule action="Replace" pattern="€" with="" />
+          <Rule action="Replace" pattern="\s+" with="" />
+          <Rule action="Replace" pattern="\." with="," />
+          <Rule action="Replace" pattern="([0-9]*)(,)([0-9]{2,},[0-9]{1,2})" with="$1.$3" />
+        </Normalization>
+        <Validation class="Warning" treatEmptyAs="Error" allowRelaxationTo="Warning">
+          <Rule action="Evaluate">
+            <Source language="CSharp">
+              <!--
+                return (input.Decimal > 10.0m);
+              -->
+            </Source>
+          </Rule>
+          <Rule action="Evaluate">
+            <Source language="CSharp">
+              <!--
+                return (input.Decimal < 200000.0m);
+              -->
+            </Source>
+          </Rule>
+          <Rule action="Evaluate">
+            <Source language="CSharp">
+              <!--
+              // using comments to preserve the code formatting (the xml editor does not deal correctly with c# code).
+              // Only code inside the comment! 
+              
+              decimal sum = new System.Decimal();
+              
+              foreach (string dependency in context.Config.Value.DependsOn)
+              {
+                  IOcrSimpleContext simple = context.Global.Fields[dependency].Ocr.As<IOcrSimpleContext>();
+                  if (ValidationClass.Valid == simple.Validator.Status && !string.IsNullOrEmpty(simple.Normalizer.Value))
+                      sum += new Variant(simple.Normalizer.Value).Decimal;
+              }
+              
+              if (0 == sum) // all fields that current field depends on were empty:
+                  return true; // comparison does not make sense
+              else // at least one was not empty: compare and allow 10% tolerance
+                  return (Math.Abs(input.Decimal - sum) <= input.Decimal / 10.0M);
+              -->
+            </Source>
+          </Rule>
+        </Validation>
+      </Field>
+
+      <Field id="CostOfSpareparts" type="Simple" height="20" readOnlyWhenValidityIsSafe="true">
+        <Name>
+          <Culture lcid="de-DE" value="Endsumme Ersatzteile" />
+          <Culture lcid="neutral" value="Cost of spare parts" />
+        </Name>
+        <Normalization like="NetCash" />
+        <Type>System.Decimal</Type>
+        <Validation class="Warning" />
+      </Field>
+
+      <!--<Field id="AdditionalCost" type="Simple" height="20" readOnlyWhenValidityIsSafe="true">
+        <Name>
+          <Culture lcid="de-DE" value="Endsumme Nebenkosten" />
+          <Culture lcid="neutral" value="Additional costs" />
+        </Name>
+        <Normalization like="NetCash" />
+        <Type>System.Decimal</Type>
+        <Validation class="Warning" />
+      </Field>-->
+
+      <Field id="Wages" type="Simple" height="20" readOnlyWhenValidityIsSafe="true">
+        <Name>
+          <Culture lcid="de-DE" value="Endsumme Arbeitslohn" />
+          <Culture lcid="neutral" value="Wages" />
+        </Name>
+        <Normalization like="NetCash" />
+        <Type>System.Decimal</Type>
+        <Validation class="Warning" />
+      </Field>
+
+      <Field id="CostOfPainting" type="Simple" height="20" readOnlyWhenValidityIsSafe="true">
+        <Name>
+          <Culture lcid="de-DE" value="Endsumme Lackierung" />
+          <Culture lcid="neutral" value="Painting costs" />
+        </Name>
+        <Normalization like="NetCash" />
+        <Type>System.Decimal</Type>
+        <Validation class="Warning" />
+        <EventHandlers source="this.Ocr.KeyboardNavigation">
+          <OnEvent name="NavigatingAway">
+            <!--
+            field.Ocr.Global.UI.Completion.TryPerform();
+            -->
+          </OnEvent>
+        </EventHandlers>
+      </Field>
+
+      <!-- Empty field to ensure that when using return button to navigate through the fields
+      the "Save" popup is always displayed at the end, even if the last field is read only.-->
+      <Field id="DummyField" type="Simple" height="20">
+        <Name>
+          <Culture lcid="de-DE" value="Leeres Feld" />
+          <Culture lcid="neutral" value="Empty field" />
+        </Name>
+        <EventHandlers source="this.Ocr.KeyboardNavigation">
+          <OnEvent name="NavigatingAway">
+            <!--
+            field.Ocr.Global.UI.Completion.TryPerform();
+            -->
+          </OnEvent>
+        </EventHandlers>
+      </Field>
+
+    </Config>
+  </Completion>
+</ICRpilot>
