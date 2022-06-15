@@ -90,7 +90,7 @@ public class Completion {
             action.inputData(90, 1300, "SUV");
 
             // Platform
-            action.inputData(90, 1460, "SUV");
+            action.inputData(1, "SUV");
 
             // Number of doors
             action.inputData(1, "5");

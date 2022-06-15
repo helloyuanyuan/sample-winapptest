@@ -12,8 +12,10 @@ Vagrant.configure("2") do |config|
     vb.cpus = 2
   end
 
-  config.vm.provision "file", source: ".\\tools\\hosts", destination: "C:\\Windows\\System32\\drivers\\etc\\hosts"
-  config.vm.provision "file", source: ".\\tools\\ICRpilot.Completion", destination: "C:\\ICRpilot.Completion"
+  config.vm.provision "file", source: ".\\files\\hosts", destination: "C:\\Windows\\System32\\drivers\\etc\\hosts"
+  config.vm.provision "file", source: ".\\files\\ICRpilot.Completion", destination: "C:\\ICRpilot.Completion"
+  config.vm.provision "file", source: ".\\files\\AddCredential.bat", destination: "C:\\Users\\vagrant\\Desktop"
+  config.vm.provision "file", source: ".\\files\\StartService.bat", destination: "C:\\Users\\vagrant\\Desktop"
   config.vm.provision :shell, path: ".\\script\\provision.ps1"
 
 end
