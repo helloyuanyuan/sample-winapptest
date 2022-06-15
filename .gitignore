@@ -9,3 +9,13 @@ logs
 **/.allure
 allure-results
 allure-reports
+**/.vagrant
+
+!*.dll
+!*.exe
+!*.msi
+!*.cab
+!*.pdb
+!*.xml
+!*.csv
+!*.config
