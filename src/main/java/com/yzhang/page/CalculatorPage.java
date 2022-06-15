@@ -11,7 +11,7 @@ public class CalculatorPage {
     public WindowsDriver<WindowsElement> driver = new DriverFactory().getDriver(App.CALCULATOR);
 
     public WindowsElement result() {
-        return driver.findElementByAccessibilityId("CalculatorResults");
+        return driver.findElement(By.name("Result"));
     }
 
     public WindowsElement clear() {
@@ -23,19 +23,19 @@ public class CalculatorPage {
     }
 
     public WindowsElement plus() {
-        return driver.findElement(By.name("Plus"));
+        return driver.findElement(By.name("Add"));
     }
 
     public WindowsElement minus() {
-        return driver.findElement(By.name("Minus"));
+        return driver.findElement(By.name("Subtract"));
     }
 
     public WindowsElement multiply() {
-        return driver.findElement(By.name("Multiply by"));
+        return driver.findElement(By.name("Multiply"));
     }
 
     public WindowsElement divide() {
-        return driver.findElement(By.name("Divide by"));
+        return driver.findElement(By.name("Divide"));
     }
 
     public WindowsElement number(String numberString) {

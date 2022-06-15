@@ -11,7 +11,7 @@ public class NotepadPage {
     public WindowsDriver<WindowsElement> driver = new DriverFactory().getDriver(App.NOTEPAD);
 
     public WindowsElement editArea() {
-        return driver.findElement(By.name("RichEdit Control"));
+        return driver.findElement(By.name("Text Editor"));
     }
 
     public WindowsElement editMenu() {
@@ -27,7 +27,7 @@ public class NotepadPage {
     }
 
     public WindowsElement saveMenu() {
-        return driver.findElement(By.name("Save"));
+        return driver.findElement(By.xpath("/Window[1]/Menu/MenuItem[4]"));
     }
 
     public WindowsElement fileNameInputArea() {
@@ -35,16 +35,15 @@ public class NotepadPage {
     }
 
     public WindowsElement saveButton() {
-        return driver.findElement(By.xpath(
-                "//Window[@Name=\"Save as\"]/Button[@ClassName=\"Button\"][@Name=\"Save\"]"));
+        return driver.findElement(By.xpath("//Button[@ClassName=\"Button\"][@Name=\"Save\"]"));
     }
 
     public WindowsElement popupSaveButton() {
-        return driver.findElementByAccessibilityId("PrimaryButton");
+        return driver.findElement(By.name("Save"));
     }
 
     public WindowsElement popupNotSaveButton() {
-        return driver.findElementByAccessibilityId("SecondaryButton");
+        return driver.findElement(By.name("Don't Save"));
     }
 
 }

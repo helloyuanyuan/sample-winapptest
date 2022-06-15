@@ -31,31 +31,31 @@ public class LogUtils {
     }
 
     public static void info(String message) {
-        logger.info("> INFO: " + message);
+        logger.info("INFO-" + message);
     }
 
     public static void warn(String message) {
-        logger.warn("> WARN: " + message);
+        logger.warn("WARN-" + message);
     }
 
     public static void error(String message) {
-        logger.error("> ERROR: " + message);
+        logger.error("ERROR-" + message);
     }
 
     public static void fatal(String message) {
-        logger.fatal("> FATAL: " + message);
+        logger.fatal("FATAL-" + message);
     }
 
     public static void debug(String message) {
-        logger.debug("> DEBUG: " + message);
+        logger.debug("DEBUG-" + message);
     }
 
     public static void expected(String message) {
-        logger.info("> EXPECTED RESULT : " + message);
+        logger.info("EXPECTED RESULT-" + message);
     }
 
     public static void actual(String message) {
-        logger.info("> ACTUAL RESULT : " + message);
+        logger.info("ACTUAL RESULT-" + message);
     }
 
 }

@@ -1,7 +1,5 @@
 package com.yzhang.cases;
 
-import com.yzhang.common.utils.LogUtils;
-import com.yzhang.pageAction.NotepadAction;
 import org.assertj.core.api.Assertions;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -10,6 +8,8 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
+import com.yzhang.common.utils.LogUtils;
+import com.yzhang.pageAction.NotepadAction;
 import io.appium.java_client.windows.WindowsElement;
 
 public class Notepad {
@@ -31,9 +31,7 @@ public class Notepad {
     }
 
     @After
-    public void afterEach() throws Exception {
-        action.driver.closeApp();
-    }
+    public void afterEach() throws Exception {}
 
     @AfterClass
     public static void afterAll() throws Exception {

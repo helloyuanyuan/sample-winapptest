@@ -17,6 +17,7 @@ public class NotepadAction extends NotepadPage {
         fileNameInputArea().clear();
         fileNameInputArea().sendKeys(fileName);
         saveButton().click();
+        driver.closeApp();
     }
 
     public void quitWithoutSave() {

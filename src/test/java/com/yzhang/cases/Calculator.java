@@ -43,25 +43,25 @@ public class Calculator {
 
     @Test
     public void testAddition() {
-        WindowsElement result = action.plus("One", "Four");
+        WindowsElement result = action.plus("1", "4");
         Assertions.assertThat(getText(result)).isEqualTo("5");
     }
 
     @Test
     public void testSubtraction() {
-        WindowsElement result = action.minus("Eight", "Three");
+        WindowsElement result = action.minus("8", "3");
         Assertions.assertThat(getText(result)).isEqualTo("5");
     }
 
     @Test
     public void testMultiplication() {
-        WindowsElement result = action.multiply("Five", "One");
+        WindowsElement result = action.multiply("5", "1");
         Assertions.assertThat(getText(result)).isEqualTo("5");
     }
 
     @Test
     public void testDivision() {
-        WindowsElement result = action.divide("Three", "Zero", "Six");
+        WindowsElement result = action.divide("3", "0", "6");
         Assertions.assertThat(getText(result)).isEqualTo("5");
     }
 
