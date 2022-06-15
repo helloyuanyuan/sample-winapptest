@@ -87,7 +87,7 @@ public class Completion {
             action.inputData(90, 1075, "01.01.2010");
 
             // Vehicle type
-            action.inputData(90, 1300, "SUV");
+            action.inputData(2, "SUV");
 
             // Platform
             action.inputData(1, "SUV");
