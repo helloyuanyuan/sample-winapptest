@@ -9,7 +9,7 @@
 ~~~Text
 1. enable windows developer mode;
 2. install /tools/WindowsApplicationDriver_1.2.1.msi;
-3. run /tools/WinAppDriver.bat to start service;
+3. run /files/StartService.bat to start service (Change hostname or ip 127.0.0.1);
 4. set env=local in env.property;
 5. run comand: ./mvnw clean compile test allure:serve; (Run and generate test report);
 ~~~

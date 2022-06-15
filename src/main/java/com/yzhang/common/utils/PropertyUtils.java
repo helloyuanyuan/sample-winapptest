@@ -63,9 +63,5 @@ public class PropertyUtils {
         return this.getProperty("calculatorPath");
     }
 
-    public String getCompletionPath() {
-        return this.getProperty("completionPath");
-    }
-
 }
 

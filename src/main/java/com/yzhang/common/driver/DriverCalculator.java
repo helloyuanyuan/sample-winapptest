@@ -2,8 +2,8 @@ package com.yzhang.common.driver;
 
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-import com.yzhang.common.utils.PropertyUtils;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import com.yzhang.common.utils.PropertyUtils;
 import io.appium.java_client.windows.WindowsDriver;
 import io.appium.java_client.windows.WindowsElement;
 

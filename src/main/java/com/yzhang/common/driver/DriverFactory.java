@@ -10,9 +10,6 @@ public class DriverFactory {
         if (app.equals(App.CALCULATOR)) {
             return new DriverCalculator().initDriver();
 
-        } else if (app.equals(App.COMPLETION)) {
-            return new DriverCompletion().initDriver();
-
         } else if (app.equals(App.NOTEPAD)) {
             return new DriverNotepad().initDriver();
         }
