@@ -4,7 +4,8 @@
 reports
 target
 logs
-settings.xml
 **/.DS_Store
 **/*.iml
 **/.allure
+allure-results
+allure-reports
